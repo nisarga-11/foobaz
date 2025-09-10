@@ -1,0 +1,207 @@
+2025-09-08 11:33:19,024 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 11:33:19,061 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: customer_demo - Command '['pgbackrest', '--stanza=customer_demo', '--type=incr', 'backup']' returned non-zero exit status 55.
+2025-09-08 11:33:19,061 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 11:33:19,075 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: customer_demo
+2025-09-08 11:33:19,076 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 11:33:19,091 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command '['pgbackrest', '--stanza=employee_demo', '--type=incr', 'backup']' returned non-zero exit status 55.
+2025-09-08 11:33:19,092 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 11:33:19,106 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: employee_demo
+2025-09-08 11:35:19,107 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 11:35:19,139 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: customer_demo - Command '['pgbackrest', '--stanza=customer_demo', '--type=incr', 'backup']' returned non-zero exit status 55.
+2025-09-08 11:35:19,143 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 11:35:19,160 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command '['pgbackrest', '--stanza=employee_demo', '--type=incr', 'backup']' returned non-zero exit status 55.
+2025-09-08 11:35:54,289 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:36:54,496 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: demo
+2025-09-08 11:36:54,499 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:37:54,714 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:37:54,716 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:38:54,882 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:38:54,883 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:39:18,862 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: demo
+2025-09-08 11:39:18,864 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:39:19,489 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: demo
+2025-09-08 11:39:19,491 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:39:19,762 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 63.
+2025-09-08 11:39:19,765 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:39:19,982 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: demo
+2025-09-08 11:43:02,872 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:43:04,944 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:43:04,946 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:43:06,347 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:43:06,349 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:44:01,213 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:44:03,112 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:44:03,113 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:44:04,356 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:44:04,358 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:45:04,437 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: demo
+2025-09-08 11:45:04,441 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:46:04,586 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:48:04,600 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:48:05,479 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:48:05,482 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:49:05,658 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:51:05,673 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:52:05,933 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:52:05,941 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:53:06,162 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 11:53:06,279 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:53:07,449 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:53:07,451 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:53:09,084 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:53:09,085 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:53:10,392 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:53:10,394 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:53:11,973 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:54:40,350 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:54:41,458 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:54:41,459 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:54:42,891 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:54:42,893 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:54:44,400 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:54:44,401 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: demo
+2025-09-08 11:54:45,864 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: demo
+2025-09-08 11:55:10,400 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:55:11,389 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:55:11,393 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:55:12,387 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:56:44,415 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:56:45,397 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:56:45,400 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:56:46,395 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:57:12,397 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:57:13,391 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:57:13,395 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:57:14,384 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:58:46,404 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:58:47,389 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:58:47,392 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:58:48,393 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:59:14,394 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:59:15,485 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 11:59:15,488 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 11:59:16,389 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:00:48,401 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:00:49,480 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:00:49,483 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:00:50,397 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:01:16,404 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:01:17,396 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:01:17,402 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:01:18,393 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:02:50,413 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:02:51,385 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:02:51,388 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:02:52,390 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:03:18,405 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:03:19,397 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:03:19,404 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:03:20,379 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:05:20,390 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:05:21,486 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:05:21,489 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:05:22,390 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:07:22,404 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:07:23,399 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:07:23,409 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:07:24,389 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: demo - ID: Unknown, Size: Unknown
+2025-09-08 12:09:24,401 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:10:24,670 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 12:10:24,680 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: demo
+2025-09-08 12:11:24,914 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: demo - Command '['pgbackrest', '--stanza=demo', '--type=incr', 'backup']' returned non-zero exit status 82.
+2025-09-08 12:18:27,153 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:18:28,433 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-121412F_20250908-121827I, Size: 2.1MB
+2025-09-08 12:18:28,435 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:18:29,932 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:18:29,935 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:19:30,011 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command failed with return code 82
+2025-09-08 12:19:30,012 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:20:30,117 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: employee_demo
+2025-09-08 12:21:30,025 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:21:31,465 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-121828F_20250908-122130I, Size: 2.1MB
+2025-09-08 12:21:31,468 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:22:31,649 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command failed with return code 82
+2025-09-08 12:24:31,662 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:24:31,699 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: customer_demo - Command failed with return code 51
+2025-09-08 12:24:31,702 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:24:31,732 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command failed with return code 51
+2025-09-08 12:26:31,743 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:26:31,790 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: customer_demo - Command failed with return code 87
+2025-09-08 12:26:31,794 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:26:31,831 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command failed with return code 87
+2025-09-08 12:28:31,834 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:28:33,988 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-122831F, Size: 29.8MB
+2025-09-08 12:28:33,991 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:28:36,111 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-122834F, Size: 37.2MB
+2025-09-08 12:30:36,121 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:30:37,401 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-122903F_20250908-123036I, Size: Unknown
+2025-09-08 12:30:37,404 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:30:38,328 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-122915F_20250908-123037I, Size: Unknown
+2025-09-08 12:32:38,335 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:32:39,294 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-122903F_20250908-123238I, Size: Unknown
+2025-09-08 12:32:39,297 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:32:40,296 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-122915F_20250908-123239I, Size: Unknown
+2025-09-08 12:32:53,379 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:32:54,998 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:32:55,000 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:32:56,300 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-123253F_20250908-123255I, Size: Unknown
+2025-09-08 12:32:56,302 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:32:58,330 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:32:58,331 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:32:59,306 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-123256F_20250908-123258I, Size: Unknown
+2025-09-08 12:34:59,315 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:35:00,303 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-123253F_20250908-123459I, Size: Unknown
+2025-09-08 12:35:00,306 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:35:01,298 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-123256F_20250908-123500I, Size: Unknown
+2025-09-08 12:37:01,308 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:37:02,457 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-123253F_20250908-123701I, Size: Unknown
+2025-09-08 12:37:02,459 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:37:03,409 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-123256F_20250908-123702I, Size: Unknown
+2025-09-08 12:39:03,419 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:39:04,400 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-123253F_20250908-123903I, Size: Unknown
+2025-09-08 12:39:04,403 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:39:05,393 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-123256F_20250908-123904I, Size: Unknown
+2025-09-08 12:39:53,973 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:40:54,040 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: customer_demo
+2025-09-08 12:40:54,045 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:41:54,130 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: customer_demo - Command failed with return code 82
+2025-09-08 12:41:54,158 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:42:54,221 - pgbackrest_operations - ERROR - pgBackRest full backup failed for stanza: employee_demo
+2025-09-08 12:42:54,225 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:43:54,408 - pgbackrest_operations - ERROR - pgBackRest incremental backup failed for stanza: employee_demo - Command failed with return code 82
+2025-09-08 12:50:27,155 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:50:29,037 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:50:29,038 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:50:30,311 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125027F_20250908-125029I, Size: Unknown
+2025-09-08 12:50:30,312 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:50:32,192 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:50:32,193 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:50:33,344 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125030F_20250908-125032I, Size: Unknown
+2025-09-08 12:51:19,579 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:51:20,330 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125027F_20250908-125119I, Size: Unknown
+2025-09-08 12:51:20,331 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:51:21,998 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: customer_demo
+2025-09-08 12:51:21,999 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:51:23,339 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125030F_20250908-125122I, Size: Unknown
+2025-09-08 12:51:23,341 - pgbackrest_operations - INFO - Starting pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:51:25,087 - pgbackrest_operations - INFO - Successfully completed pgBackRest full backup for stanza: employee_demo
+2025-09-08 12:53:23,353 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:53:24,287 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125120F_20250908-125323I, Size: Unknown
+2025-09-08 12:53:24,292 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:53:25,303 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125123F_20250908-125324I, Size: Unknown
+2025-09-08 12:55:25,314 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:55:26,323 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125120F_20250908-125525I, Size: Unknown
+2025-09-08 12:55:26,327 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:55:27,317 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125123F_20250908-125526I, Size: Unknown
+2025-09-08 12:57:27,329 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:57:28,298 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125120F_20250908-125727I, Size: Unknown
+2025-09-08 12:57:28,303 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:57:29,306 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125123F_20250908-125728I, Size: Unknown
+2025-09-08 12:59:29,308 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 12:59:30,432 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125120F_20250908-125929I, Size: Unknown
+2025-09-08 12:59:30,434 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 12:59:31,416 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125123F_20250908-125930I, Size: Unknown
+2025-09-08 13:01:31,427 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: customer_demo
+2025-09-08 13:01:32,402 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: customer_demo - ID: 20250908-125120F_20250908-130131I, Size: Unknown
+2025-09-08 13:01:32,407 - pgbackrest_operations - INFO - Starting pgBackRest incremental backup for stanza: employee_demo
+2025-09-08 13:01:33,404 - pgbackrest_operations - INFO - Successfully completed pgBackRest incremental backup for stanza: employee_demo - ID: 20250908-125123F_20250908-130132I, Size: Unknown
