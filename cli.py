@@ -302,7 +302,7 @@ def test_connection():
             continue
             
         try:
-            from mcp_client import SyncMCPClient
+            from mcp.mcp_client import SyncMCPClient
             api_key = os.getenv(f"{server_name}_API_KEY")
             
             client = SyncMCPClient(url, api_key)

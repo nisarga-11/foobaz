@@ -1,3 +1,4 @@
+
 """Backup/Restore Agent for PG2 server."""
 
 import os
@@ -8,8 +9,8 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.tools import BaseTool
 
 from llm.ollama_helper import create_backup_agent_llm
-from mcp_client import SyncMCPClient
-from tools.mcp_tools import create_pg2_toolset
+from mcp.mcp_client import SyncMCPClient
+from mcp.mcp_tools import create_pg2_toolset
 
 # Server-specific system prompt
 SYSTEM_PROMPT = """You are the Backup/Restore Agent for PG2. You only act via MCP tools over HTTP.

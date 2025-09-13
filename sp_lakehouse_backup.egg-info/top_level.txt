@@ -1,6 +1,0 @@
-agents
-config
-llm
-mcp
-supervisor
-tools

@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional, Type
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 
-from mcp_client import MCPClient, MCPError, SyncMCPClient
+from .mcp_client import MCPClient, MCPError, SyncMCPClient
 
 logger = logging.getLogger(__name__)
 

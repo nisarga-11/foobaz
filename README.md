@@ -117,8 +117,8 @@ OLLAMA_NUM_CTX=8192
 ### Start the TRUE WAL Backup System
 
 ```bash
-# Start the complete system (MCP servers + scheduler)
-python3 start_true_wal_system.py
+# Start the MCP servers directly
+python true_wal_incremental_backup.py
 ```
 
 This starts:
@@ -272,17 +272,16 @@ sp-lakehouse-backup/
 ├── sql/
 │   ├── setup_pg1.sql           # PG1 database schema & data
 │   └── setup_pg2.sql           # PG2 database schema & data
-├── mcp/
-│   └── server_config.json      # MCP server configuration
 ├── backups/                    # TRUE WAL backup storage
 │   ├── mcp1/                   # PG1 backups
 │   └── mcp2/                   # PG2 backups
-├── mcp_client.py               # MCP REST client
+├── mcp/                        # MCP tools and client
+│   ├── mcp_client.py           # MCP REST client
+│   ├── mcp_tools.py            # LangChain MCP tools
+│   └── server_config.json      # MCP server configuration
 ├── graph.py                    # LangGraph workflow (fixed JSON parsing)
 ├── cli.py                      # Interactive CLI (fixed)
-├── true_wal_incremental_backup.py  # TRUE WAL backup system
-├── start_true_wal_system.py    # System starter
-├── coordinated_restore_planner.py  # Advanced restore coordination
+├── true_wal_incremental_backup.py  # Main MCP server (TRUE WAL backup system)
 ├── setup_postgres.sh          # Database setup script
 ├── pyproject.toml              # Project dependencies
 ├── env.example                 # Environment template
@@ -307,7 +306,7 @@ sp-lakehouse-backup/
 
 1. **Start the system**:
    ```bash
-   python3 start_true_wal_system.py
+   python true_wal_incremental_backup.py
    ```
 
 2. **Test the CLI**:
