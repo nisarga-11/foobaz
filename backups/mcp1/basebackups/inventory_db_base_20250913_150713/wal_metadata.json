@@ -1,0 +1,12 @@
+{
+  "backup_id": "inventory_db_base_20250913_150713",
+  "database": "inventory_db",
+  "backup_type": "basebackup",
+  "timestamp": "2025-09-13T15:07:13.545865",
+  "lsn_start": "3/23000000",
+  "lsn_end": "3/25000000",
+  "wal_start_file": "000000190000000300000023",
+  "wal_end_file": "000000190000000300000025",
+  "timeline_id": 1,
+  "server": "MCP1"
+}

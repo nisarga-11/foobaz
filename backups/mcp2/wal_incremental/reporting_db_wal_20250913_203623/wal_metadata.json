@@ -1,0 +1,18 @@
+{
+  "backup_id": "reporting_db_wal_20250913_203623",
+  "database": "reporting_db",
+  "backup_type": "wal_incremental",
+  "timestamp": "2025-09-13T20:36:23.673935",
+  "lsn_start": "3/42000000",
+  "lsn_end": "3/42000000",
+  "wal_files_archived": [
+    "00000019000000030000003D.wal",
+    "00000019000000030000003E.wal",
+    "00000019000000030000003F.wal",
+    "000000190000000300000040.wal",
+    "000000190000000300000041.wal"
+  ],
+  "timeline_id": 1,
+  "server": "MCP2",
+  "base_backup_reference": null
+}

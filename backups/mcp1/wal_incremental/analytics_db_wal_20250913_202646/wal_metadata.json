@@ -1,0 +1,18 @@
+{
+  "backup_id": "analytics_db_wal_20250913_202646",
+  "database": "analytics_db",
+  "backup_type": "wal_incremental",
+  "timestamp": "2025-09-13T20:26:46.534121",
+  "lsn_start": "3/39000000",
+  "lsn_end": "3/39000000",
+  "wal_files_archived": [
+    "000000190000000300000034.wal",
+    "000000190000000300000035.wal",
+    "000000190000000300000036.wal",
+    "000000190000000300000037.wal",
+    "000000190000000300000038.wal"
+  ],
+  "timeline_id": 1,
+  "server": "MCP1",
+  "base_backup_reference": null
+}

@@ -1,0 +1,19 @@
+{
+  "backup_id": "customer_db_wal_20250913_203415",
+  "database": "customer_db",
+  "backup_type": "wal_incremental",
+  "timestamp": "2025-09-13T20:34:15.432732",
+  "lsn_start": "3/3D000000",
+  "lsn_end": "3/3E000060",
+  "wal_files_archived": [
+    "00000019000000030000003A.wal",
+    "00000019000000030000003B.wal",
+    "00000019000000030000003C.wal",
+    "00000019000000030000003D.wal",
+    "00000019000000030000003E.wal",
+    "00000019000000030000003E.wal"
+  ],
+  "timeline_id": 1,
+  "server": "MCP1",
+  "base_backup_reference": null
+}

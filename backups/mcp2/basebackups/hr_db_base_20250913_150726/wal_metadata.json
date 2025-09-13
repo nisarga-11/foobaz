@@ -1,0 +1,12 @@
+{
+  "backup_id": "hr_db_base_20250913_150726",
+  "database": "hr_db",
+  "backup_type": "basebackup",
+  "timestamp": "2025-09-13T15:07:26.319945",
+  "lsn_start": "3/26000000",
+  "lsn_end": "3/27000000",
+  "wal_start_file": "000000190000000300000026",
+  "wal_end_file": "000000190000000300000027",
+  "timeline_id": 1,
+  "server": "MCP2"
+}

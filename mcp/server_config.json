@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "postgres-backup-pg1": {
+      "command": "python",
+      "args": ["mcp/postgres_backup_server.py", "--server-name", "PG1"],
+      "env": {}
+    },
+    "postgres-backup-pg2": {
+      "command": "python", 
+      "args": ["mcp/postgres_backup_server.py", "--server-name", "PG2"],
+      "env": {}
+    }
+  }
+}
