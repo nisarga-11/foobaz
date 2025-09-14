@@ -1,0 +1,27 @@
+# PostgreSQL Backup/Restore System Requirements
+# =============================================
+
+# Core LangChain & AI Dependencies
+langchain>=0.3.0
+langgraph>=0.2.0
+langchain-ollama>=0.3.0
+
+# Data Models & Validation
+pydantic>=2.0.0
+
+# HTTP Client & Web Framework
+httpx>=0.28.0
+fastapi>=0.115.0
+uvicorn>=0.30.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+python-dateutil>=2.9.0
+
+# CLI & User Interface
+rich>=13.0.0
+typer>=0.12.0
+
+# Scheduling & Task Management
+schedule>=1.2.0
+

@@ -85,7 +85,11 @@ This creates all databases with sample data on the main PostgreSQL instance.
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install dependencies
+# Install dependencies (choose one method)
+# Method 1: Using requirements.txt
+pip install -r requirements.txt
+
+# Method 2: Using pyproject.toml
 pip install -e .
 
 # Configure environment
@@ -283,7 +287,8 @@ sp-lakehouse-backup/
 ├── cli.py                      # Interactive CLI (fixed)
 ├── true_wal_incremental_backup.py  # Main MCP server (TRUE WAL backup system)
 ├── setup_postgres.sh          # Database setup script
-├── pyproject.toml              # Project dependencies
+├── pyproject.toml              # Project dependencies (setuptools)
+├── requirements.txt            # Dependencies for pip install
 ├── env.example                 # Environment template
 └── README.md                   # This file
 ```
