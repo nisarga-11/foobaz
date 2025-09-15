@@ -254,22 +254,58 @@ class SyncMCPClient:
 
     def __init__(self, *args, **kwargs):
         self._async_client = MCPClient(*args, **kwargs)
+        self._loop = None
+        self._closed = False
+
+    def _ensure_loop(self):
+        """Ensure we have an active event loop."""
+        if self._closed:
+            raise RuntimeError("SyncMCPClient has been closed")
+        
+        try:
+            # Check if there's already an event loop running
+            loop = asyncio.get_running_loop()
+            # If we get here, there's already a loop running
+            raise RuntimeError("Cannot use SyncMCPClient from within an existing event loop. Use async version instead.")
+        except RuntimeError:
+            # No loop running, which is what we want for sync client
+            pass
+        
+        # Create a new event loop if we don't have one
+        if self._loop is None or self._loop.is_closed():
+            self._loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(self._loop)
+        
+        return self._loop
+
+    def _run_async(self, coro):
+        """Run an async coroutine synchronously."""
+        loop = self._ensure_loop()
+        try:
+            return loop.run_until_complete(coro)
+        except Exception as e:
+            # If the loop got closed externally, recreate it
+            if loop.is_closed():
+                self._loop = None
+                loop = self._ensure_loop()
+                return loop.run_until_complete(coro)
+            else:
+                raise
 
     def list_tools(self) -> List[MCPTool]:
         """Synchronous version of list_tools."""
-        return asyncio.run(self._async_client.list_tools())
+        try:
+            return self._run_async(self._async_client.list_tools())
+        except Exception as e:
+            logger.error(f"MCP client list_tools failed: {e}")
+            if isinstance(e, MCPError):
+                raise
+            raise MCPError(f"Failed to list tools: {e}")
 
     def invoke(self, tool: str, arguments: Dict[str, Any]) -> Dict[str, Any]:
         """Synchronous version of invoke."""
         try:
-            # Check if there's already an event loop running
-            try:
-                loop = asyncio.get_running_loop()
-                # If we get here, there's already a loop running
-                raise RuntimeError("Cannot call invoke() from within an existing event loop. Use async version instead.")
-            except RuntimeError:
-                # No loop running, safe to use asyncio.run()
-                return asyncio.run(self._async_client.invoke(tool, arguments))
+            return self._run_async(self._async_client.invoke(tool, arguments))
         except Exception as e:
             # Log the actual error and re-raise it properly
             logger.error(f"MCP client invoke failed for tool '{tool}': {e}")
@@ -280,21 +316,41 @@ class SyncMCPClient:
     def health_check(self) -> Dict[str, Any]:
         """Synchronous version of health_check."""
         try:
-            # Check if there's already an event loop running
-            try:
-                loop = asyncio.get_running_loop()
-                raise RuntimeError("Cannot call health_check() from within an existing event loop. Use async version instead.")
-            except RuntimeError:
-                # No loop running, safe to use asyncio.run()
-                return asyncio.run(self._async_client.health_check())
+            return self._run_async(self._async_client.health_check())
         except Exception as e:
             logger.error(f"MCP client health check failed: {e}")
             if isinstance(e, MCPError):
                 raise
             raise MCPError(f"Health check failed: {e}")
 
+    def close(self):
+        """Close the client and clean up resources."""
+        if not self._closed:
+            self._closed = True
+            if self._loop and not self._loop.is_closed():
+                # Close the loop gracefully
+                pending = asyncio.all_tasks(self._loop)
+                if pending:
+                    for task in pending:
+                        task.cancel()
+                try:
+                    self._loop.close()
+                except:
+                    # Ignore errors during cleanup
+                    pass
+            self._loop = None
+
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        asyncio.run(self._async_client.__aexit__(exc_type, exc_val, exc_tb))
+        self.close()
+
+    def __del__(self):
+        """Cleanup when object is garbage collected."""
+        if not self._closed:
+            try:
+                self.close()
+            except:
+                # Ignore errors during cleanup
+                pass
