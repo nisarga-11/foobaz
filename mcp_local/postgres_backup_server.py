@@ -222,6 +222,24 @@ class PostgresBackupMCPServer:
                         "type": "object",
                         "properties": {}
                     }
+                ),
+                Tool(
+                    name="recommend_restore",
+                    description=f"Generate intelligent restore recommendations using AI analysis",
+                    inputSchema={
+                        "type": "object",
+                        "properties": {
+                            "target_timestamp": {
+                                "type": "string",
+                                "description": "Optional target timestamp for recommendations (ISO format)"
+                            },
+                            "num_recommendations": {
+                                "type": "integer",
+                                "description": "Number of recommendation sets to generate",
+                                "default": 3
+                            }
+                        }
+                    }
                 )
             ]
         
