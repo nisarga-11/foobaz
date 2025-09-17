@@ -1,0 +1,1470 @@
+INFO:__main__:🚀 STARTING TRUE WAL-BASED INCREMENTAL BACKUP SYSTEM
+INFO:__main__:================================================================================
+INFO:__main__:🎯 TRUE WAL-Based Features:
+INFO:__main__:   ✅ pg_basebackup for WAL-compatible base backups
+INFO:__main__:   📁 TRUE WAL file archiving (actual transaction logs)
+INFO:__main__:   📍 Precise LSN tracking for point-in-time recovery
+INFO:__main__:   🔄 TRUE incremental restore (base + WAL replay)
+INFO:__main__:   ⏰ Automatic scheduling (2min WAL archiving, weekly base)
+INFO:__main__:   📊 Only captures ACTUAL CHANGES, not full dumps
+INFO:__main__:
+INFO:__main__:📋 How TRUE WAL incremental works:
+INFO:__main__:   1. Base backup: pg_basebackup creates cluster snapshot
+INFO:__main__:   2. Incremental: Archive actual WAL files (transaction logs)
+INFO:__main__:   3. Restore: Restore base + replay WAL files to exact LSN
+INFO:__main__:   4. Result: TRUE incremental backups with only the changes
+INFO:__main__:
+INFO:__main__:Loading WAL backup registry for MCP1
+INFO:__main__:Loaded 24 WAL backup records
+INFO:__main__:🔧 True WAL incremental backup server initialized for MCP1
+INFO:__main__:🚀 Starting MCP1 TRUE WAL Incremental Backup Server on port 8001
+INFO:     Started server process [73170]
+INFO:     Waiting for application startup.
+INFO:__main__:Loading WAL backup registry for MCP2
+INFO:__main__:Loaded 9 WAL backup records
+INFO:__main__:🔧 True WAL incremental backup server initialized for MCP2
+INFO:__main__:🚀 Starting MCP2 TRUE WAL Incremental Backup Server on port 8002
+INFO:     Started server process [73170]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     Uvicorn running on http://127.0.0.1:8002 (Press CTRL+C to quit)
+INFO:__main__:🚀 Starting TRUE WAL backup scheduler for MCP1
+INFO:__main__:🔧 Setting up PostgreSQL WAL archiving...
+INFO:__main__:📋 Current WAL archiving status:
+INFO:__main__:   archive_mode: on
+INFO:__main__:   archive_command: unknown
+INFO:__main__:🚀 Creating initial WAL-compatible base backups for MCP1
+INFO:__main__:⏭️  Skipping customer_db - already has 1 base backup(s)
+INFO:__main__:⏭️  Skipping inventory_db - already has 1 base backup(s)
+INFO:__main__:⏭️  Skipping analytics_db - already has 1 base backup(s)
+INFO:__main__:⏰ Setting up TRUE WAL backup schedules...
+INFO:__main__:🔄 Starting TRUE WAL incremental backup cycle in 30 seconds...
+INFO:     127.0.0.1:53827 - "POST /invoke HTTP/1.1" 200 OK
+INFO:__main__:🚀 Starting TRUE WAL backup scheduler for MCP2
+INFO:__main__:🔧 Setting up PostgreSQL WAL archiving...
+INFO:__main__:📋 Current WAL archiving status:
+INFO:__main__:   archive_mode: on
+INFO:__main__:   archive_command: unknown
+INFO:__main__:🚀 Creating initial WAL-compatible base backups for MCP2
+INFO:__main__:⏭️  Skipping hr_db - already has 1 base backup(s)
+INFO:__main__:⏭️  Skipping finance_db - already has 1 base backup(s)
+INFO:__main__:⏭️  Skipping reporting_db - already has 1 base backup(s)
+INFO:__main__:⏰ Setting up TRUE WAL backup schedules...
+INFO:__main__:🔄 Starting TRUE WAL incremental backup cycle in 30 seconds...
+INFO:     127.0.0.1:53831 - "POST /invoke HTTP/1.1" 200 OK
+INFO:__main__:📍 Current WAL LSN: 3/6D000000
+INFO:__main__:📁 Current WAL file: 00000019000000030000006D
+INFO:     127.0.0.1:53835 - "POST /invoke HTTP/1.1" 200 OK
+INFO:__main__:📍 Current WAL LSN: 3/6D000000
+INFO:__main__:📁 Current WAL file: 00000019000000030000006D
+INFO:     127.0.0.1:53839 - "POST /invoke HTTP/1.1" 200 OK
+INFO:__main__:🔄 Running first TRUE WAL incremental backup cycle...
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/6D000668
+INFO:__main__:🔄 Running first TRUE WAL incremental backup cycle...
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006D
+INFO:__main__:📍 Current WAL LSN: 3/6D000668
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006D
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_184813
+INFO:__main__:📊 Archived 6 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_184813
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📍 Current WAL LSN: 3/6E000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006D
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_184814
+INFO:__main__:📊 Archived 6 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_184814
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📍 Current WAL LSN: 3/6E000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_184816
+INFO:__main__:📊 Archived 5 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_184816
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📍 Current WAL LSN: 3/6E000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_184816
+INFO:__main__:📊 Archived 5 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_184816
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/6E000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_184818
+INFO:__main__:📊 Archived 5 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_184818
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 000000190000000300000069
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_184818
+INFO:__main__:📊 Archived 5 WAL files (1150397 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_184818
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/6E000060
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📍 Current WAL LSN: 3/6E000060
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_184943
+INFO:__main__:📊 Archived 6 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_184943
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📍 Current WAL LSN: 3/6F000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006E
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_184944
+INFO:__main__:📊 Archived 6 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_184944
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📍 Current WAL LSN: 3/6F000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_184945
+INFO:__main__:📊 Archived 5 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_184945
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/6F000000
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_184945
+INFO:__main__:📊 Archived 5 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_184945
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/6F000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_184945
+INFO:__main__:📊 Archived 5 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_184945
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006A
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_184946
+INFO:__main__:📊 Archived 5 WAL files (87180 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_184946
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/6F000060
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📍 Current WAL LSN: 3/6F000060
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_185143
+INFO:__main__:📊 Archived 6 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_185143
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived switched WAL file: 00000019000000030000006F
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_185144
+INFO:__main__:📊 Archived 6 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_185144
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📍 Current WAL LSN: 3/70000000
+INFO:__main__:📍 Current WAL LSN: 3/70000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_185144
+INFO:__main__:📊 Archived 5 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_185144
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/70000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_185145
+INFO:__main__:📊 Archived 5 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_185145
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📍 Current WAL LSN: 3/70000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006B
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_185145
+INFO:__main__:📊 Archived 5 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_185145
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_185145
+INFO:__main__:📊 Archived 5 WAL files (82889 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_185145
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📍 Current WAL LSN: 3/70000168
+INFO:__main__:📍 Current WAL LSN: 3/70000168
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_185344
+INFO:__main__:📊 Archived 6 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_185344
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📍 Current WAL LSN: 3/71000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000070
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_185344
+INFO:__main__:📊 Archived 6 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_185344
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/71000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_185345
+INFO:__main__:📊 Archived 5 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_185345
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/71000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_185345
+INFO:__main__:📊 Archived 5 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_185345
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/71000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_185345
+INFO:__main__:📊 Archived 5 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_185345
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006C
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_185345
+INFO:__main__:📊 Archived 5 WAL files (82981 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_185345
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/71006F90
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📍 Current WAL LSN: 3/71006F90
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_185544
+INFO:__main__:📊 Archived 6 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_185544
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:📍 Current WAL LSN: 3/72000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000071
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_185544
+INFO:__main__:📊 Archived 6 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_185544
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:📍 Current WAL LSN: 3/72000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_185545
+INFO:__main__:📊 Archived 5 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_185545
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/72000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_185545
+INFO:__main__:📊 Archived 5 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_185545
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/72000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006D
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_185545
+INFO:__main__:📊 Archived 5 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_185545
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_185546
+INFO:__main__:📊 Archived 5 WAL files (88379 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_185546
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/724826F8
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/724826F8
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000072
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_185744
+INFO:__main__:📊 Archived 6 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_185744
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000072
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_185744
+INFO:__main__:📊 Archived 6 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_185744
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_185746
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_185746
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_185747
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_185747
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_185749
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_185749
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_185749
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_185749
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_185944
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_185944
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_185944
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_185944
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_185945
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_185945
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_185946
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_185946
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/73000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_185947
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_185947
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006E
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000073
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_185948
+INFO:__main__:📊 Archived 5 WAL files (1149367 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_185948
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_190144
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_190144
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_190144
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_190144
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_190145
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_190145
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_190146
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_190146
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📍 Current WAL LSN: 3/74000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_190147
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_190147
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 00000019000000030000006F
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_190148
+INFO:__main__:📊 Archived 5 WAL files (1149390 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_190148
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/74000110
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/74000110
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000074
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_190344
+INFO:__main__:📊 Archived 6 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_190344
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived switched WAL file: 000000190000000300000074
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_190344
+INFO:__main__:📊 Archived 6 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_190344
+INFO:__main__:📊 WAL files archived: 6
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_190346
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_190346
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_190346
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_190346
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_190348
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_190348
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_190348
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_190348
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_190544
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_190544
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_190544
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_190544
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_190546
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_190546
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_190546
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_190546
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_190547
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_190547
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_190548
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_190548
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_190744
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_190744
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_190744
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_190744
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_190745
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_190745
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_190746
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_190746
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_190747
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_190747
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_190748
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_190748
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_190944
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_190944
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_190944
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_190944
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_190945
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_190945
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_190947
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_190947
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_190949
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_190949
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_190950
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_190950
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_191144
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_191144
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_191144
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_191144
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_191146
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_191146
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_191149
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_191149
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_191151
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_191151
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_191151
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_191151
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP1
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for customer_db
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:🔄 Running scheduled TRUE WAL INCREMENTAL backups for MCP2
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for hr_db
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: customer_db_wal_20250917_191344
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for customer_db: customer_db_wal_20250917_191344
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for inventory_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: hr_db_wal_20250917_191344
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for hr_db: hr_db_wal_20250917_191344
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for finance_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: inventory_db_wal_20250917_191350
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for inventory_db: inventory_db_wal_20250917_191350
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for analytics_db
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: finance_db_wal_20250917_191350
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for finance_db: finance_db_wal_20250917_191350
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Starting TRUE WAL incremental backup for reporting_db
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📍 Current WAL LSN: 3/75000000
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Found 5 recent WAL files to archive
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Archived WAL file: 000000190000000300000070
+INFO:__main__:📁 Archived WAL file: 000000190000000300000071
+INFO:__main__:📁 Archived WAL file: 000000190000000300000072
+INFO:__main__:📁 Archived WAL file: 000000190000000300000073
+INFO:__main__:📁 Archived WAL file: 000000190000000300000074
+INFO:__main__:📁 Archived 5 WAL files
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: analytics_db_wal_20250917_191405
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for analytics_db: analytics_db_wal_20250917_191405
+INFO:__main__:📊 WAL files archived: 5
+INFO:__main__:🔄 Forced WAL switch to capture current changes
+INFO:__main__:📁 Current WAL file: 000000190000000300000075
+INFO:__main__:✅ TRUE WAL incremental backup completed: reporting_db_wal_20250917_191405
+INFO:__main__:📊 Archived 5 WAL files (1149470 bytes)
+INFO:__main__:✅ Scheduled WAL incremental backup completed for reporting_db: reporting_db_wal_20250917_191405
+INFO:__main__:📊 WAL files archived: 5
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73170]
+INFO:     Shutting down
+INFO:     Finished server process [73170]

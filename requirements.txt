@@ -25,3 +25,6 @@ typer>=0.12.0
 # Scheduling & Task Management
 schedule>=1.2.0
 
+# MCP (Model Context Protocol) Support
+mcp>=1.0.0
+

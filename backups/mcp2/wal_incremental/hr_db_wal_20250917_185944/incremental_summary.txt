@@ -1,0 +1,20 @@
+TRUE WAL Incremental Backup Summary
+=====================================
+Backup ID: hr_db_wal_20250917_185944
+Database: hr_db
+Timestamp: 2025-09-17T18:59:44.204253
+Server: MCP2
+LSN Range: 3/73000000 → 3/73000000
+WAL Files Archived: 5
+Base Backup: None
+
+WAL Files:
+  - 00000019000000030000006E.wal
+  - 00000019000000030000006F.wal
+  - 000000190000000300000070.wal
+  - 000000190000000300000071.wal
+  - 000000190000000300000072.wal
+
+This backup contains ONLY the changes (transaction log entries)
+that occurred since the last backup. It can be replayed on top of
+a base backup to restore the database to this point in time.

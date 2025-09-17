@@ -14,12 +14,12 @@ import shutil
 import glob
 import gzip
 import hashlib
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import schedule
-import time
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import uvicorn
@@ -73,6 +73,9 @@ class TrueWALIncrementalBackupServer:
         # Create directories
         for dir_path in [self.backup_full_dir, self.backup_wal_dir, self.backup_incr_dir]:
             dir_path.mkdir(parents=True, exist_ok=True)
+        
+        # Restore operation locks to prevent concurrent restores
+        self._restore_locks = {db: asyncio.Lock() for db in self.databases}
         
         # WAL tracking
         self.current_wal_position = None
@@ -1044,70 +1047,84 @@ class TrueWALIncrementalBackupServer:
         if db_name not in self.backup_registry or not self.backup_registry[db_name]:
             raise ValueError(f"No backups found for database {db_name}")
         
-        # Find the backup to restore
-        if backup_id:
-            backup = next((b for b in self.backup_registry[db_name] if b.backup_id == backup_id), None)
-            if not backup:
-                raise ValueError(f"Backup {backup_id} not found for database {db_name}")
-        else:
-            # Use latest backup
-            backup = max(self.backup_registry[db_name], key=lambda x: x.completed_at_iso)
+        # Check if a restore is already in progress for this database
+        if db_name in self._restore_locks:
+            if self._restore_locks[db_name].locked():
+                return {
+                    "restore_id": f"blocked_{int(time.time())}",
+                    "database": db_name,
+                    "status": "blocked",
+                    "error": f"Restore operation for {db_name} is already in progress. Please wait for it to complete.",
+                    "restore_time": datetime.now().isoformat() + "Z",
+                    "note": "Concurrent restore operations are not allowed"
+                }
         
-        logger.info(f"🔄 Starting TRUE WAL restore of {db_name} from backup {backup.backup_id}")
-        
-        try:
-            if backup.backup_type == "basebackup":
-                logger.info("🗄️  TRUE WAL base backup restore process:")
-                logger.info("   1. Stop PostgreSQL service")
-                logger.info("   2. Replace data directory with base backup")
-                logger.info("   3. Configure recovery.conf for WAL replay")
-                logger.info("   4. Restart PostgreSQL to replay WAL files")
-                logger.info("   ✅ This restores to the exact LSN point")
-                
-                restore_method = "pg_basebackup + WAL replay (TRUE point-in-time recovery)"
-                
-            else:  # wal_incremental
-                logger.info("🔄 TRUE WAL incremental restore process:")
-                logger.info("   1. Find the base backup this incremental depends on")
-                logger.info("   2. Restore base backup first")
-                logger.info("   3. Replay WAL files from incremental backup")
-                logger.info("   4. Apply changes up to target LSN")
-                
-                # Find the base backup this incremental depends on
-                base_backup = await self._find_base_backup_for_incremental(backup)
-                if base_backup:
-                    logger.info(f"   📦 Base backup: {base_backup.backup_id}")
-                    logger.info(f"   📁 WAL files to replay: {len(backup.wal_files or [])}")
+        # Acquire the restore lock
+        async with self._restore_locks[db_name]:
+            # Find the backup to restore
+            if backup_id:
+                backup = next((b for b in self.backup_registry[db_name] if b.backup_id == backup_id), None)
+                if not backup:
+                    raise ValueError(f"Backup {backup_id} not found for database {db_name}")
+            else:
+                # Use latest backup
+                backup = max(self.backup_registry[db_name], key=lambda x: x.completed_at_iso)
+            
+            logger.info(f"🔄 Starting TRUE WAL restore of {db_name} from backup {backup.backup_id}")
+            
+            try:
+                if backup.backup_type == "basebackup":
+                    logger.info("🗄️  TRUE WAL base backup restore process:")
+                    logger.info("   1. Stop PostgreSQL service")
+                    logger.info("   2. Replace data directory with base backup")
+                    logger.info("   3. Configure recovery.conf for WAL replay")
+                    logger.info("   4. Restart PostgreSQL to replay WAL files")
+                    logger.info("   ✅ This restores to the exact LSN point")
                     
-                    # List the WAL files that would be replayed
-                    if backup.wal_files:
-                        logger.info("   📋 WAL files in this incremental backup:")
-                        for wal_file in backup.wal_files:
-                            logger.info(f"      - {wal_file}")
-                else:
-                    logger.warning("   ⚠️  No base backup found - incremental restore may fail")
+                    restore_method = "pg_basebackup + WAL replay (TRUE point-in-time recovery)"
+                    
+                else:  # wal_incremental
+                    logger.info("🔄 TRUE WAL incremental restore process:")
+                    logger.info("   1. Find the base backup this incremental depends on")
+                    logger.info("   2. Restore base backup first")
+                    logger.info("   3. Replay WAL files from incremental backup")
+                    logger.info("   4. Apply changes up to target LSN")
+                    
+                    # Find the base backup this incremental depends on
+                    base_backup = await self._find_base_backup_for_incremental(backup)
+                    if base_backup:
+                        logger.info(f"   📦 Base backup: {base_backup.backup_id}")
+                        logger.info(f"   📁 WAL files to replay: {len(backup.wal_files or [])}")
+                        
+                        # List the WAL files that would be replayed
+                        if backup.wal_files:
+                            logger.info("   📋 WAL files in this incremental backup:")
+                            for wal_file in backup.wal_files:
+                                logger.info(f"      - {wal_file}")
+                    else:
+                        logger.warning("   ⚠️  No base backup found - incremental restore may fail")
+                    
+                    restore_method = "Base backup + WAL file replay (TRUE incremental restore)"
                 
-                restore_method = "Base backup + WAL file replay (TRUE incremental restore)"
-            
-            restore_id = f"wal_restore_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-            
-            logger.info(f"🔄 Starting TRUE WAL restore execution: {restore_id}")
-            logger.info(f"📍 Target LSN: {backup.lsn_end}")
-            
-            # Execute the actual restore
-            restore_result = await self._execute_wal_restore(
-                db_name=db_name,
-                backup=backup,
-                restore_id=restore_id,
-                restore_method=restore_method,
-                base_backup=base_backup if backup.backup_type == "wal_incremental" else None
-            )
-            
-            return restore_result
-            
-        except Exception as e:
-            logger.error(f"TRUE WAL restore planning failed for {db_name}: {e}")
-            raise
+                restore_id = f"wal_restore_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+                
+                logger.info(f"🔄 Starting TRUE WAL restore execution: {restore_id}")
+                logger.info(f"📍 Target LSN: {backup.lsn_end}")
+                
+                # Execute the actual restore
+                restore_result = await self._execute_wal_restore(
+                    db_name=db_name,
+                    backup=backup,
+                    restore_id=restore_id,
+                    restore_method=restore_method,
+                    base_backup=base_backup if backup.backup_type == "wal_incremental" else None
+                )
+                
+                return restore_result
+                
+            except Exception as e:
+                logger.error(f"TRUE WAL restore planning failed for {db_name}: {e}")
+                raise
     
     async def _find_base_backup_for_incremental(self, incremental_backup: Any) -> Any:
         """Find the base backup that this incremental backup depends on."""

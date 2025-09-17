@@ -302,12 +302,18 @@ def test_connection():
             continue
             
         try:
-            from mcp.mcp_client import SyncMCPClient
-            api_key = os.getenv(f"{server_name}_API_KEY")
-            
-            client = SyncMCPClient(url, api_key)
-            health_result = client.health_check()
-            console.print(f"✅ {server_name}: Connected ({url})", style="green")
+            if url.startswith("http"):
+                # Use HTTP client for running servers
+                from mcp_local.mcp_http_client import SyncMCPHTTPClient
+                client = SyncMCPHTTPClient(base_url=url)
+                health_result = client.health_check()
+                console.print(f"✅ {server_name}: Connected via HTTP ({url})", style="green")
+            else:
+                # Use stdio client (spawn server process)
+                from mcp_local.mcp_client import SyncMCPClient
+                client = SyncMCPClient(server_name=server_name.replace("MCP", "PG"))
+                health_result = client.health_check()
+                console.print(f"✅ {server_name}: Connected via stdio", style="green")
             
         except Exception as e:
             console.print(f"❌ {server_name}: Connection failed - {e}", style="red")

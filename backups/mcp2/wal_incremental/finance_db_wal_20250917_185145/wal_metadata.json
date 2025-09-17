@@ -1,0 +1,18 @@
+{
+  "backup_id": "finance_db_wal_20250917_185145",
+  "database": "finance_db",
+  "backup_type": "wal_incremental",
+  "timestamp": "2025-09-17T18:51:45.043208",
+  "lsn_start": "3/6F000060",
+  "lsn_end": "3/70000000",
+  "wal_files_archived": [
+    "00000019000000030000006B.wal",
+    "00000019000000030000006C.wal",
+    "00000019000000030000006D.wal",
+    "00000019000000030000006E.wal",
+    "00000019000000030000006F.wal"
+  ],
+  "timeline_id": 1,
+  "server": "MCP2",
+  "base_backup_reference": null
+}

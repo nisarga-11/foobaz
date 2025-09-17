@@ -975,30 +975,4 @@ GROUP BY account_type;
 
 EOF
 
-echo -e "${GREEN}✅ Deployment summary created (DEPLOYMENT_SUMMARY.md)${NC}"
-
-# Final Summary
-echo ""
-echo -e "${BLUE}🎉 PostgreSQL Backup System Deployment Complete!${NC}"
-echo ""
-echo -e "${GREEN}✅ Successfully deployed:${NC}"
-echo "  📊 6 databases with sample data"
-echo "  📋 21 tables with business logic"
-echo "  🔧 Environment configuration"
-echo "  📦 Python requirements"
-echo "  📝 Complete documentation"
-echo ""
-echo -e "${YELLOW}📋 Next Steps:${NC}"
-echo "1. Copy the backup system code from the original system"
-echo "2. Install Python dependencies: pip install -r requirements.txt"
-echo "3. Install and setup Ollama for LLM functionality"
-echo "4. Start the backup system: python true_wal_incremental_backup.py"
-echo "5. Test with CLI: python -m cli run"
-echo ""
-echo -e "${CYAN}📁 Files created:${NC}"
-echo "  • sql/setup_pg1.sql & sql/setup_pg2.sql"
-echo "  • .env (environment configuration)"
-echo "  • requirements.txt (Python dependencies)"
-echo "  • DEPLOYMENT_SUMMARY.md (complete documentation)"
-echo ""
-echo -e "${GREEN}🎯 System is ready for backup operations!${NC}"
+echo -e "Databases created"

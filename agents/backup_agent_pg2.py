@@ -9,11 +9,12 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.tools import BaseTool
 
 from llm.ollama_helper import create_backup_agent_llm
-from mcp.mcp_client import SyncMCPClient
-from mcp.mcp_tools import create_pg2_toolset
+from mcp_local.mcp_client import SyncMCPClient
+from mcp_local.mcp_http_client import SyncMCPHTTPClient
+from mcp_local.mcp_tools import create_pg2_toolset
 
 # Server-specific system prompt
-SYSTEM_PROMPT = """You are the Backup/Restore Agent for PG2. You only act via MCP tools over HTTP.
+SYSTEM_PROMPT = """You are the Backup/Restore Agent for PG2. You use true MCP (Model Context Protocol) tools.
 Rules:
 - Always require `db_name` for any backup or restore.
 - list_backups(db_name) yields available restore points; do not invent results.
@@ -22,7 +23,8 @@ Rules:
 - Enable schedules: enable_schedules(incremental_every="PT2M", full_cron="0 3 * * 0").
 - Restore: Prefer backup_id if provided; otherwise accept target_timestamp (ISO8601).
 - Never perform local DB/file operations.
-- Return the MCP JSON responses as structured output."""
+- Return the MCP JSON responses as structured output.
+- You communicate with PostgreSQL via true MCP protocol using JSON-RPC."""
 
 
 class BackupAgentPG2:
@@ -30,7 +32,7 @@ class BackupAgentPG2:
 
     def __init__(
         self,
-        mcp2_base_url: str,
+        mcp2_base_url: str = None,
         mcp2_api_key: str = None,
         **llm_kwargs
     ):
@@ -38,15 +40,21 @@ class BackupAgentPG2:
         Initialize PG2 backup agent.
 
         Args:
-            mcp2_base_url: Base URL for MCP2 server
-            mcp2_api_key: API key for MCP2 server
+            mcp2_base_url: URL for MCP2 HTTP server (e.g., "http://localhost:8002")
+            mcp2_api_key: API key for MCP2 server (optional)
             **llm_kwargs: Additional arguments for LLM
         """
         self.server_name = "PG2"
-        self.mcp_client = SyncMCPClient(
-            base_url=mcp2_base_url,
-            api_key=mcp2_api_key
-        )
+        
+        # Check if we should use HTTP client (server running separately) or stdio client
+        if mcp2_base_url and mcp2_base_url.startswith("http"):
+            # Use HTTP client to connect to running server
+            self.mcp_client = SyncMCPHTTPClient(base_url=mcp2_base_url)
+            self.using_http = True
+        else:
+            # Use stdio client (spawn server process)
+            self.mcp_client = SyncMCPClient(server_name="PG2")
+            self.using_http = False
         
         # Create LLM
         self.llm = create_backup_agent_llm(**llm_kwargs)

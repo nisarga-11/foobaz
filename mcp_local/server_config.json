@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "postgres-backup-pg1": {
+      "command": "python",
+      "args": ["mcp_local/postgres_backup_server.py", "--server-name", "PG1"],
+      "env": {
+        "POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": "5432",
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": ""
+      }
+    },
+    "postgres-backup-pg2": {
+      "command": "python", 
+      "args": ["mcp_local/postgres_backup_server.py", "--server-name", "PG2"],
+      "env": {
+        "POSTGRES_HOST": "localhost",
+        "POSTGRES_PORT": "5432", 
+        "POSTGRES_USER": "postgres",
+        "POSTGRES_PASSWORD": ""
+      }
+    }
+  },
+  "clientConfig": {
+    "timeout": 60,
+    "retries": 3
+  }
+}

@@ -1,0 +1,19 @@
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🚀 Starting MCP HTTP Server for PG1 on port 8003
+2025-09-17 18:47:38,776 - mcp-postgres-backup - INFO - 🔧 MCP PostgreSQL Backup Server initialized for PG1
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🔧 MCP HTTP Server initialized for PG1 on port 8003
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🌐 Available routes: ['/openapi.json', '/docs', '/docs/oauth2-redirect', '/redoc', '/', '/tools', '/invoke', '/health']
+INFO:     Started server process [73185]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
+2025-09-17 18:47:44,418 - mcp-postgres-backup - INFO - 🔧 Direct tool call: health with arguments: {}
+2025-09-17 18:47:44,478 - mcp-postgres-backup - INFO - ✅ Health check completed for PG1
+INFO:     127.0.0.1:53843 - "GET /health HTTP/1.1" 200 OK
+2025-09-17 18:49:03,620 - mcp-http-server - INFO - 🔧 Invoking tool 'restore_database' with args: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
+2025-09-17 18:49:03,621 - mcp-postgres-backup - INFO - 🔧 Direct tool call: restore_database with arguments: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
+2025-09-17 18:49:03,622 - mcp-postgres-backup - INFO - ✅ Database restore simulation completed for inventory_db
+INFO:     127.0.0.1:53963 - "POST /invoke HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73185]

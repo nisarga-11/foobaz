@@ -1,0 +1,15 @@
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🚀 Starting MCP HTTP Server for PG2 on port 8004
+2025-09-17 18:47:38,776 - mcp-postgres-backup - INFO - 🔧 MCP PostgreSQL Backup Server initialized for PG2
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🔧 MCP HTTP Server initialized for PG2 on port 8004
+2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🌐 Available routes: ['/openapi.json', '/docs', '/docs/oauth2-redirect', '/redoc', '/', '/tools', '/invoke', '/health']
+INFO:     Started server process [73186]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8004 (Press CTRL+C to quit)
+2025-09-17 18:47:44,495 - mcp-postgres-backup - INFO - 🔧 Direct tool call: health with arguments: {}
+2025-09-17 18:47:44,550 - mcp-postgres-backup - INFO - ✅ Health check completed for PG2
+INFO:     127.0.0.1:53846 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [73186]
