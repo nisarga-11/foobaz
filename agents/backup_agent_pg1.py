@@ -249,15 +249,15 @@ if __name__ == "__main__":
     
     try:
         agent = create_pg1_agent_from_env()
-        print(f"✅ PG1 Backup Agent created successfully")
+        print(f"PG1 Backup Agent created successfully")
         print(f"Available tools: {', '.join(agent.get_available_tools())}")
         
         # Test health check
         result = agent.health_check()
         if result["success"]:
-            print("✅ Health check passed")
+            print("Health check passed")
         else:
-            print(f"❌ Health check failed: {result.get('error')}")
+            print(f"Health check failed: {result.get('error')}")
             
     except Exception as e:
-        print(f"❌ Failed to create PG1 agent: {e}")
+        print(f"Failed to create PG1 agent: {e}")

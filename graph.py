@@ -448,25 +448,25 @@ class BackupOrchestrator:
                     
                     if isinstance(data, dict) and "backups" in data:
                         backups = data["backups"]
-                        logger.info(f"✅ Found {len(backups)} backups in JSON object")
+                        logger.info(f"Found {len(backups)} backups in JSON object")
                         return backups
                     elif isinstance(data, list):
-                        logger.info(f"✅ Found {len(data)} backups in JSON array")
+                        logger.info(f"Found {len(data)} backups in JSON array")
                         return data
                     else:
                         logger.warning(f"JSON data is {type(data)} but doesn't contain 'backups' key")
                         
                 except json.JSONDecodeError as e:
-                    logger.error(f"❌ JSON parse error: {e}")
+                    logger.error(f"JSON parse error: {e}")
                     logger.debug(f"Failed JSON string: {json_str}")
             else:
                 logger.warning("No JSON braces found in output")
             
-            logger.warning("❌ No valid JSON backup data found")
+            logger.warning("No valid JSON backup data found")
             return []
             
         except Exception as e:
-            logger.error(f"❌ Exception in backup extraction: {e}")
+            logger.error(f"Exception in backup extraction: {e}")
             import traceback
             logger.debug(traceback.format_exc())
             return []
@@ -675,9 +675,9 @@ class BackupOrchestrator:
         # Add restore plan if applicable
         if intent == "restore" and restore_plan:
             if "error" in restore_plan:
-                output_parts.append(f"❌ Restore planning failed: {restore_plan['error']}")
+                output_parts.append(f"Restore planning failed: {restore_plan['error']}")
             else:
-                output_parts.append("📋 Restore Plan:")
+                output_parts.append("Restore Plan:")
                 output_parts.append(restore_plan["summary"])
                 output_parts.append("")
         
@@ -686,9 +686,9 @@ class BackupOrchestrator:
         successful = [r for r in all_results if r.get("success")]
         failed = [r for r in all_results if not r.get("success")]
         
-        output_parts.append(f"✅ Completed {len(successful)} operations successfully")
+        output_parts.append(f"Completed {len(successful)} operations successfully")
         if failed:
-            output_parts.append(f"❌ {len(failed)} operations failed")
+            output_parts.append(f"{len(failed)} operations failed")
             for result in failed:
                 output_parts.append(f"   - {result.get('server', 'Unknown')}: {result.get('error', 'Unknown error')}")
         
@@ -776,7 +776,7 @@ class BackupOrchestrator:
             return {
                 "success": False,
                 "error": str(e),
-                "output": f"❌ Failed to execute request: {e}"
+                "output": f"Failed to execute request: {e}"
             }
 
 
@@ -797,6 +797,6 @@ if __name__ == "__main__":
     ]
     
     for request in test_requests:
-        print(f"\n🔥 Testing: {request}")
+        print(f"\nTesting: {request}")
         result = orchestrator.execute(request)
         print(result["output"])

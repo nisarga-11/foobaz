@@ -11,27 +11,27 @@ echo ""
 
 # Check if Ollama is running
 if curl -s http://localhost:11434/api/tags > /dev/null 2>&1; then
-    echo "✅ Ollama: Running"
+    echo "Ollama: Running"
 else
-    echo "❌ Ollama: Not running - please start with 'ollama serve'"
+    echo "Ollama: Not running - please start with 'ollama serve'"
     echo "   The tool will still work but use fallback recommendations"
 fi
 
 # Check if MCP servers are running
 if curl -s http://localhost:8003/health > /dev/null 2>&1; then
-    echo "✅ MCP1 Server: Running on port 8003"
+    echo "MCP1 Server: Running on port 8003"
 else
-    echo "❌ MCP1 Server: Not running on port 8003"
+    echo "MCP1 Server: Not running on port 8003"
 fi
 
 if curl -s http://localhost:8004/health > /dev/null 2>&1; then
-    echo "✅ MCP2 Server: Running on port 8004"
+    echo "MCP2 Server: Running on port 8004"
 else
-    echo "❌ MCP2 Server: Not running on port 8004"
+    echo "MCP2 Server: Not running on port 8004"
 fi
 
 echo ""
-echo "🎯 READY TO TEST!"
+echo "READY TO TEST!"
 echo ""
 echo "Copy and paste these prompts into the CLI or agent:"
 echo ""

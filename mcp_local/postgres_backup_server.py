@@ -76,12 +76,12 @@ class PostgresBackupMCPServer:
         # Initialize restore recommender
         self.restore_recommender = IntelligentRestoreRecommender()
         
-        logger.info(f"🔧 MCP PostgreSQL Backup Server initialized for {server_name}")
+        logger.info(f"MCP PostgreSQL Backup Server initialized for {server_name}")
     
     async def _call_tool_direct(self, name: str, arguments: dict) -> dict:
         """Direct tool call method for HTTP server integration."""
         try:
-            logger.info(f"🔧 Direct tool call: {name} with arguments: {arguments}")
+            logger.info(f"Direct tool call: {name} with arguments: {arguments}")
             
             if name == "list_backups":
                 result = await self._list_backups(arguments.get("db_name"), arguments.get("limit", 50))
@@ -113,7 +113,7 @@ class PostgresBackupMCPServer:
             return {"ok": True, "result": result}
             
         except Exception as e:
-            logger.error(f"❌ Direct tool {name} failed: {e}")
+            logger.error(f"Direct tool {name} failed: {e}")
             return {"ok": False, "error": str(e)}
         
     def setup_handlers(self):
@@ -247,7 +247,7 @@ class PostgresBackupMCPServer:
         async def call_tool(name: str, arguments: dict) -> CallToolResult:
             """Handle tool calls."""
             try:
-                logger.info(f"🔧 Tool called: {name} with arguments: {arguments}")
+                logger.info(f"Tool called: {name} with arguments: {arguments}")
                 
                 if name == "list_backups":
                     result = await self._list_backups(arguments.get("db_name"), arguments.get("limit", 50))
@@ -276,7 +276,7 @@ class PostgresBackupMCPServer:
                 )
                 
             except Exception as e:
-                logger.error(f"❌ Tool {name} failed: {e}")
+                logger.error(f"Tool {name} failed: {e}")
                 return CallToolResult(
                     content=[TextContent(type="text", text=f"Error: {str(e)}")],
                     isError=True
@@ -381,7 +381,7 @@ class PostgresBackupMCPServer:
             if self.pg_password:
                 env["PGPASSWORD"] = self.pg_password
             
-            logger.info(f"🔄 Starting full backup for {db_name}...")
+            logger.info(f"Starting full backup for {db_name}...")
             result = subprocess.run(cmd, capture_output=True, text=True, env=env, timeout=3600)
             
             if result.returncode != 0:
@@ -403,7 +403,7 @@ class PostgresBackupMCPServer:
             with open(backup_dir / "wal_metadata.json", 'w') as f:
                 json.dump(metadata, f, indent=2, default=str)
             
-            logger.info(f"✅ Full backup completed for {db_name}: {backup_id}")
+            logger.info(f"Full backup completed for {db_name}: {backup_id}")
             
             return {
                 "success": True,
@@ -415,7 +415,7 @@ class PostgresBackupMCPServer:
             }
             
         except Exception as e:
-            logger.error(f"❌ Full backup failed for {db_name}: {e}")
+            logger.error(f"Full backup failed for {db_name}: {e}")
             # Cleanup failed backup
             if backup_dir.exists():
                 subprocess.run(["rm", "-rf", str(backup_dir)], check=False)
@@ -504,7 +504,7 @@ WAL Files: {len(wal_files)}
             with open(backup_dir / "incremental_summary.txt", 'w') as f:
                 f.write(summary)
             
-            logger.info(f"✅ Incremental backup completed for {db_name}: {backup_id}")
+            logger.info(f"Incremental backup completed for {db_name}: {backup_id}")
             
             return {
                 "success": True,
@@ -516,7 +516,7 @@ WAL Files: {len(wal_files)}
             }
             
         except Exception as e:
-            logger.error(f"❌ Incremental backup failed for {db_name}: {e}")
+            logger.error(f"Incremental backup failed for {db_name}: {e}")
             # Cleanup failed backup
             if backup_dir.exists():
                 subprocess.run(["rm", "-rf", str(backup_dir)], check=False)
@@ -532,9 +532,9 @@ WAL Files: {len(wal_files)}
         restore_id = f"{db_name}_restore_{timestamp}"
         
         try:
-            logger.info(f"🔥 STARTING REAL DATABASE RESTORE: {restore_id}")
-            logger.info(f"📊 Database: {db_name}")
-            logger.info(f"🏷️  Backup ID: {backup_id}")
+            logger.info(f"STARTING REAL DATABASE RESTORE: {restore_id}")
+            logger.info(f"Database: {db_name}")
+            logger.info(f"Backup ID: {backup_id}")
             
             # Find appropriate backup
             backup_path = None
@@ -561,20 +561,20 @@ WAL Files: {len(wal_files)}
                 backup_id = backup_path.name
                 backup_type = "basebackup"
             
-            logger.info(f"📦 Backup found: {backup_path} (type: {backup_type})")
+            logger.info(f"Backup found: {backup_path} (type: {backup_type})")
             
             # Step 1: Create rollback script (current state backup)
-            logger.info("💾 Step 1: Creating rollback backup...")
+            logger.info("Step 1: Creating rollback backup...")
             rollback_script = await self._create_rollback_backup(db_name, restore_id)
             
             # Step 2: Execute real database restore
-            logger.info("🔄 Step 2: Executing REAL database restore...")
+            logger.info("Step 2: Executing REAL database restore...")
             restore_result = await self._execute_real_restore(db_name, backup_path, backup_type, restore_id)
             
             if not restore_result["success"]:
                 raise Exception(f"Real restore failed: {restore_result['error']}")
             
-            logger.info(f"🎉 REAL DATABASE RESTORE COMPLETED: {restore_id}")
+            logger.info(f"REAL DATABASE RESTORE COMPLETED: {restore_id}")
             
             return {
                 "success": True,
@@ -586,11 +586,11 @@ WAL Files: {len(wal_files)}
                 "timestamp": timestamp,
                 "rollback_script": str(rollback_script),
                 "restore_details": restore_result,
-                "note": "🚀 REAL DATABASE RESTORE EXECUTED - Database has been fully restored from backup!"
+                "note": "REAL DATABASE RESTORE EXECUTED - Database has been fully restored from backup!"
             }
             
         except Exception as e:
-            logger.error(f"❌ Real database restore failed for {db_name}: {e}")
+            logger.error(f"Real database restore failed for {db_name}: {e}")
             # Attempt rollback if we have a rollback script
             try:
                 await self._attempt_rollback(db_name, restore_id)
@@ -603,7 +603,7 @@ WAL Files: {len(wal_files)}
         import subprocess
         
         try:
-            logger.info(f"💾 Creating rollback backup for {db_name}")
+            logger.info(f"Creating rollback backup for {db_name}")
             
             # Create rollback directory
             self.rollback_dir.mkdir(exist_ok=True)
@@ -630,10 +630,10 @@ WAL Files: {len(wal_files)}
             result = subprocess.run(cmd, capture_output=True, text=True, env=env)
             
             if result.returncode == 0:
-                logger.info(f"✅ Rollback backup created: {rollback_file}")
+                logger.info(f"Rollback backup created: {rollback_file}")
                 return str(rollback_file)
             else:
-                logger.warning(f"⚠️ Rollback backup failed: {result.stderr}")
+                logger.warning(f"Rollback backup failed: {result.stderr}")
                 # Create a minimal rollback script
                 with open(rollback_file, 'w') as f:
                     f.write(f"-- Rollback script for {db_name} restore {restore_id}\n")
@@ -642,7 +642,7 @@ WAL Files: {len(wal_files)}
                 return str(rollback_file)
                 
         except Exception as e:
-            logger.error(f"❌ Failed to create rollback backup: {e}")
+            logger.error(f"Failed to create rollback backup: {e}")
             # Return a basic rollback script path even if creation failed
             rollback_file = self.rollback_dir / f"{db_name}_{restore_id}_rollback.sql" 
             return str(rollback_file)
@@ -652,7 +652,7 @@ WAL Files: {len(wal_files)}
         import subprocess
         
         try:
-            logger.info(f"🔄 Executing REAL restore for {db_name} from {backup_path}")
+            logger.info(f"Executing REAL restore for {db_name} from {backup_path}")
             
             if backup_type == "basebackup":
                 return await self._restore_from_base_backup(db_name, backup_path)
@@ -662,7 +662,7 @@ WAL Files: {len(wal_files)}
                 raise ValueError(f"Unknown backup type: {backup_type}")
                 
         except Exception as e:
-            logger.error(f"❌ Real restore execution failed: {e}")
+            logger.error(f"Real restore execution failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _restore_from_base_backup(self, db_name: str, backup_path: Path) -> Dict[str, Any]:
@@ -671,34 +671,34 @@ WAL Files: {len(wal_files)}
         import tarfile
         
         try:
-            logger.info(f"📦 Restoring {db_name} from base backup: {backup_path}")
+            logger.info(f"Restoring {db_name} from base backup: {backup_path}")
             
             # Look for SQL backup file first
             sql_backup = backup_path / f"{db_name}_backup.sql"
             if sql_backup.exists():
-                logger.info(f"📄 Found SQL backup file: {sql_backup}")
+                logger.info(f"Found SQL backup file: {sql_backup}")
                 return await self._restore_from_sql_file(db_name, sql_backup)
             
             # Look for base.tar.gz
             base_tar = backup_path / "base.tar.gz"
             if base_tar.exists():
-                logger.info(f"📦 Found base backup archive: {base_tar}")
+                logger.info(f"Found base backup archive: {base_tar}")
                 # For now, extract and look for SQL files, or fallback to fresh schema
-                logger.warning("⚠️ TAR backup restore not fully implemented - using fresh schema")
+                logger.warning("TAR backup restore not fully implemented - using fresh schema")
                 return await self._restore_fresh_schema(db_name)
             
             # Look for any .sql files
             sql_files = list(backup_path.glob("*.sql"))
             if sql_files:
-                logger.info(f"📄 Found SQL files: {sql_files}")
+                logger.info(f"Found SQL files: {sql_files}")
                 return await self._restore_from_sql_file(db_name, sql_files[0])
             
             # Fallback: recreate database with fresh schema
-            logger.info(f"🔧 No backup files found, performing schema restoration")
+            logger.info(f"No backup files found, performing schema restoration")
             return await self._restore_fresh_schema(db_name)
             
         except Exception as e:
-            logger.error(f"❌ Base backup restore failed: {e}")
+            logger.error(f"Base backup restore failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _restore_from_sql_file(self, db_name: str, sql_file: Path) -> Dict[str, Any]:
@@ -706,7 +706,7 @@ WAL Files: {len(wal_files)}
         import subprocess
         
         try:
-            logger.info(f"📤 Restoring {db_name} from SQL file: {sql_file}")
+            logger.info(f"Restoring {db_name} from SQL file: {sql_file}")
             
             # Set environment for PostgreSQL
             env = os.environ.copy()
@@ -714,7 +714,7 @@ WAL Files: {len(wal_files)}
                 env["PGPASSWORD"] = self.pg_password
             
             # Step 1: Drop database
-            logger.info(f"🗑️ Dropping database {db_name}")
+            logger.info(f"Dropping database {db_name}")
             drop_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", "postgres", "-c", f"DROP DATABASE IF EXISTS {db_name};"
@@ -722,7 +722,7 @@ WAL Files: {len(wal_files)}
             subprocess.run(drop_cmd, env=env, check=True)
             
             # Step 2: Create fresh database
-            logger.info(f"🔨 Creating fresh database {db_name}")
+            logger.info(f"Creating fresh database {db_name}")
             create_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", "postgres", "-c", f"CREATE DATABASE {db_name};"
@@ -730,7 +730,7 @@ WAL Files: {len(wal_files)}
             subprocess.run(create_cmd, env=env, check=True)
             
             # Step 3: Restore from SQL file
-            logger.info(f"📥 Importing data from SQL backup")
+            logger.info(f"Importing data from SQL backup")
             restore_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", db_name, "-f", str(sql_file)
@@ -738,7 +738,7 @@ WAL Files: {len(wal_files)}
             result = subprocess.run(restore_cmd, capture_output=True, text=True, env=env)
             
             if result.returncode == 0:
-                logger.info(f"✅ Successfully restored {db_name} from SQL backup")
+                logger.info(f"Successfully restored {db_name} from SQL backup")
                 return {
                     "success": True, 
                     "method": "SQL dump restore",
@@ -746,11 +746,11 @@ WAL Files: {len(wal_files)}
                     "database": db_name
                 }
             else:
-                logger.error(f"❌ SQL restore failed: {result.stderr}")
+                logger.error(f"SQL restore failed: {result.stderr}")
                 return {"success": False, "error": result.stderr}
                 
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ SQL file restore failed: {e}")
+            logger.error(f"SQL file restore failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _restore_fresh_schema(self, db_name: str) -> Dict[str, Any]:
@@ -758,7 +758,7 @@ WAL Files: {len(wal_files)}
         import subprocess
         
         try:
-            logger.info(f"🔧 Performing fresh schema restore for {db_name}")
+            logger.info(f"Performing fresh schema restore for {db_name}")
             
             # Set environment for PostgreSQL
             env = os.environ.copy()
@@ -766,7 +766,7 @@ WAL Files: {len(wal_files)}
                 env["PGPASSWORD"] = self.pg_password
             
             # Step 1: Drop and recreate database
-            logger.info(f"🗑️ Dropping and recreating database {db_name}")
+            logger.info(f"Dropping and recreating database {db_name}")
             drop_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", "postgres", "-c", f"DROP DATABASE IF EXISTS {db_name};"
@@ -787,14 +787,14 @@ WAL Files: {len(wal_files)}
                 setup_file = Path("sql/setup_pg2.sql")
             
             if setup_file and setup_file.exists():
-                logger.info(f"📊 Running schema setup from {setup_file}")
+                logger.info(f"Running schema setup from {setup_file}")
                 setup_cmd = [
                     "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                     "-d", db_name, "-f", str(setup_file)
                 ]
                 subprocess.run(setup_cmd, env=env, check=True)
                 
-            logger.info(f"✅ Fresh schema restore completed for {db_name}")
+            logger.info(f"Fresh schema restore completed for {db_name}")
             return {
                 "success": True,
                 "method": "Fresh schema restore", 
@@ -803,21 +803,21 @@ WAL Files: {len(wal_files)}
             }
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Fresh schema restore failed: {e}")
+            logger.error(f"Fresh schema restore failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _restore_from_incremental_backup(self, db_name: str, backup_path: Path) -> Dict[str, Any]:
         """Restore from incremental backup using proper WAL replay."""
         try:
-            logger.info(f"🔄 Incremental backup restore for {db_name}")
+            logger.info(f"Incremental backup restore for {db_name}")
             
             # Find the base backup for this incremental backup
             base_backup = await self._find_base_backup_for_incremental(backup_path)
             if not base_backup:
-                logger.error(f"❌ No base backup found for incremental backup {backup_path.name}")
+                logger.error(f"No base backup found for incremental backup {backup_path.name}")
                 return {"success": False, "error": "No base backup found for incremental restore"}
             
-            logger.info(f"📦 Found base backup: {base_backup.name}")
+            logger.info(f"Found base backup: {base_backup.name}")
             
             # Use the True WAL restore functionality
             from true_wal_incremental_backup import TrueWALIncrementalBackupServer
@@ -842,7 +842,7 @@ WAL Files: {len(wal_files)}
             )
             
             if result.get("status") == "completed":
-                logger.info(f"✅ TRUE incremental restore completed for {db_name}")
+                logger.info(f"TRUE incremental restore completed for {db_name}")
                 return {
                     "success": True,
                     "method": "True incremental WAL restore",
@@ -853,11 +853,11 @@ WAL Files: {len(wal_files)}
                     "restore_details": result
                 }
             else:
-                logger.error(f"❌ WAL restore failed: {result.get('error', 'Unknown error')}")
+                logger.error(f"WAL restore failed: {result.get('error', 'Unknown error')}")
                 return {"success": False, "error": result.get('error', 'WAL restore failed')}
             
         except Exception as e:
-            logger.error(f"❌ Incremental backup restore failed: {e}")
+            logger.error(f"Incremental backup restore failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _find_base_backup_for_incremental(self, incremental_backup_path: Path) -> Optional[Path]:
@@ -873,7 +873,7 @@ WAL Files: {len(wal_files)}
             return max(base_backups, key=lambda x: x.name)
             
         except Exception as e:
-            logger.error(f"❌ Error finding base backup: {e}")
+            logger.error(f"Error finding base backup: {e}")
             return None
     
     async def _create_backup_object_from_path(self, backup_path: Path):
@@ -905,30 +905,30 @@ WAL Files: {len(wal_files)}
                             if "timestamp" in metadata:
                                 self.completed_at_iso = metadata["timestamp"]
                     except Exception as e:
-                        logger.warning(f"⚠️ Could not read metadata from {metadata_file}: {e}")
+                        logger.warning(f"Could not read metadata from {metadata_file}: {e}")
         
         return BackupObject(backup_path)
 
     async def _attempt_rollback(self, db_name: str, restore_id: str):
         """Attempt to rollback a failed restore."""
         try:
-            logger.info(f"🔄 Attempting rollback for {db_name}")
+            logger.info(f"Attempting rollback for {db_name}")
             
             rollback_file = self.rollback_dir / f"{db_name}_{restore_id}_rollback.sql"
             if rollback_file.exists():
                 await self._restore_from_sql_file(db_name, rollback_file)
-                logger.info(f"✅ Rollback completed for {db_name}")
+                logger.info(f"Rollback completed for {db_name}")
             else:
-                logger.warning(f"⚠️ No rollback file found for {db_name}")
+                logger.warning(f"No rollback file found for {db_name}")
                 
         except Exception as e:
-            logger.error(f"❌ Rollback failed for {db_name}: {e}")
+            logger.error(f"Rollback failed for {db_name}: {e}")
     
     async def _recommend_restore(self, target_timestamp: Optional[str] = None, 
                                 num_recommendations: int = 3) -> Dict[str, Any]:
         """Generate intelligent restore recommendations using AI."""
         try:
-            logger.info(f"🧠 Generating {num_recommendations} restore recommendations")
+            logger.info(f"Generating {num_recommendations} restore recommendations")
             
             # Collect backup data from both servers
             all_backup_data = await self._collect_all_backup_data()
@@ -970,11 +970,11 @@ WAL Files: {len(wal_files)}
                 ]
             }
             
-            logger.info(f"✅ Generated {len(recommendations)} restore recommendations")
+            logger.info(f"Generated {len(recommendations)} restore recommendations")
             return result
             
         except Exception as e:
-            logger.error(f"❌ Failed to generate restore recommendations: {e}")
+            logger.error(f"Failed to generate restore recommendations: {e}")
             raise
     
     async def _collect_all_backup_data(self) -> Dict[str, Dict[str, List[Dict]]]:
@@ -989,7 +989,7 @@ WAL Files: {len(wal_files)}
                     backup_data = await self._list_backups(db_name, limit=50)
                     current_server_data[db_name] = backup_data.get("backups", [])
                 except Exception as e:
-                    logger.warning(f"⚠️ Failed to get backups for {db_name}: {e}")
+                    logger.warning(f"Failed to get backups for {db_name}: {e}")
                     current_server_data[db_name] = []
             
             all_data[self.server_name] = current_server_data
@@ -1002,14 +1002,14 @@ WAL Files: {len(wal_files)}
                 other_server_data = await self._get_remote_backup_data(other_server, other_port)
                 all_data[other_server] = other_server_data
             except Exception as e:
-                logger.warning(f"⚠️ Failed to get backup data from {other_server}: {e}")
+                logger.warning(f"Failed to get backup data from {other_server}: {e}")
                 all_data[other_server] = {}
             
-            logger.info(f"📊 Collected backup data from {len(all_data)} servers")
+            logger.info(f"Collected backup data from {len(all_data)} servers")
             return all_data
             
         except Exception as e:
-            logger.error(f"❌ Failed to collect backup data: {e}")
+            logger.error(f"Failed to collect backup data: {e}")
             return {self.server_name: {}}
     
     async def _get_remote_backup_data(self, server_name: str, port: int) -> Dict[str, List[Dict]]:
@@ -1045,7 +1045,7 @@ WAL Files: {len(wal_files)}
                         remote_data[db_name] = []
                         
                 except Exception as e:
-                    logger.warning(f"⚠️ Failed to get {db_name} backups from {server_name}: {e}")
+                    logger.warning(f"Failed to get {db_name} backups from {server_name}: {e}")
                     remote_data[db_name] = []
         
         return remote_data
@@ -1063,7 +1063,7 @@ WAL Files: {len(wal_files)}
                 "timestamp": datetime.now().isoformat()
             }
             
-            logger.info(f"✅ Backup schedules enabled for {self.server_name}")
+            logger.info(f"Backup schedules enabled for {self.server_name}")
             
             return {
                 "success": True,
@@ -1072,7 +1072,7 @@ WAL Files: {len(wal_files)}
             }
             
         except Exception as e:
-            logger.error(f"❌ Failed to enable schedules: {e}")
+            logger.error(f"Failed to enable schedules: {e}")
             raise
     
     async def _health_check(self) -> Dict[str, Any]:
@@ -1116,11 +1116,11 @@ WAL Files: {len(wal_files)}
                 "backup_directories": backup_dirs_status
             }
             
-            logger.info(f"✅ Health check completed for {self.server_name}")
+            logger.info(f"Health check completed for {self.server_name}")
             return health_status
             
         except Exception as e:
-            logger.error(f"❌ Health check failed: {e}")
+            logger.error(f"Health check failed: {e}")
             raise
 
 async def main():
@@ -1134,7 +1134,7 @@ async def main():
     backup_server = PostgresBackupMCPServer(args.server_name)
     backup_server.setup_handlers()
     
-    logger.info(f"🚀 Starting MCP PostgreSQL Backup Server for {args.server_name}")
+    logger.info(f"Starting MCP PostgreSQL Backup Server for {args.server_name}")
     
     # Run the stdio server
     async with stdio_server() as (read_stream, write_stream):

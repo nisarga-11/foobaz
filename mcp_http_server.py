@@ -72,8 +72,8 @@ class MCPHTTPServer:
         
         self._setup_routes()
         
-        logger.info(f"🔧 MCP HTTP Server initialized for {server_name} on port {port}")
-        logger.info(f"🌐 Available routes: {[route.path for route in self.app.routes]}")
+        logger.info(f"MCP HTTP Server initialized for {server_name} on port {port}")
+        logger.info(f"Available routes: {[route.path for route in self.app.routes]}")
     
     def _setup_routes(self):
         """Set up HTTP routes that expose MCP functionality."""
@@ -119,7 +119,7 @@ class MCPHTTPServer:
         async def invoke_tool(request: MCPRequest):
             """Invoke an MCP tool."""
             try:
-                logger.info(f"🔧 Invoking tool '{request.tool}' with args: {request.arguments}")
+                logger.info(f"Invoking tool '{request.tool}' with args: {request.arguments}")
                 
                 # Call the MCP server's tool handler directly
                 result = await mcp_server._call_tool_direct(request.tool, request.arguments)
@@ -159,7 +159,7 @@ class MCPHTTPServer:
 
 async def start_server(server_name: str, port: int):
     """Start the MCP HTTP server."""
-    logger.info(f"🚀 Starting MCP HTTP Server for {server_name} on port {port}")
+    logger.info(f"Starting MCP HTTP Server for {server_name} on port {port}")
     
     # Create server instance
     mcp_http_server = MCPHTTPServer(server_name, port)
@@ -193,9 +193,9 @@ def main():
     try:
         asyncio.run(start_server(args.server_name, args.port))
     except KeyboardInterrupt:
-        logger.info(f"🛑 MCP HTTP Server {args.server_name} stopped")
+        logger.info(f"MCP HTTP Server {args.server_name} stopped")
     except Exception as e:
-        logger.error(f"❌ MCP HTTP Server {args.server_name} failed: {e}")
+        logger.error(f"MCP HTTP Server {args.server_name} failed: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":

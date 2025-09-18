@@ -7,10 +7,6 @@ from typing import Dict, List, Optional, Any
 
 import typer
 from dotenv import load_dotenv
-from rich.console import Console
-from rich.panel import Panel
-from rich.prompt import Confirm, Prompt
-from rich.table import Table
 
 from graph import BackupOrchestrator, create_orchestrator_from_env
 
@@ -24,7 +20,6 @@ logging.basicConfig(
 )
 
 app = typer.Typer(help="PostgreSQL Backup/Restore Orchestration CLI")
-console = Console()
 
 
 class BackupCLI:
@@ -47,14 +42,14 @@ class BackupCLI:
             self.conversation_history = []
             
         except Exception as e:
-            console.print(f"❌ Failed to initialize CLI: {e}", style="red")
+            print(f"Failed to initialize CLI: {e}")
             raise typer.Exit(1)
 
     def display_banner(self):
         """Display welcome banner."""
         banner = """
-[bold blue]PostgreSQL Backup/Restore Orchestrator[/bold blue]
-[dim]Multi-server backup automation using LangChain + LangGraph + Ollama[/dim]
+PostgreSQL Backup/Restore Orchestrator
+Multi-server backup automation using LangChain + LangGraph + Ollama
 
 Servers: PG1 ({}) | PG2 ({})
 Model: {}
@@ -64,14 +59,14 @@ Model: {}
             os.getenv("OLLAMA_MODEL", "Not configured")
         )
         
-        console.print(Panel(banner, title="🚀 SP Lakehouse Backup", border_style="blue"))
+        print("SP Lakehouse Backup")
+        print(banner)
 
     def display_help(self):
         """Display help information."""
-        help_table = Table(title="Available Commands", show_header=True, header_style="bold magenta")
-        help_table.add_column("Command", style="cyan", width=25)
-        help_table.add_column("Description", style="white")
-
+        print("Available Commands:")
+        print("=" * 50)
+        
         examples = [
             ("list backups for customer_db", "List available backups for a specific database"),
             ("list backups for all databases", "List backups across all databases on both servers"),
@@ -87,20 +82,17 @@ Model: {}
         ]
 
         for command, description in examples:
-            help_table.add_row(command, description)
-
-        console.print(help_table)
-        console.print("\n[dim]💡 Tip: You can use natural language! The Supervisor agent will understand your intent.[/dim]")
+            print(f"{command:<35} - {description}")
+        
+        print("\nTip: You can use natural language! The Supervisor agent will understand your intent.")
 
     def format_output(self, result: dict) -> None:
         """Format and display execution results."""
         if result["success"]:
             # Display successful output
-            console.print(Panel(
-                result["output"],
-                title="✅ Execution Result",
-                border_style="green"
-            ))
+            print("Execution Result:")
+            print("-" * 20)
+            print(result["output"])
             
             # Show detailed state information if available
             state = result.get("state", {})
@@ -109,11 +101,9 @@ Model: {}
                 
         else:
             # Display error
-            console.print(Panel(
-                f"❌ Error: {result.get('error', 'Unknown error')}",
-                title="Execution Failed",
-                border_style="red"
-            ))
+            print("Execution Failed:")
+            print("-" * 20)
+            print(f"Error: {result.get('error', 'Unknown error')}")
 
     def _display_state_details(self, state: dict) -> None:
         """Display detailed state information."""
@@ -122,32 +112,28 @@ Model: {}
         databases = state.get("databases", [])
         
         if intent or target_servers or databases:
-            details_table = Table(title="Operation Details", show_header=False)
-            details_table.add_column("Property", style="cyan")
-            details_table.add_column("Value", style="white")
+            print("\nOperation Details:")
+            print("-" * 20)
             
             if intent:
-                details_table.add_row("Intent", intent)
+                print(f"Intent: {intent}")
             if target_servers:
-                details_table.add_row("Target Servers", ", ".join(target_servers))
+                print(f"Target Servers: {', '.join(target_servers)}")
             if databases:
-                details_table.add_row("Databases", ", ".join(databases))
-            
-            console.print(details_table)
+                print(f"Databases: {', '.join(databases)}")
 
         # Display restore plan if available
         restore_plan = state.get("restore_plan")
         if restore_plan and "summary" in restore_plan:
-            console.print(Panel(
-                restore_plan["summary"],
-                title="📋 Restore Plan",
-                border_style="yellow"
-            ))
+            print("\nRestore Plan:")
+            print("-" * 15)
+            print(restore_plan["summary"])
 
     def _handle_restore_confirmation(self, user_input: str) -> bool:
         """Handle restore operation confirmation."""
         if "restore" in user_input.lower():
-            return Confirm.ask("🔄 This will restore database(s). Are you sure you want to proceed?")
+            response = input("This will restore database(s). Are you sure you want to proceed? (y/N): ")
+            return response.lower() in ['y', 'yes']
         return True
 
     def execute_command_direct(self, command: str) -> Dict[str, Any]:
@@ -197,16 +183,16 @@ Model: {}
         """Run interactive REPL."""
         self.display_banner()
         
-        console.print("[green]🎯 Ready! Type your backup/restore commands or 'help' for examples.[/green]\n")
+        print("Ready! Type your backup/restore commands or 'help' for examples.\n")
         
         while True:
             try:
                 # Get user input
-                user_input = Prompt.ask("[bold cyan]backup>[/bold cyan]").strip()
+                user_input = input("backup> ").strip()
                 
                 # Handle special commands
                 if user_input.lower() in ["quit", "exit", "q"]:
-                    console.print("👋 Goodbye!")
+                    print("Goodbye!")
                     break
                 
                 if user_input.lower() in ["help", "h", "?"]:
@@ -218,15 +204,15 @@ Model: {}
 
                 # Handle restore confirmation
                 if not self._handle_restore_confirmation(user_input):
-                    console.print("[yellow]❌ Restore operation cancelled.[/yellow]")
+                    print("Restore operation cancelled.")
                     continue
 
                 # Add to conversation history
                 self.conversation_history.append({"role": "user", "content": user_input})
                 
                 # Show processing indicator
-                with console.status("[bold green]Processing request...") as status:
-                    result = self.orchestrator.execute(user_input, self.conversation_history)
+                print("Processing request...")
+                result = self.orchestrator.execute(user_input, self.conversation_history)
                 
                 # Display results
                 self.format_output(result)
@@ -238,13 +224,13 @@ Model: {}
                         "content": result["output"]
                     })
                 
-                console.print()  # Add spacing
+                print()  # Add spacing
                 
             except KeyboardInterrupt:
-                console.print("\n👋 Goodbye!")
+                print("\nGoodbye!")
                 break
             except Exception as e:
-                console.print(f"❌ Unexpected error: {e}", style="red")
+                print(f"Unexpected error: {e}")
 
 
 @app.command()
@@ -272,33 +258,33 @@ def run(
         if interactive:
             cli.run_interactive()
         else:
-            console.print("Non-interactive mode not yet implemented. Use --interactive.")
+            print("Non-interactive mode not yet implemented. Use --interactive.")
             
     except Exception as e:
-        console.print(f"❌ Failed to start CLI: {e}", style="red")
+        print(f"Failed to start CLI: {e}")
         raise typer.Exit(1)
 
 
 @app.command()
 def test_connection():
     """Test connection to MCP servers and Ollama."""
-    console.print("🔧 Testing connections...\n")
+    print("Testing connections...\n")
     
     # Test Ollama
     try:
         from llm.ollama_helper import test_ollama_connection
         if test_ollama_connection():
-            console.print("✅ Ollama: Connected", style="green")
+            print("Ollama: Connected")
         else:
-            console.print("❌ Ollama: Connection failed", style="red")
+            print("Ollama: Connection failed")
     except Exception as e:
-        console.print(f"❌ Ollama: Error - {e}", style="red")
+        print(f"Ollama: Error - {e}")
     
     # Test MCP servers
     for server_name, url_env in [("MCP1", "MCP1_BASE_URL"), ("MCP2", "MCP2_BASE_URL")]:
         url = os.getenv(url_env)
         if not url:
-            console.print(f"❌ {server_name}: No URL configured", style="red")
+            print(f"{server_name}: No URL configured")
             continue
             
         try:
@@ -307,16 +293,16 @@ def test_connection():
                 from mcp_local.mcp_http_client import SyncMCPHTTPClient
                 client = SyncMCPHTTPClient(base_url=url)
                 health_result = client.health_check()
-                console.print(f"✅ {server_name}: Connected via HTTP ({url})", style="green")
+                print(f"{server_name}: Connected via HTTP ({url})")
             else:
                 # Use stdio client (spawn server process)
                 from mcp_local.mcp_client import SyncMCPClient
                 client = SyncMCPClient(server_name=server_name.replace("MCP", "PG"))
                 health_result = client.health_check()
-                console.print(f"✅ {server_name}: Connected via stdio", style="green")
+                print(f"{server_name}: Connected via stdio")
             
         except Exception as e:
-            console.print(f"❌ {server_name}: Connection failed - {e}", style="red")
+            print(f"{server_name}: Connection failed - {e}")
 
 
 @app.command() 
@@ -334,7 +320,7 @@ def query(
     ),
 ):
     """Execute a single backup/restore command non-interactively."""
-    console.print(f"🚀 Executing command: [bold cyan]{command}[/bold cyan]\n")
+    print(f"Executing command: {command}\n")
     
     try:
         cli = BackupCLI(mcp1_base_url, mcp2_base_url)
@@ -343,20 +329,20 @@ def query(
         result = cli.execute_command_direct(command)
         
         if result.get("success"):
-            console.print("✅ Command completed successfully")
-            console.print(f"📋 Result: {result.get('message', 'No details available')}")
+            print("Command completed successfully")
+            print(f"Result: {result.get('message', 'No details available')}")
         else:
-            console.print("❌ Command failed")
-            console.print(f"🔥 Error: {result.get('error', 'Unknown error')}")
+            print("Command failed")
+            print(f"Error: {result.get('error', 'Unknown error')}")
             
     except Exception as e:
-        console.print(f"❌ CLI Error: {e}", style="red")
+        print(f"CLI Error: {e}")
         raise typer.Exit(1)
 
 @app.command()
 def example():
     """Show example commands."""
-    console.print("📚 Example Commands:\n")
+    print("Example Commands:\n")
     
     examples = [
         ("Basic Operations", [
@@ -377,10 +363,10 @@ def example():
     ]
     
     for category, commands in examples:
-        console.print(f"[bold cyan]{category}:[/bold cyan]")
+        print(f"{category}:")
         for cmd in commands:
-            console.print(f"  • {cmd}")
-        console.print()
+            print(f"  - {cmd}")
+        print()
 
 
 @app.callback()

@@ -15,11 +15,11 @@ echo "===================================="
 
 # Check if PostgreSQL is installed
 if command_exists psql; then
-    echo "✅ PostgreSQL client installed"
+    echo "PostgreSQL client installed"
     PSQL_VERSION=$(psql --version | head -n1)
     echo "   Version: $PSQL_VERSION"
 else
-    echo "❌ PostgreSQL client not found!"
+    echo "PostgreSQL client not found!"
     echo "   Install with: sudo yum install postgresql postgresql-contrib"
     echo "   Or: sudo apt install postgresql postgresql-contrib"
     exit 1
@@ -27,7 +27,7 @@ fi
 
 # Check PostgreSQL service
 if systemctl is-active --quiet postgresql; then
-    echo "✅ PostgreSQL service is running"
+    echo "PostgreSQL service is running"
 else
     echo "⚠️  PostgreSQL service not running"
     echo "   Start with: sudo systemctl start postgresql"
@@ -60,7 +60,7 @@ echo "   To:     local all postgres peer"
 echo "   Then: sudo systemctl restart postgresql"
 echo ""
 
-echo "🌐 STEP 3: Network/Firewall Check"
+echo "STEP 3: Network/Firewall Check"
 echo "================================="
 
 # Check if ports are available
@@ -70,46 +70,46 @@ for port in 8001 8002 8003 8004; do
         echo "   Process using port $port:"
         ss -tulpn | grep ":$port "
     else
-        echo "✅ Port $port is available"
+        echo "Port $port is available"
     fi
 done
 
 echo ""
-echo "🔥 STEP 4: Firewall Configuration"
+echo "STEP 4: Firewall Configuration"
 echo "================================="
 
 if command_exists firewall-cmd; then
-    echo "🔧 FirewallD detected - adding rules..."
+    echo "FirewallD detected - adding rules..."
     echo "   sudo firewall-cmd --permanent --add-port=8001-8004/tcp"
     echo "   sudo firewall-cmd --reload"
 elif command_exists ufw; then
-    echo "🔧 UFW detected - adding rules..."
+    echo "UFW detected - adding rules..."
     echo "   sudo ufw allow 8001:8004/tcp"
 elif command_exists iptables; then
-    echo "🔧 iptables detected - adding rules..."
+    echo "iptables detected - adding rules..."
     echo "   sudo iptables -A INPUT -p tcp --dport 8001:8004 -j ACCEPT"
 else
-    echo "✅ No common firewall detected - should be OK"
+    echo "No common firewall detected - should be OK"
 fi
 
 echo ""
-echo "🔧 STEP 5: Quick PostgreSQL Test"
+echo "STEP 5: Quick PostgreSQL Test"
 echo "================================"
 
 echo "Testing PostgreSQL connection..."
 if sudo -u postgres psql -c "SELECT version();" >/dev/null 2>&1; then
-    echo "✅ PostgreSQL connection works with sudo"
+    echo "PostgreSQL connection works with sudo"
     echo "   Use: sudo -u postgres psql for manual access"
 elif psql -U postgres -h localhost -c "SELECT version();" >/dev/null 2>&1; then
-    echo "✅ PostgreSQL connection works with password"
+    echo "PostgreSQL connection works with password"
 else
-    echo "❌ PostgreSQL connection failed"
+    echo "PostgreSQL connection failed"
     echo "   Check PostgreSQL status: sudo systemctl status postgresql"
     echo "   Check logs: sudo journalctl -u postgresql"
 fi
 
 echo ""
-echo "🚀 STEP 6: Environment Setup"
+echo "STEP 6: Environment Setup"
 echo "============================"
 
 echo "Create/update your .env file:"
@@ -130,7 +130,7 @@ OLLAMA_PORT=11434
 EOF
 
 echo ""
-echo "💡 STEP 7: Simplified Testing"
+echo "STEP 7: Simplified Testing"
 echo "============================="
 
 echo "Instead of the full system, test components individually:"
@@ -148,7 +148,7 @@ echo "4️⃣ Test individual MCP server:"
 echo "   python mcp_local/postgres_backup_server.py --server-name PG1"
 echo ""
 
-echo "🎯 RECOMMENDED LINUX WORKFLOW"
+echo "RECOMMENDED LINUX WORKFLOW"
 echo "============================="
 echo ""
 echo "1. Fix PostgreSQL authentication (choose Option A, B, or C above)"

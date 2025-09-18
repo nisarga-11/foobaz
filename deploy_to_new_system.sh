@@ -7,23 +7,17 @@
 
 set -e
 
-echo "🚀 PostgreSQL Backup System - Complete Deployment"
+echo "PostgreSQL Backup System - Complete Deployment"
 echo "=================================================="
 
-# Colors for output
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-CYAN='\033[0;36m'
-NC='\033[0m' # No Color
+# Simple output without colors
 
 # Default configurations
 PG_PORT=${PG_PORT:-5432}
 POSTGRES_USER=${POSTGRES_USER:-postgres}
 SYSTEM_NAME=${SYSTEM_NAME:-"backup-system"}
 
-echo -e "${BLUE}Configuration:${NC}"
+echo "Configuration:"
 echo "PostgreSQL Server: localhost:$PG_PORT"
 echo "PostgreSQL User: $POSTGRES_USER"
 echo "System Name: $SYSTEM_NAME"
@@ -39,10 +33,10 @@ check_postgres() {
     local port=$1
     
     if pg_isready -h localhost -p $port -U $POSTGRES_USER >/dev/null 2>&1; then
-        echo -e "${GREEN}✅ PostgreSQL (port $port) is running${NC}"
+        echo "PostgreSQL (port $port) is running"
         return 0
     else
-        echo -e "${RED}❌ PostgreSQL (port $port) is not running${NC}"
+        echo "PostgreSQL (port $port) is not running"
         return 1
     fi
 }
@@ -53,48 +47,48 @@ run_sql_file() {
     local port=$2
     local description=$3
     
-    echo -e "${BLUE}$description...${NC}"
+    echo "$description..."
     
     if psql -h localhost -p $port -U $POSTGRES_USER -f "$sql_file" >/dev/null 2>&1; then
-        echo -e "${GREEN}✅ $description completed${NC}"
+        echo "$description completed"
         return 0
     else
-        echo -e "${RED}❌ Failed: $description${NC}"
+        echo "Failed: $description"
         echo "Trying with current user..."
         
         # Try with current user if postgres user fails
         if psql -h localhost -p $port -U $USER -d postgres -f "$sql_file" >/dev/null 2>&1; then
-            echo -e "${GREEN}✅ $description completed (using $USER)${NC}"
+            echo "$description completed (using $USER)"
             return 0
         else
-            echo -e "${RED}❌ Failed: $description with both postgres and $USER${NC}"
+            echo "Failed: $description with both postgres and $USER"
             return 1
         fi
     fi
 }
 
 # Step 1: Check Prerequisites
-echo -e "${CYAN}=== Step 1: Checking Prerequisites ===${NC}"
+echo "=== Step 1: Checking Prerequisites ==="
 
 # Check if PostgreSQL is installed
 if ! command_exists psql; then
-    echo -e "${RED}❌ PostgreSQL is not installed${NC}"
-    echo -e "${YELLOW}To install PostgreSQL:${NC}"
+    echo "PostgreSQL is not installed"
+    echo "To install PostgreSQL:"
     echo "  macOS: brew install postgresql"
     echo "  Ubuntu: sudo apt-get install postgresql postgresql-contrib"
     echo "  CentOS/RHEL: sudo yum install postgresql-server postgresql-contrib"
     exit 1
 else
-    echo -e "${GREEN}✅ PostgreSQL is installed${NC}"
+    echo "PostgreSQL is installed"
 fi
 
 # Check if Python 3 is installed
 if ! command_exists python3; then
-    echo -e "${RED}❌ Python 3 is not installed${NC}"
-    echo -e "${YELLOW}Please install Python 3.8 or higher${NC}"
+    echo "Python 3 is not installed"
+    echo "Please install Python 3.8 or higher"
     exit 1
 else
-    echo -e "${GREEN}✅ Python 3 is installed${NC}"
+    echo "Python 3 is installed"
 fi
 
 # Check if PostgreSQL is running
@@ -745,7 +739,7 @@ CREATE INDEX idx_executive_dashboard_category ON executive_dashboard(metric_cate
 CREATE INDEX idx_executive_dashboard_date ON executive_dashboard(update_date);
 EOF
 
-echo -e "${GREEN}✅ SQL setup files created${NC}"
+echo "SQL setup files created"
 
 # Step 3: Run Database Setup
 echo -e "${CYAN}=== Step 3: Setting Up Databases ===${NC}"
@@ -792,7 +786,7 @@ POSTGRES_USER=$POSTGRES_USER
 POSTGRES_PORT=$PG_PORT
 EOF
 
-echo -e "${GREEN}✅ Environment configuration created (.env)${NC}"
+echo "Environment configuration created (.env)"
 
 # Step 5: Create Requirements File
 echo -e "${CYAN}=== Step 5: Creating Python Requirements ===${NC}"
@@ -825,7 +819,7 @@ tqdm==4.66.1
 jsondiff==2.0.0
 EOF
 
-echo -e "${GREEN}✅ Python requirements created (requirements.txt)${NC}"
+echo "Python requirements created (requirements.txt)"
 
 # Step 6: Create setup summary
 echo -e "${CYAN}=== Step 6: Installation Summary ===${NC}"
