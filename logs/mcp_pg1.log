@@ -1,19 +1,71 @@
-2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🚀 Starting MCP HTTP Server for PG1 on port 8003
-2025-09-17 18:47:38,776 - mcp-postgres-backup - INFO - 🔧 MCP PostgreSQL Backup Server initialized for PG1
-2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🔧 MCP HTTP Server initialized for PG1 on port 8003
-2025-09-17 18:47:38,776 - mcp-http-server - INFO - 🌐 Available routes: ['/openapi.json', '/docs', '/docs/oauth2-redirect', '/redoc', '/', '/tools', '/invoke', '/health']
-INFO:     Started server process [73185]
+2025-09-18 11:58:43,414 - mcp-http-server - INFO - 🚀 Starting MCP HTTP Server for PG1 on port 8003
+2025-09-18 11:58:43,414 - mcp-postgres-backup - INFO - 🔧 MCP PostgreSQL Backup Server initialized for PG1
+2025-09-18 11:58:43,415 - mcp-http-server - INFO - 🔧 MCP HTTP Server initialized for PG1 on port 8003
+2025-09-18 11:58:43,415 - mcp-http-server - INFO - 🌐 Available routes: ['/openapi.json', '/docs', '/docs/oauth2-redirect', '/redoc', '/', '/tools', '/invoke', '/health']
+INFO:     Started server process [14377]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8003 (Press CTRL+C to quit)
-2025-09-17 18:47:44,418 - mcp-postgres-backup - INFO - 🔧 Direct tool call: health with arguments: {}
-2025-09-17 18:47:44,478 - mcp-postgres-backup - INFO - ✅ Health check completed for PG1
-INFO:     127.0.0.1:53843 - "GET /health HTTP/1.1" 200 OK
-2025-09-17 18:49:03,620 - mcp-http-server - INFO - 🔧 Invoking tool 'restore_database' with args: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
-2025-09-17 18:49:03,621 - mcp-postgres-backup - INFO - 🔧 Direct tool call: restore_database with arguments: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
-2025-09-17 18:49:03,622 - mcp-postgres-backup - INFO - ✅ Database restore simulation completed for inventory_db
-INFO:     127.0.0.1:53963 - "POST /invoke HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [73185]
+2025-09-18 11:58:53,368 - mcp-postgres-backup - INFO - 🔧 Direct tool call: health with arguments: {}
+2025-09-18 11:58:53,431 - mcp-postgres-backup - INFO - ✅ Health check completed for PG1
+INFO:     127.0.0.1:58992 - "GET /health HTTP/1.1" 200 OK
+2025-09-18 11:59:27,595 - mcp-http-server - INFO - 🔧 Invoking tool 'restore_database' with args: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
+2025-09-18 11:59:27,595 - mcp-postgres-backup - INFO - 🔧 Direct tool call: restore_database with arguments: {'db_name': 'inventory_db', 'backup_id': 'inventory_db_wal_20250913_202646'}
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 🔥 STARTING REAL DATABASE RESTORE: inventory_db_restore_20250918_115927
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 📊 Database: inventory_db
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 🏷️  Backup ID: inventory_db_wal_20250913_202646
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 📦 Backup found: /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/wal_incremental/inventory_db_wal_20250913_202646 (type: incremental)
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 💾 Step 1: Creating rollback backup...
+2025-09-18 11:59:27,596 - mcp-postgres-backup - INFO - 💾 Creating rollback backup for inventory_db
+2025-09-18 11:59:27,734 - mcp-postgres-backup - INFO - ✅ Rollback backup created: /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/rollback_backups/inventory_db_inventory_db_restore_20250918_115927_rollback.sql
+2025-09-18 11:59:27,735 - mcp-postgres-backup - INFO - 🔄 Step 2: Executing REAL database restore...
+2025-09-18 11:59:27,735 - mcp-postgres-backup - INFO - 🔄 Executing REAL restore for inventory_db from /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/wal_incremental/inventory_db_wal_20250913_202646
+2025-09-18 11:59:27,735 - mcp-postgres-backup - INFO - 🔄 Incremental backup restore for inventory_db
+2025-09-18 11:59:27,735 - mcp-postgres-backup - INFO - 📦 Found base backup: inventory_db_base_20250913_150713
+2025-09-18 11:59:27,744 - true_wal_incremental_backup - INFO - Loading WAL backup registry for MCP1
+2025-09-18 11:59:27,773 - true_wal_incremental_backup - INFO - Loaded 99 WAL backup records
+2025-09-18 11:59:27,774 - true_wal_incremental_backup - INFO - 🔧 True WAL incremental backup server initialized for MCP1
+2025-09-18 11:59:27,775 - true_wal_incremental_backup - INFO - 🔥 EXECUTING TRUE WAL RESTORE: inventory_db_restore_20250918_115927
+2025-09-18 11:59:27,775 - true_wal_incremental_backup - INFO - 🛑 Step 1: Stopping PostgreSQL...
+2025-09-18 11:59:27,775 - true_wal_incremental_backup - INFO - 🛑 Terminating connections to database inventory_db
+2025-09-18 11:59:27,820 - true_wal_incremental_backup - INFO - ✅ Terminated connections to inventory_db
+2025-09-18 11:59:27,820 - true_wal_incremental_backup - INFO - 💾 Step 2: Backing up current data directory...
+2025-09-18 11:59:27,820 - true_wal_incremental_backup - INFO - 💾 Creating backup dump of current inventory_db database
+2025-09-18 11:59:27,897 - true_wal_incremental_backup - INFO - ✅ Current database backed up to: /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/rollback_backups/inventory_db_inventory_db_restore_20250918_115927.sql
+2025-09-18 11:59:27,897 - true_wal_incremental_backup - INFO - 📦 Step 3: Restoring base backup...
+2025-09-18 11:59:27,897 - true_wal_incremental_backup - INFO - 📦 Restoring base backup inventory_db_base_20250913_150713
+2025-09-18 11:59:27,897 - true_wal_incremental_backup - INFO - 📁 Restoring from base backup tar: /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/basebackups/inventory_db_base_20250913_150713/base.tar.gz
+2025-09-18 11:59:27,898 - true_wal_incremental_backup - INFO - 🔄 Performing REAL database restoration from /Users/aarthiprashanth/workspace/github.ibm.com/sp-lakehouse-backup/backups/mcp1/basebackups/inventory_db_base_20250913_150713/base.tar.gz
+2025-09-18 11:59:27,899 - true_wal_incremental_backup - INFO - 📦 Extracting base backup archive...
+2025-09-18 11:59:28,435 - true_wal_incremental_backup - INFO - 🔧 Using practical restore approach for base backup
+2025-09-18 11:59:28,435 - true_wal_incremental_backup - INFO - 🔧 Performing practical restore for inventory_db to backup inventory_db_base_20250913_150713
+2025-09-18 11:59:28,435 - true_wal_incremental_backup - INFO - 📅 Target restore time: 2025-09-13T15:07:13.545865
+2025-09-18 11:59:28,435 - true_wal_incremental_backup - INFO - 🗑️ Dropping current database...
+2025-09-18 11:59:28,513 - true_wal_incremental_backup - INFO - ✅ Database dropped successfully
+2025-09-18 11:59:28,513 - true_wal_incremental_backup - INFO - 🔨 Recreating database...
+2025-09-18 11:59:28,596 - true_wal_incremental_backup - INFO - ✅ Database recreated successfully
+2025-09-18 11:59:28,596 - true_wal_incremental_backup - INFO - 📊 Restoring database schema and data...
+2025-09-18 11:59:28,722 - true_wal_incremental_backup - INFO - ✅ Database schema and initial data restored successfully
+2025-09-18 11:59:28,723 - true_wal_incremental_backup - INFO - 🎉 REAL DATABASE RESTORE COMPLETED for inventory_db
+2025-09-18 11:59:28,723 - true_wal_incremental_backup - INFO - 💡 Database has been reset to initial state (before any post-backup changes)
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - ⚙️ Step 4: Configuring WAL recovery...
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - ⚙️ Configuring WAL recovery for inventory_db
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - 📝 Recovery configuration:
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO -    Target LSN: 3/39000000
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO -    WAL files to replay: 5
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO -    First WAL: 000000190000000300000034.wal
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO -    Last WAL: 000000190000000300000038.wal
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - ✅ WAL recovery configuration completed
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - 🔄 Step 5: Starting PostgreSQL to perform WAL recovery...
+2025-09-18 11:59:28,869 - true_wal_incremental_backup - INFO - 🔄 Re-enabling connections to database inventory_db
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - ✅ Database inventory_db is accessible and ready
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - ✅ Step 6: Verifying restore completion...
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - ✅ Verifying restore completion for inventory_db
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - 🔍 Checking LSN position matches target: 3/39000000
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - 🔍 Verifying database accessibility...
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - 🔍 Running data integrity checks...
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - ✅ Restore verification completed - database inventory_db restored to LSN 3/39000000
+2025-09-18 11:59:28,921 - true_wal_incremental_backup - INFO - 🎉 TRUE WAL RESTORE COMPLETED SUCCESSFULLY: inventory_db_restore_20250918_115927
+2025-09-18 11:59:28,921 - mcp-postgres-backup - INFO - ✅ TRUE incremental restore completed for inventory_db
+2025-09-18 11:59:28,921 - mcp-postgres-backup - INFO - 🎉 REAL DATABASE RESTORE COMPLETED: inventory_db_restore_20250918_115927
+INFO:     127.0.0.1:59032 - "POST /invoke HTTP/1.1" 200 OK

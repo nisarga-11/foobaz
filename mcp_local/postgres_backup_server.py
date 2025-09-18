@@ -807,20 +807,108 @@ WAL Files: {len(wal_files)}
             return {"success": False, "error": str(e)}
     
     async def _restore_from_incremental_backup(self, db_name: str, backup_path: Path) -> Dict[str, Any]:
-        """Restore from incremental backup (would need base backup + WAL replay)."""
+        """Restore from incremental backup using proper WAL replay."""
         try:
             logger.info(f"🔄 Incremental backup restore for {db_name}")
             
-            # For incremental backups, we need to find the base backup first
-            # This is a simplified version - in production you'd implement full WAL replay
-            logger.warning("⚠️ Incremental restore not fully implemented - performing fresh schema restore instead")
+            # Find the base backup for this incremental backup
+            base_backup = await self._find_base_backup_for_incremental(backup_path)
+            if not base_backup:
+                logger.error(f"❌ No base backup found for incremental backup {backup_path.name}")
+                return {"success": False, "error": "No base backup found for incremental restore"}
             
-            return await self._restore_fresh_schema(db_name)
+            logger.info(f"📦 Found base backup: {base_backup.name}")
+            
+            # Use the True WAL restore functionality
+            from true_wal_incremental_backup import TrueWALIncrementalBackupServer
+            
+            # Create a backup object for the incremental backup
+            incremental_backup = await self._create_backup_object_from_path(backup_path)
+            base_backup_obj = await self._create_backup_object_from_path(base_backup)
+            
+            # Initialize the WAL backup server
+            # Convert PG1 -> MCP1, PG2 -> MCP2
+            wal_server_name = f"MCP{self.server_name[-1]}"
+            wal_server = TrueWALIncrementalBackupServer(server_name=wal_server_name)
+            
+            # Execute the proper WAL restore
+            restore_id = f"{db_name}_restore_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+            result = await wal_server._execute_wal_restore(
+                db_name=db_name,
+                backup=incremental_backup,
+                restore_id=restore_id,
+                restore_method="incremental_wal_restore",
+                base_backup=base_backup_obj
+            )
+            
+            if result.get("status") == "completed":
+                logger.info(f"✅ TRUE incremental restore completed for {db_name}")
+                return {
+                    "success": True,
+                    "method": "True incremental WAL restore",
+                    "database": db_name,
+                    "backup_id": incremental_backup.backup_id,
+                    "base_backup_id": base_backup_obj.backup_id,
+                    "note": "Database restored to exact point-in-time using WAL replay",
+                    "restore_details": result
+                }
+            else:
+                logger.error(f"❌ WAL restore failed: {result.get('error', 'Unknown error')}")
+                return {"success": False, "error": result.get('error', 'WAL restore failed')}
             
         except Exception as e:
             logger.error(f"❌ Incremental backup restore failed: {e}")
             return {"success": False, "error": str(e)}
     
+    async def _find_base_backup_for_incremental(self, incremental_backup_path: Path) -> Optional[Path]:
+        """Find the base backup for an incremental backup."""
+        try:
+            # Look for base backups in the basebackups directory
+            base_backups = list(self.backup_full_dir.glob(f"*_base_*"))
+            if not base_backups:
+                return None
+            
+            # For now, return the most recent base backup
+            # In a more sophisticated implementation, you'd match by timeline or LSN
+            return max(base_backups, key=lambda x: x.name)
+            
+        except Exception as e:
+            logger.error(f"❌ Error finding base backup: {e}")
+            return None
+    
+    async def _create_backup_object_from_path(self, backup_path: Path):
+        """Create a backup object from a backup path."""
+        class BackupObject:
+            def __init__(self, path: Path):
+                self.backup_id = path.name
+                self.backup_type = "basebackup" if "base" in path.name else "wal_incremental"
+                self.path = path
+                self.file_path = path  # Add file_path alias for compatibility
+                self.lsn_start = "0/0"
+                self.lsn_end = "0/0"
+                self.timeline_id = 1
+                self.wal_files = []
+                self.completed_at_iso = datetime.now().isoformat() + "Z"  # Add completed_at_iso
+                
+                # Try to read metadata if available
+                metadata_file = path / "wal_metadata.json"
+                if metadata_file.exists():
+                    try:
+                        import json
+                        with open(metadata_file, 'r') as f:
+                            metadata = json.load(f)
+                            self.lsn_start = metadata.get("lsn_start", "0/0")
+                            self.lsn_end = metadata.get("lsn_end", "0/0")
+                            self.timeline_id = metadata.get("timeline_id", 1)
+                            self.wal_files = metadata.get("wal_files_archived", [])
+                            # Try to get timestamp from metadata
+                            if "timestamp" in metadata:
+                                self.completed_at_iso = metadata["timestamp"]
+                    except Exception as e:
+                        logger.warning(f"⚠️ Could not read metadata from {metadata_file}: {e}")
+        
+        return BackupObject(backup_path)
+
     async def _attempt_rollback(self, db_name: str, restore_id: str):
         """Attempt to rollback a failed restore."""
         try:

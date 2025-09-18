@@ -1,0 +1,20 @@
+TRUE WAL Incremental Backup Summary
+=====================================
+Backup ID: analytics_db_wal_20250918_105737
+Database: analytics_db
+Timestamp: 2025-09-18T10:57:37.817696
+Server: MCP1
+LSN Range: 3/87000000 → 3/87000000
+WAL Files Archived: 5
+Base Backup: None
+
+WAL Files:
+  - 000000190000000300000082.wal
+  - 000000190000000300000083.wal
+  - 000000190000000300000084.wal
+  - 000000190000000300000085.wal
+  - 000000190000000300000086.wal
+
+This backup contains ONLY the changes (transaction log entries)
+that occurred since the last backup. It can be replayed on top of
+a base backup to restore the database to this point in time.

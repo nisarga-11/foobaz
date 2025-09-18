@@ -1,0 +1,21 @@
+TRUE WAL Incremental Backup Summary
+=====================================
+Backup ID: customer_db_wal_20250918_110729
+Database: customer_db
+Timestamp: 2025-09-18T11:07:29.957155
+Server: MCP1
+LSN Range: 3/8E000000 → 3/8E000148
+WAL Files Archived: 6
+Base Backup: None
+
+WAL Files:
+  - 00000019000000030000008A.wal
+  - 00000019000000030000008B.wal
+  - 00000019000000030000008C.wal
+  - 00000019000000030000008D.wal
+  - 00000019000000030000008E.wal
+  - 00000019000000030000008E.wal
+
+This backup contains ONLY the changes (transaction log entries)
+that occurred since the last backup. It can be replayed on top of
+a base backup to restore the database to this point in time.

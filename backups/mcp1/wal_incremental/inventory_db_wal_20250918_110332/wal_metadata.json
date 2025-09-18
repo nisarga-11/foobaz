@@ -1,0 +1,18 @@
+{
+  "backup_id": "inventory_db_wal_20250918_110332",
+  "database": "inventory_db",
+  "backup_type": "wal_incremental",
+  "timestamp": "2025-09-18T11:03:32.077053",
+  "lsn_start": "3/8B000060",
+  "lsn_end": "3/8C000000",
+  "wal_files_archived": [
+    "000000190000000300000087.wal",
+    "000000190000000300000088.wal",
+    "000000190000000300000089.wal",
+    "00000019000000030000008A.wal",
+    "00000019000000030000008B.wal"
+  ],
+  "timeline_id": 1,
+  "server": "MCP1",
+  "base_backup_reference": null
+}
