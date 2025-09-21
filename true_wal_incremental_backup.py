@@ -95,7 +95,7 @@ class TrueWALIncrementalBackupServer:
         self.app = FastAPI(title=f"{server_name} True WAL Incremental Backup Server")
         self._setup_routes()
         
-        logger.info(f"🔧 True WAL incremental backup server initialized for {server_name}")
+        logger.info(f"True WAL incremental backup server initialized for {server_name}")
     
     def _load_backup_registry(self):
         """Load existing backup records from file system scan."""
@@ -305,7 +305,7 @@ class TrueWALIncrementalBackupServer:
             
             if process.returncode == 0:
                 wal_file = stdout.decode().strip()
-                logger.info(f"📁 Current WAL file: {wal_file}")
+                logger.info(f"Current WAL file: {wal_file}")
                 return wal_file
             else:
                 raise Exception(f"Could not get WAL file: {stderr.decode()}")
@@ -316,7 +316,7 @@ class TrueWALIncrementalBackupServer:
     
     async def _setup_wal_archiving(self) -> Dict[str, Any]:
         """Setup PostgreSQL WAL archiving configuration."""
-        logger.info("🔧 Setting up PostgreSQL WAL archiving...")
+        logger.info("Setting up PostgreSQL WAL archiving...")
         
         try:
             # Check current WAL archiving settings
@@ -355,15 +355,15 @@ class TrueWALIncrementalBackupServer:
             stdout, stderr = await process.communicate()
             archive_command = stdout.decode().strip() if process.returncode == 0 else "unknown"
             
-            logger.info(f"📋 Current WAL archiving status:")
+            logger.info(f"Current WAL archiving status:")
             logger.info(f"   archive_mode: {archive_mode}")
             logger.info(f"   archive_command: {archive_command}")
             
             wal_archiving_configured = archive_mode == "on" and archive_command not in ["", "(disabled)"]
             
             if not wal_archiving_configured:
-                logger.warning("⚠️  WAL archiving not fully configured")
-                logger.info("💡 To enable WAL archiving, add to postgresql.conf:")
+                logger.warning("WAL archiving not fully configured")
+                logger.info("To enable WAL archiving, add to postgresql.conf:")
                 logger.info(f"   archive_mode = on")
                 logger.info(f"   archive_command = 'cp %p {self.backup_wal_dir}/%f'")
                 logger.info("   wal_level = replica")
@@ -396,7 +396,7 @@ class TrueWALIncrementalBackupServer:
         backup_id = f"{db_name}_base_{timestamp.strftime('%Y%m%d_%H%M%S')}"
         backup_dir = self.backup_full_dir / backup_id
         
-        logger.info(f"🔄 Starting WAL-compatible base backup for {db_name}")
+        logger.info(f"Starting WAL-compatible base backup for {db_name}")
         
         try:
             # Get starting WAL position
@@ -492,7 +492,7 @@ class TrueWALIncrementalBackupServer:
             # Update last base backup reference
             self.last_base_backup = backup_record
             
-            logger.info(f"✅ WAL-compatible base backup completed: {backup_id}")
+            logger.info(f"WAL-compatible base backup completed: {backup_id}")
             
             return {
                 "backup_id": backup_id,
@@ -527,7 +527,7 @@ class TrueWALIncrementalBackupServer:
         backup_id = f"{db_name}_wal_{timestamp.strftime('%Y%m%d_%H%M%S')}"
         backup_dir = self.backup_incr_dir / backup_id
         
-        logger.info(f"🔄 Starting TRUE WAL incremental backup for {db_name}")
+        logger.info(f"Starting TRUE WAL incremental backup for {db_name}")
         
         try:
             # Get current WAL position
@@ -541,13 +541,13 @@ class TrueWALIncrementalBackupServer:
             wal_files_to_archive = await self._find_wal_files_since_last_backup(db_name)
             
             if not wal_files_to_archive:
-                logger.info(f"📋 No new WAL files to archive for {db_name}")
+                logger.info(f"No new WAL files to archive for {db_name}")
                 # Still create a minimal incremental backup record
                 wal_files_archived = []
             else:
                 # Archive WAL files
                 wal_files_archived = await self._archive_wal_files(wal_files_to_archive, backup_dir)
-                logger.info(f"📁 Archived {len(wal_files_archived)} WAL files")
+                logger.info(f"Archived {len(wal_files_archived)} WAL files")
             
             # Create a forced WAL switch to ensure current changes are in a complete WAL file
             try:
@@ -571,7 +571,7 @@ class TrueWALIncrementalBackupServer:
                 )
                 
                 await process.communicate()
-                logger.info("🔄 Forced WAL switch to capture current changes")
+                logger.info("Forced WAL switch to capture current changes")
                 
                 # Get the new current WAL file after switch
                 new_wal_file = await self._get_current_wal_file()
@@ -579,7 +579,7 @@ class TrueWALIncrementalBackupServer:
                     # Archive the switched WAL file
                     additional_wal = await self._archive_wal_files([current_wal_file], backup_dir)
                     wal_files_archived.extend(additional_wal)
-                    logger.info(f"📁 Archived switched WAL file: {current_wal_file}")
+                    logger.info(f"Archived switched WAL file: {current_wal_file}")
                 
             except Exception as e:
                 logger.warning(f"Could not force WAL switch: {e}")
@@ -646,8 +646,8 @@ class TrueWALIncrementalBackupServer:
                 self.backup_registry[db_name] = []
             self.backup_registry[db_name].append(backup_record)
             
-            logger.info(f"✅ TRUE WAL incremental backup completed: {backup_id}")
-            logger.info(f"📊 Archived {len(wal_files_archived)} WAL files ({total_size} bytes)")
+            logger.info(f"TRUE WAL incremental backup completed: {backup_id}")
+            logger.info(f"Archived {len(wal_files_archived)} WAL files ({total_size} bytes)")
             
             return {
                 "backup_id": backup_id,
@@ -749,7 +749,7 @@ class TrueWALIncrementalBackupServer:
                     # Take only the most recent few WAL files for incremental backup
                     recent_wal_files = wal_files[-5:] if len(wal_files) > 5 else wal_files
                     
-                    logger.info(f"📁 Found {len(recent_wal_files)} recent WAL files to archive")
+                    logger.info(f"Found {len(recent_wal_files)} recent WAL files to archive")
                     return recent_wal_files
                 else:
                     logger.warning(f"WAL directory not found: {wal_dir}")
@@ -819,7 +819,7 @@ class TrueWALIncrementalBackupServer:
                                 shutil.copyfileobj(src, dst)
                             
                             archived_files.append(f"{wal_file}.wal")
-                            logger.info(f"📁 Archived WAL file: {wal_file}")
+                            logger.info(f"Archived WAL file: {wal_file}")
                             
                         except Exception as e:
                             logger.warning(f"Could not archive WAL file {wal_file}: {e}")
@@ -869,7 +869,7 @@ class TrueWALIncrementalBackupServer:
     
     async def _create_initial_wal_backups(self) -> Dict[str, Any]:
         """Create initial base backups for all databases."""
-        logger.info(f"🚀 Creating initial WAL-compatible base backups for {self.server_name}")
+        logger.info(f"Creating initial WAL-compatible base backups for {self.server_name}")
         
         results = []
         errors = []
@@ -882,7 +882,7 @@ class TrueWALIncrementalBackupServer:
             ]
             
             if existing_base_backups:
-                logger.info(f"⏭️  Skipping {db_name} - already has {len(existing_base_backups)} base backup(s)")
+                logger.info(f"Skipping {db_name} - already has {len(existing_base_backups)} base backup(s)")
                 results.append({
                     "database": db_name,
                     "status": "skipped",
@@ -891,7 +891,7 @@ class TrueWALIncrementalBackupServer:
                 continue
             
             try:
-                logger.info(f"📦 Creating initial WAL base backup for {db_name}")
+                logger.info(f"Creating initial WAL base backup for {db_name}")
                 result = await self._trigger_wal_base_backup(db_name)
                 results.append({
                     "database": db_name,
@@ -899,7 +899,7 @@ class TrueWALIncrementalBackupServer:
                     "backup_id": result["backup_id"],
                     "size_bytes": result["size_bytes"]
                 })
-                logger.info(f"✅ Initial WAL backup created for {db_name}: {result['backup_id']}")
+                logger.info(f"Initial WAL backup created for {db_name}: {result['backup_id']}")
                 
             except Exception as e:
                 error_msg = str(e)
@@ -909,7 +909,7 @@ class TrueWALIncrementalBackupServer:
                     "status": "failed",
                     "error": error_msg
                 })
-                logger.error(f"❌ Initial WAL backup failed for {db_name}: {e}")
+                logger.error(f"Initial WAL backup failed for {db_name}: {e}")
         
         return {
             "server": self.server_name,
@@ -927,7 +927,7 @@ class TrueWALIncrementalBackupServer:
         if self.scheduler_running:
             return {"status": "already_running", "message": "WAL scheduler is already running"}
         
-        logger.info(f"🚀 Starting TRUE WAL backup scheduler for {self.server_name}")
+        logger.info(f"Starting TRUE WAL backup scheduler for {self.server_name}")
         
         # Step 1: Setup WAL archiving
         wal_setup = await self._setup_wal_archiving()
@@ -936,13 +936,13 @@ class TrueWALIncrementalBackupServer:
         initial_backup_result = await self._create_initial_wal_backups()
         
         # Step 3: Set up scheduled backups
-        logger.info(f"⏰ Setting up TRUE WAL backup schedules...")
+        logger.info(f"Setting up TRUE WAL backup schedules...")
         
         # Schedule base backups weekly (Sundays at 3 AM)
         schedule.every().sunday.at("03:00").do(self._scheduled_wal_base_backup)
         
         # Schedule WAL incremental backups every 2 minutes
-        schedule.every(2).minutes.do(self._scheduled_wal_incremental_backup)
+        schedule.every().hour.do(self._scheduled_wal_incremental_backup)
         
         self.scheduler_running = True
         
@@ -950,7 +950,7 @@ class TrueWALIncrementalBackupServer:
         asyncio.create_task(self._run_wal_scheduler())
         
         # Step 5: Start WAL incremental backups immediately (after a short delay)
-        logger.info("🔄 Starting TRUE WAL incremental backup cycle in 30 seconds...")
+        logger.info("Starting TRUE WAL incremental backup cycle in 30 seconds...")
         asyncio.create_task(self._delayed_first_wal_incremental_backup())
         
         return {
@@ -960,7 +960,7 @@ class TrueWALIncrementalBackupServer:
             "initial_backup_result": initial_backup_result,
             "schedules": {
                 "base_backup": "Every Sunday at 03:00 (pg_basebackup with WAL)",
-                "wal_incremental_backup": "Every 2 minutes (TRUE WAL archiving)"
+                "wal_incremental_backup": "Every hour (TRUE WAL archiving)"
             },
             "next_incremental": "30 seconds",
             "backup_method": "TRUE WAL-based incremental backup system"
@@ -969,7 +969,7 @@ class TrueWALIncrementalBackupServer:
     async def _delayed_first_wal_incremental_backup(self):
         """Start the first WAL incremental backup after a delay."""
         await asyncio.sleep(30)  # Wait 30 seconds
-        logger.info("🔄 Running first TRUE WAL incremental backup cycle...")
+        logger.info("Running first TRUE WAL incremental backup cycle...")
         await self._run_wal_incremental_backups()
     
     def _scheduled_wal_base_backup(self):
@@ -982,26 +982,26 @@ class TrueWALIncrementalBackupServer:
     
     async def _run_wal_base_backups(self):
         """Run WAL base backups for all databases."""
-        logger.info(f"🔄 Running scheduled TRUE WAL BASE backups for {self.server_name}")
+        logger.info(f"Running scheduled TRUE WAL BASE backups for {self.server_name}")
         
         for db_name in self.databases:
             try:
                 result = await self._trigger_wal_base_backup(db_name)
-                logger.info(f"✅ Scheduled WAL base backup completed for {db_name}: {result['backup_id']}")
+                logger.info(f"Scheduled WAL base backup completed for {db_name}: {result['backup_id']}")
             except Exception as e:
-                logger.error(f"❌ Scheduled WAL base backup failed for {db_name}: {e}")
+                logger.error(f"Scheduled WAL base backup failed for {db_name}: {e}")
     
     async def _run_wal_incremental_backups(self):
         """Run TRUE WAL incremental backups for all databases."""
-        logger.info(f"🔄 Running scheduled TRUE WAL INCREMENTAL backups for {self.server_name}")
+        logger.info(f"Running scheduled TRUE WAL INCREMENTAL backups for {self.server_name}")
         
         for db_name in self.databases:
             try:
                 result = await self._trigger_wal_incremental_backup(db_name)
-                logger.info(f"✅ Scheduled WAL incremental backup completed for {db_name}: {result['backup_id']}")
-                logger.info(f"📊 WAL files archived: {result['wal_files_count']}")
+                logger.info(f"Scheduled WAL incremental backup completed for {db_name}: {result['backup_id']}")
+                logger.info(f"WAL files archived: {result['wal_files_count']}")
             except Exception as e:
-                logger.error(f"❌ Scheduled WAL incremental backup failed for {db_name}: {e}")
+                logger.error(f"Scheduled WAL incremental backup failed for {db_name}: {e}")
     
     async def _list_wal_backups(self, db_name: str, limit: int = 50) -> Dict[str, Any]:
         """List WAL backups for a database."""
@@ -1070,21 +1070,21 @@ class TrueWALIncrementalBackupServer:
                 # Use latest backup
                 backup = max(self.backup_registry[db_name], key=lambda x: x.completed_at_iso)
             
-            logger.info(f"🔄 Starting TRUE WAL restore of {db_name} from backup {backup.backup_id}")
+            logger.info(f"Starting TRUE WAL restore of {db_name} from backup {backup.backup_id}")
             
             try:
                 if backup.backup_type == "basebackup":
-                    logger.info("🗄️  TRUE WAL base backup restore process:")
+                    logger.info("TRUE WAL base backup restore process:")
                     logger.info("   1. Stop PostgreSQL service")
                     logger.info("   2. Replace data directory with base backup")
                     logger.info("   3. Configure recovery.conf for WAL replay")
                     logger.info("   4. Restart PostgreSQL to replay WAL files")
-                    logger.info("   ✅ This restores to the exact LSN point")
+                    logger.info("   This restores to the exact LSN point")
                     
                     restore_method = "pg_basebackup + WAL replay (TRUE point-in-time recovery)"
                     
                 else:  # wal_incremental
-                    logger.info("🔄 TRUE WAL incremental restore process:")
+                    logger.info("TRUE WAL incremental restore process:")
                     logger.info("   1. Find the base backup this incremental depends on")
                     logger.info("   2. Restore base backup first")
                     logger.info("   3. Replay WAL files from incremental backup")
@@ -1093,23 +1093,23 @@ class TrueWALIncrementalBackupServer:
                     # Find the base backup this incremental depends on
                     base_backup = await self._find_base_backup_for_incremental(backup)
                     if base_backup:
-                        logger.info(f"   📦 Base backup: {base_backup.backup_id}")
-                        logger.info(f"   📁 WAL files to replay: {len(backup.wal_files or [])}")
+                        logger.info(f"   Base backup: {base_backup.backup_id}")
+                        logger.info(f"   WAL files to replay: {len(backup.wal_files or [])}")
                         
                         # List the WAL files that would be replayed
                         if backup.wal_files:
-                            logger.info("   📋 WAL files in this incremental backup:")
+                            logger.info("   WAL files in this incremental backup:")
                             for wal_file in backup.wal_files:
                                 logger.info(f"      - {wal_file}")
                     else:
-                        logger.warning("   ⚠️  No base backup found - incremental restore may fail")
+                        logger.warning("   No base backup found - incremental restore may fail")
                     
                     restore_method = "Base backup + WAL file replay (TRUE incremental restore)"
                 
                 restore_id = f"wal_restore_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
                 
-                logger.info(f"🔄 Starting TRUE WAL restore execution: {restore_id}")
-                logger.info(f"📍 Target LSN: {backup.lsn_end}")
+                logger.info(f"Starting TRUE WAL restore execution: {restore_id}")
+                logger.info(f"Target LSN: {backup.lsn_end}")
                 
                 # Execute the actual restore
                 restore_result = await self._execute_wal_restore(
@@ -1164,7 +1164,7 @@ class TrueWALIncrementalBackupServer:
             suitable_base_backups.sort(key=lambda x: x[1], reverse=True)
             best_base_backup = suitable_base_backups[0][0]
             
-            logger.info(f"✅ Found base backup {best_base_backup.backup_id} for incremental {incremental_backup.backup_id}")
+            logger.info(f"Found base backup {best_base_backup.backup_id} for incremental {incremental_backup.backup_id}")
             return best_base_backup
             
         except Exception as e:
@@ -1187,22 +1187,22 @@ class TrueWALIncrementalBackupServer:
         from pathlib import Path
         
         try:
-            logger.info(f"🔥 EXECUTING TRUE WAL RESTORE: {restore_id}")
+            logger.info(f"EXECUTING TRUE WAL RESTORE: {restore_id}")
             
             # Step 1: Stop PostgreSQL
-            logger.info("🛑 Step 1: Stopping PostgreSQL...")
+            logger.info("Step 1: Stopping PostgreSQL...")
             stop_result = await self._stop_postgresql(db_name)
             if not stop_result["success"]:
                 raise Exception(f"Failed to stop PostgreSQL: {stop_result['error']}")
             
             # Step 2: Backup current data directory
-            logger.info("💾 Step 2: Backing up current data directory...")
+            logger.info("Step 2: Backing up current data directory...")
             backup_result = await self._backup_current_data_dir(db_name, restore_id)
             if not backup_result["success"]:
                 raise Exception(f"Failed to backup current data: {backup_result['error']}")
             
             # Step 3: Restore base backup
-            logger.info("📦 Step 3: Restoring base backup...")
+            logger.info("Step 3: Restoring base backup...")
             if backup.backup_type == "wal_incremental" and base_backup:
                 restore_backup = base_backup
             else:
@@ -1213,24 +1213,24 @@ class TrueWALIncrementalBackupServer:
                 raise Exception(f"Failed to restore base backup: {restore_result['error']}")
             
             # Step 4: Configure recovery for WAL replay
-            logger.info("⚙️ Step 4: Configuring WAL recovery...")
+            logger.info("Step 4: Configuring WAL recovery...")
             recovery_result = await self._configure_wal_recovery(db_name, backup)
             if not recovery_result["success"]:
                 raise Exception(f"Failed to configure recovery: {recovery_result['error']}")
             
             # Step 5: Restart PostgreSQL to perform recovery
-            logger.info("🔄 Step 5: Starting PostgreSQL to perform WAL recovery...")
+            logger.info("Step 5: Starting PostgreSQL to perform WAL recovery...")
             start_result = await self._start_postgresql(db_name)
             if not start_result["success"]:
                 raise Exception(f"Failed to start PostgreSQL: {start_result['error']}")
             
             # Step 6: Verify restore completion
-            logger.info("✅ Step 6: Verifying restore completion...")
+            logger.info("Step 6: Verifying restore completion...")
             verify_result = await self._verify_restore_completion(db_name, backup)
             if not verify_result["success"]:
                 logger.warning(f"Restore verification failed: {verify_result['error']}")
             
-            logger.info(f"🎉 TRUE WAL RESTORE COMPLETED SUCCESSFULLY: {restore_id}")
+            logger.info(f"TRUE WAL RESTORE COMPLETED SUCCESSFULLY: {restore_id}")
             
             return {
                 "restore_id": restore_id,
@@ -1255,17 +1255,17 @@ class TrueWALIncrementalBackupServer:
             }
             
         except Exception as e:
-            logger.error(f"❌ TRUE WAL RESTORE FAILED: {restore_id} - {e}")
+                logger.error(f"TRUE WAL RESTORE FAILED: {restore_id} - {e}")
             
             # Attempt rollback
-            logger.info("🔄 Attempting rollback...")
-            try:
+                logger.info("Attempting rollback...")
+        try:
                 await self._rollback_failed_restore(db_name, restore_id)
-                logger.info("✅ Rollback completed")
-            except Exception as rollback_error:
-                logger.error(f"❌ Rollback also failed: {rollback_error}")
-            
-            return {
+                logger.info("Rollback completed")
+        except Exception as rollback_error:
+                logger.error(f"Rollback also failed: {rollback_error}")
+
+        return {
                 "restore_id": restore_id,
                 "database": db_name,
                 "backup_id": backup.backup_id,
@@ -1280,7 +1280,7 @@ class TrueWALIncrementalBackupServer:
         import subprocess
         
         try:
-            logger.info(f"🛑 Terminating connections to database {db_name}")
+            logger.info(f" Terminating connections to database {db_name}")
             
             # Terminate all connections to the database being restored
             terminate_cmd = [
@@ -1290,14 +1290,14 @@ class TrueWALIncrementalBackupServer:
             ]
             
             result = subprocess.run(terminate_cmd, capture_output=True, text=True, check=True)
-            logger.info(f"✅ Terminated connections to {db_name}")
+            logger.info(f" Terminated connections to {db_name}")
             return {"success": True}
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Failed to terminate connections: {e.stderr}")
+            logger.error(f" Failed to terminate connections: {e.stderr}")
             return {"success": False, "error": str(e.stderr)}
         except Exception as e:
-            logger.error(f"❌ Failed to stop PostgreSQL: {e}")
+            logger.error(f" Failed to stop PostgreSQL: {e}")
             return {"success": False, "error": str(e)}
     
     async def _start_postgresql(self, db_name: str) -> Dict[str, Any]:
@@ -1305,7 +1305,7 @@ class TrueWALIncrementalBackupServer:
         import subprocess
         
         try:
-            logger.info(f"🔄 Re-enabling connections to database {db_name}")
+            logger.info(f" Re-enabling connections to database {db_name}")
             
             # Test that the database is accessible
             test_cmd = [
@@ -1314,14 +1314,14 @@ class TrueWALIncrementalBackupServer:
             ]
             
             result = subprocess.run(test_cmd, capture_output=True, text=True, check=True)
-            logger.info(f"✅ Database {db_name} is accessible and ready")
+            logger.info(f" Database {db_name} is accessible and ready")
             return {"success": True}
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Database {db_name} is not accessible: {e.stderr}")
+            logger.error(f" Database {db_name} is not accessible: {e.stderr}")
             return {"success": False, "error": str(e.stderr)}
         except Exception as e:
-            logger.error(f"❌ Failed to verify database access: {e}")
+            logger.error(f" Failed to verify database access: {e}")
             return {"success": False, "error": str(e)}
     
     async def _backup_current_data_dir(self, db_name: str, restore_id: str) -> Dict[str, Any]:
@@ -1330,7 +1330,7 @@ class TrueWALIncrementalBackupServer:
         from pathlib import Path
         
         try:
-            logger.info(f"💾 Creating backup dump of current {db_name} database")
+            logger.info(f" Creating backup dump of current {db_name} database")
             
             # Create rollback backup directory
             rollback_dir = Path(self.backup_base_dir) / "rollback_backups"
@@ -1345,15 +1345,15 @@ class TrueWALIncrementalBackupServer:
             ]
             
             result = subprocess.run(dump_cmd, capture_output=True, text=True, check=True)
-            logger.info(f"✅ Current database backed up to: {backup_file}")
+            logger.info(f" Current database backed up to: {backup_file}")
             
             return {"success": True, "backup_path": str(backup_file)}
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Failed to backup current database: {e.stderr}")
+            logger.error(f" Failed to backup current database: {e.stderr}")
             return {"success": False, "error": str(e.stderr)}
         except Exception as e:
-            logger.error(f"❌ Failed to backup current data: {e}")
+            logger.error(f" Failed to backup current data: {e}")
             return {"success": False, "error": str(e)}
     
     async def _restore_base_backup(self, db_name: str, backup: Any) -> Dict[str, Any]:
@@ -1363,7 +1363,7 @@ class TrueWALIncrementalBackupServer:
         from pathlib import Path
         
         try:
-            logger.info(f"📦 Restoring base backup {backup.backup_id}")
+            logger.info(f" Restoring base backup {backup.backup_id}")
             
             # Find the base backup file
             backup_path = Path(backup.file_path)
@@ -1373,24 +1373,24 @@ class TrueWALIncrementalBackupServer:
             base_tar = backup_path / "base.tar.gz"
             
             if sql_dump.exists():
-                logger.info(f"📁 Restoring from SQL dump: {sql_dump}")
+                logger.info(f" Restoring from SQL dump: {sql_dump}")
                 return await self._restore_from_sql_dump(db_name, sql_dump)
             
             elif base_tar.exists():
-                logger.info(f"📁 Restoring from base backup tar: {base_tar}")
+                logger.info(f" Restoring from base backup tar: {base_tar}")
                 return await self._restore_from_base_tar(db_name, base_tar, backup)
                 
             else:
                 # Try to find any SQL files in the backup directory
                 sql_files = list(backup_path.glob("*.sql"))
                 if sql_files:
-                    logger.info(f"📁 Restoring from found SQL file: {sql_files[0]}")
+                    logger.info(f" Restoring from found SQL file: {sql_files[0]}")
                     return await self._restore_from_sql_dump(db_name, sql_files[0])
                 
                 raise FileNotFoundError(f"No restorable backup files found in: {backup_path}")
                 
         except Exception as e:
-            logger.error(f"❌ Failed to restore base backup: {e}")
+            logger.error(f" Failed to restore base backup: {e}")
             return {"success": False, "error": str(e)}
             
     async def _restore_from_sql_dump(self, db_name: str, sql_file: Path) -> Dict[str, Any]:
@@ -1398,7 +1398,7 @@ class TrueWALIncrementalBackupServer:
         import subprocess
         
         try:
-            logger.info(f"🗄️ Dropping and recreating database {db_name}")
+            logger.info(f" Dropping and recreating database {db_name}")
             
             # Drop database (terminate connections first)
             drop_cmd = [
@@ -1414,7 +1414,7 @@ class TrueWALIncrementalBackupServer:
             ]
             subprocess.run(create_cmd, capture_output=True, text=True, check=True)
             
-            logger.info(f"📤 Restoring data from SQL dump...")
+            logger.info(f" Restoring data from SQL dump...")
             
             # Restore from SQL dump
             restore_cmd = [
@@ -1423,12 +1423,12 @@ class TrueWALIncrementalBackupServer:
             ]
             
             result = subprocess.run(restore_cmd, capture_output=True, text=True, check=True)
-            logger.info(f"✅ Database {db_name} restored successfully from SQL dump")
+            logger.info(f" Database {db_name} restored successfully from SQL dump")
             
             return {"success": True, "restored_from": str(sql_file)}
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Failed to restore from SQL dump: {e.stderr}")
+            logger.error(f" Failed to restore from SQL dump: {e.stderr}")
             return {"success": False, "error": str(e.stderr)}
             
     async def _restore_from_base_tar(self, db_name: str, base_tar: Path, backup: Any) -> Dict[str, Any]:
@@ -1438,35 +1438,35 @@ class TrueWALIncrementalBackupServer:
         import shutil
         
         try:
-            logger.info(f"🔄 Performing REAL database restoration from {base_tar}")
+            logger.info(f" Performing REAL database restoration from {base_tar}")
             
             # Create temporary directory for extraction
             with tempfile.TemporaryDirectory() as temp_dir:
                 temp_path = Path(temp_dir)
                 
                 # Extract the base backup
-                logger.info("📦 Extracting base backup archive...")
+                logger.info(" Extracting base backup archive...")
                 shutil.unpack_archive(str(base_tar), str(temp_path))
                 
                 # Look for the data directory or SQL files in the extracted content
                 data_dirs = list(temp_path.glob("**/data"))
                 if data_dirs:
                     # Found PostgreSQL data directory - try to use pg_dump equivalent
-                    logger.info("📁 Found PostgreSQL data directory in backup")
+                    logger.info(" Found PostgreSQL data directory in backup")
                     return await self._restore_from_extracted_data(db_name, data_dirs[0])
                 
                 # If no data directory, try to find SQL files in extraction
                 sql_files = list(temp_path.rglob("*.sql"))
                 if sql_files:
-                    logger.info(f"📄 Found SQL files in backup: {sql_files}")
+                    logger.info(f" Found SQL files in backup: {sql_files}")
                     return await self._restore_from_sql_dump(db_name, sql_files[0])
                 
                 # If no recognizable format, create a custom restore approach
-                logger.info("🔧 Using practical restore approach for base backup")
+                logger.info(" Using practical restore approach for base backup")
                 return await self._practical_base_backup_restore(db_name, backup)
                 
         except Exception as e:
-            logger.error(f"❌ Failed to restore from base backup: {e}")
+            logger.error(f" Failed to restore from base backup: {e}")
             return {"success": False, "error": str(e)}
     
     async def _practical_base_backup_restore(self, db_name: str, backup: Any) -> Dict[str, Any]:
@@ -1474,42 +1474,42 @@ class TrueWALIncrementalBackupServer:
         import subprocess
         
         try:
-            logger.info(f"🔧 Performing practical restore for {db_name} to backup {backup.backup_id}")
+            logger.info(f" Performing practical restore for {db_name} to backup {backup.backup_id}")
             
             # Get the backup timestamp to understand what state to restore to
             backup_time = backup.completed_at_iso
-            logger.info(f"📅 Target restore time: {backup_time}")
+            logger.info(f" Target restore time: {backup_time}")
             
             # For demonstration, let's perform a real database reset
             # Step 1: Drop the database
-            logger.info("🗑️ Dropping current database...")
+            logger.info(" Dropping current database...")
             drop_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", "postgres", "-c", f"DROP DATABASE IF EXISTS {db_name};"
             ]
             result = subprocess.run(drop_cmd, capture_output=True, text=True, check=True)
-            logger.info("✅ Database dropped successfully")
+            logger.info(" Database dropped successfully")
             
             # Step 2: Recreate the database
-            logger.info("🔨 Recreating database...")
+            logger.info(" Recreating database...")
             create_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", "postgres", "-c", f"CREATE DATABASE {db_name};"
             ]
             result = subprocess.run(create_cmd, capture_output=True, text=True, check=True)
-            logger.info("✅ Database recreated successfully")
+            logger.info(" Database recreated successfully")
             
             # Step 3: Run the database setup script to restore schema and initial data
-            logger.info("📊 Restoring database schema and data...")
+            logger.info(" Restoring database schema and data...")
             setup_cmd = [
                 "psql", "-h", self.pg_host, "-p", str(self.pg_port), "-U", self.pg_user,
                 "-d", db_name, "-f", "sql/setup_pg1.sql"
             ]
             result = subprocess.run(setup_cmd, capture_output=True, text=True, check=True)
-            logger.info("✅ Database schema and initial data restored successfully")
+            logger.info(" Database schema and initial data restored successfully")
             
-            logger.info(f"🎉 REAL DATABASE RESTORE COMPLETED for {db_name}")
-            logger.info("💡 Database has been reset to initial state (before any post-backup changes)")
+            logger.info(f" REAL DATABASE RESTORE COMPLETED for {db_name}")
+            logger.info(" Database has been reset to initial state (before any post-backup changes)")
             
             return {
                 "success": True, 
@@ -1519,16 +1519,16 @@ class TrueWALIncrementalBackupServer:
             }
             
         except subprocess.CalledProcessError as e:
-            logger.error(f"❌ Database restoration failed: {e.stderr}")
+            logger.error(f" Database restoration failed: {e.stderr}")
             return {"success": False, "error": str(e.stderr)}
         except Exception as e:
-            logger.error(f"❌ Practical restore failed: {e}")
+            logger.error(f" Practical restore failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _configure_wal_recovery(self, db_name: str, backup: Any) -> Dict[str, Any]:
         """Configure PostgreSQL recovery to replay WAL files."""
         try:
-            logger.info(f"⚙️ Configuring WAL recovery for {db_name}")
+            logger.info(f" Configuring WAL recovery for {db_name}")
             
             # In real implementation, this would:
             # 1. Create recovery.conf or postgresql.auto.conf
@@ -1543,24 +1543,24 @@ recovery_target_lsn = '{backup.lsn_end}'
 recovery_target_action = 'promote'
 """
             
-            logger.info(f"📝 Recovery configuration:")
+            logger.info(f" Recovery configuration:")
             logger.info(f"   Target LSN: {backup.lsn_end}")
             logger.info(f"   WAL files to replay: {len(backup.wal_files or [])}")
             if backup.wal_files:
                 logger.info(f"   First WAL: {backup.wal_files[0] if backup.wal_files else 'None'}")
                 logger.info(f"   Last WAL: {backup.wal_files[-1] if backup.wal_files else 'None'}")
             
-            logger.info("✅ WAL recovery configuration completed")
+            logger.info(" WAL recovery configuration completed")
             return {"success": True, "target_lsn": backup.lsn_end}
             
         except Exception as e:
-            logger.error(f"❌ Failed to configure WAL recovery: {e}")
+            logger.error(f" Failed to configure WAL recovery: {e}")
             return {"success": False, "error": str(e)}
     
     async def _verify_restore_completion(self, db_name: str, backup: Any) -> Dict[str, Any]:
         """Verify that the restore completed successfully."""
         try:
-            logger.info(f"✅ Verifying restore completion for {db_name}")
+            logger.info(f"Verifying restore completion for {db_name}")
             
             # In real implementation, this would:
             # 1. Connect to PostgreSQL
@@ -1568,21 +1568,21 @@ recovery_target_action = 'promote'
             # 3. Verify database is accessible
             # 4. Run basic data integrity checks
             
-            logger.info(f"🔍 Checking LSN position matches target: {backup.lsn_end}")
-            logger.info("🔍 Verifying database accessibility...")
-            logger.info("🔍 Running data integrity checks...")
+            logger.info(f" Checking LSN position matches target: {backup.lsn_end}")
+            logger.info(" Verifying database accessibility...")
+            logger.info(" Running data integrity checks...")
             
-            logger.info(f"✅ Restore verification completed - database {db_name} restored to LSN {backup.lsn_end}")
+            logger.info(f" Restore verification completed - database {db_name} restored to LSN {backup.lsn_end}")
             return {"success": True, "verified_lsn": backup.lsn_end}
             
         except Exception as e:
-            logger.error(f"❌ Restore verification failed: {e}")
+            logger.error(f" Restore verification failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _rollback_failed_restore(self, db_name: str, restore_id: str) -> Dict[str, Any]:
         """Rollback a failed restore by restoring the original data directory."""
         try:
-            logger.info(f"🔄 Rolling back failed restore {restore_id} for {db_name}")
+            logger.info(f" Rolling back failed restore {restore_id} for {db_name}")
             
             # In real implementation, this would:
             # 1. Stop PostgreSQL if running
@@ -1590,13 +1590,13 @@ recovery_target_action = 'promote'
             # 3. Start PostgreSQL
             
             backup_path = f"{self.backup_base_dir}/rollback_backups/{db_name}_{restore_id}"
-            logger.info(f"📁 Restoring original data from: {backup_path}")
+            logger.info(f" Restoring original data from: {backup_path}")
             
-            logger.info("✅ Rollback completed successfully")
+            logger.info("Rollback completed successfully")
             return {"success": True}
             
         except Exception as e:
-            logger.error(f"❌ Rollback failed: {e}")
+            logger.error(f" Rollback failed: {e}")
             return {"success": False, "error": str(e)}
     
     async def _stop_wal_scheduler(self) -> Dict[str, Any]:
@@ -1604,7 +1604,7 @@ recovery_target_action = 'promote'
         schedule.clear()
         self.scheduler_running = False
         
-        logger.info(f"🛑 Stopped TRUE WAL backup scheduler for {self.server_name}")
+        logger.info(f"Stopped TRUE WAL backup scheduler for {self.server_name}")
         
         return {
             "status": "stopped",
@@ -1666,14 +1666,14 @@ recovery_target_action = 'promote'
                 "current_wal_file": current_wal_file
             },
             "timestamp": datetime.now().isoformat() + "Z",
-            "backup_system": "🚀 TRUE WAL-Based Incremental (pg_basebackup + WAL archiving)"
+            "backup_system": " TRUE WAL-Based Incremental (pg_basebackup + WAL archiving)"
         }
 
 async def start_true_wal_backup_server(server_name: str, port: int):
     """Start a TRUE WAL-based backup server."""
     backup_server = TrueWALIncrementalBackupServer(server_name)
     
-    logger.info(f"🚀 Starting {server_name} TRUE WAL Incremental Backup Server on port {port}")
+    logger.info(f"Starting {server_name} TRUE WAL Incremental Backup Server on port {port}")
     
     config = uvicorn.Config(
         backup_server.app,
@@ -1686,17 +1686,17 @@ async def start_true_wal_backup_server(server_name: str, port: int):
 
 async def main():
     """Start both TRUE WAL backup servers."""
-    logger.info("🚀 STARTING TRUE WAL-BASED INCREMENTAL BACKUP SYSTEM")
+    logger.info("STARTING TRUE WAL-BASED INCREMENTAL BACKUP SYSTEM")
     logger.info("=" * 80)
-    logger.info("🎯 TRUE WAL-Based Features:")
-    logger.info("   ✅ pg_basebackup for WAL-compatible base backups")
-    logger.info("   📁 TRUE WAL file archiving (actual transaction logs)")
-    logger.info("   📍 Precise LSN tracking for point-in-time recovery")
-    logger.info("   🔄 TRUE incremental restore (base + WAL replay)")
-    logger.info("   ⏰ Automatic scheduling (2min WAL archiving, weekly base)")
-    logger.info("   📊 Only captures ACTUAL CHANGES, not full dumps")
+    logger.info("TRUE WAL-Based Features:")
+    logger.info("   pg_basebackup for WAL-compatible base backups")
+    logger.info("   TRUE WAL file archiving (actual transaction logs)")
+    logger.info("   Precise LSN tracking for point-in-time recovery")
+    logger.info("   TRUE incremental restore (base + WAL replay)")
+    logger.info("   Automatic scheduling (1 hour WAL archiving, weekly base)")
+    logger.info("   Only captures ACTUAL CHANGES, not full dumps")
     logger.info("")
-    logger.info("📋 How TRUE WAL incremental works:")
+    logger.info(" How TRUE WAL incremental works:")
     logger.info("   1. Base backup: pg_basebackup creates cluster snapshot")
     logger.info("   2. Incremental: Archive actual WAL files (transaction logs)")
     logger.info("   3. Restore: Restore base + replay WAL files to exact LSN")
@@ -1711,10 +1711,10 @@ async def main():
     try:
         await asyncio.gather(*tasks)
     except KeyboardInterrupt:
-        logger.info("🛑 Shutting down TRUE WAL backup servers...")
+        logger.info(" Shutting down TRUE WAL backup servers...")
 
 if __name__ == "__main__":
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
-        print("\n🛑 TRUE WAL backup servers stopped")
+        print("\n TRUE WAL backup servers stopped")

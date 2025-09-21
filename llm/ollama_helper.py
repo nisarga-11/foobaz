@@ -130,19 +130,19 @@ if __name__ == "__main__":
     
     # Test connection
     if test_ollama_connection():
-        print("✅ Ollama connection successful!")
+        print(" Ollama connection successful!")
         
         # Test LLM creation
         try:
             supervisor_llm = create_supervisor_llm()
             backup_llm = create_backup_agent_llm()
             
-            print(f"✅ Supervisor LLM: {supervisor_llm.model} @ {supervisor_llm.base_url}")
-            print(f"✅ Backup Agent LLM: {backup_llm.model} @ {backup_llm.base_url}")
+            print(f" Supervisor LLM: {supervisor_llm.model} @ {supervisor_llm.base_url}")
+            print(f" Backup Agent LLM: {backup_llm.model} @ {backup_llm.base_url}")
             
         except Exception as e:
-            print(f"❌ Error creating LLMs: {e}")
+            print(f" Error creating LLMs: {e}")
     else:
-        print("❌ Ollama connection failed!")
+        print(" Ollama connection failed!")
         print("Make sure Ollama is running and the model is available.")
         print("Try: ollama pull llama3.1:8b-instruct")
