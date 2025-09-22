@@ -374,7 +374,7 @@ class PostgresBackupMCPServer:
                 "-z",   # gzip compression
                 "-P",   # progress reporting
                 "-v",   # verbose
-                "--no-password"  # disable password prompt
+                "-w"  # disable password prompt
             ]
             
             env = os.environ.copy()
