@@ -418,7 +418,7 @@ class TrueWALIncrementalBackupServer:
                 "-P",   # show progress
                 "-v",   # verbose
                 "-X", "stream",  # Include WAL files needed for recovery
-                "-W"    # force password prompt
+                "--no-password"  # disable password prompt
             ]
             
             # Set environment variables for PostgreSQL
