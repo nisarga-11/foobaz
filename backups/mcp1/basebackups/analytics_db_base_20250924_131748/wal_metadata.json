@@ -1,0 +1,10 @@
+{
+  "backup_id": "analytics_db_base_20250924_131748",
+  "database": "analytics_db",
+  "server": "PG1",
+  "timestamp": "20250924_131748",
+  "type": "full",
+  "method": "pg_basebackup",
+  "status": "completed",
+  "size_mb": 10.989765167236328
+}

@@ -1,0 +1,10 @@
+{
+  "backup_id": "inventory_db_base_20250924_151010",
+  "database": "inventory_db",
+  "server": "PG1",
+  "timestamp": "20250924_151010",
+  "type": "full",
+  "method": "pg_basebackup",
+  "status": "completed",
+  "size_mb": 11.014871597290039
+}

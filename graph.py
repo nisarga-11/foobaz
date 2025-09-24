@@ -160,16 +160,23 @@ class BackupOrchestrator:
         Analyze this user request for PostgreSQL backup/restore operations: "{user_input}"
         
         Determine:
-        1. Intent: list_backups, full_backup, incremental_backup, enable_schedules, or restore
-        2. Target servers: PG1, PG2, or both  
-        3. Database names mentioned (if any)
-        4. Target timestamp for restore (if any)
-        5. Backup ID if specifically mentioned (e.g., "inventory_db_wal_20250913_202646")
+        1. Intent: 
+           - "list_backups" = user wants to see existing backups
+           - "full_backup" = user wants to CREATE a new backup (e.g., "backup finance_db")
+           - "incremental_backup" = user wants to create incremental backup
+           - "enable_schedules" = user wants to enable backup schedules
+           - "restore" = user wants to restore from backup
+        2. Database names mentioned (if any)
+        3. Target timestamp for restore (if any)
+        4. Backup ID if specifically mentioned (e.g., "inventory_db_wal_20250913_202646")
+        
+        IMPORTANT: 
+        - Do NOT specify target_servers - the system will automatically determine the correct servers based on database names.
+        - If user says "backup [db_name]", intent should be "full_backup", NOT "list_backups"
         
         Respond in JSON format:
         {{
             "intent": "...",
-            "target_servers": ["PG1", "PG2"],
             "databases": ["db1", "db2"],
             "target_timestamp": "2025-09-10T10:30:00Z or null",
             "backup_id": "backup_id_if_mentioned or null"
@@ -195,15 +202,29 @@ class BackupOrchestrator:
             state["target_timestamp"] = analysis.get("target_timestamp")
             state["backup_id"] = analysis.get("backup_id")
             
-            # Smart server determination - if backup_id is provided, determine correct server
+            # Smart server determination - ALWAYS use database-to-server mapping when databases are detected
             backup_id = analysis.get("backup_id")
             databases = analysis.get("databases", [])
-            if backup_id and databases:
-                state["target_servers"] = self._determine_server_from_backup_id(backup_id, databases)
+            llm_target_servers = analysis.get("target_servers", [])
+            
+            logger.info(f"LLM returned target_servers: {llm_target_servers}")
+            logger.info(f"Detected databases: {databases}")
+            
+            if databases:
+                if backup_id:
+                    state["target_servers"] = self._determine_server_from_backup_id(backup_id, databases)
+                    logger.info(f"Using backup_id-based mapping: {state['target_servers']}")
+                else:
+                    # Use database-to-server mapping for server determination
+                    state["target_servers"] = self._determine_servers_from_databases(databases)
+                    logger.info(f"Using database-to-server mapping: {state['target_servers']}")
             else:
-                state["target_servers"] = analysis.get("target_servers", [])
+                # Only use LLM's target_servers if no databases detected
+                state["target_servers"] = llm_target_servers
+                logger.info(f"Using LLM target_servers (no databases): {state['target_servers']}")
             
             logger.info(f"Supervisor analysis: {analysis}")
+            logger.info(f"Database-to-server mapping: {databases} -> {state['target_servers']}")
             if backup_id and databases:
                 logger.info(f"Smart server detection: {backup_id} -> {state['target_servers']}")
             
@@ -215,12 +236,17 @@ class BackupOrchestrator:
             state["target_timestamp"] = self._parse_timestamp_fallback(user_input)
             state["backup_id"] = self._parse_backup_id_fallback(user_input)
             
-            # Smart server determination for fallback too
+            # Smart server determination for fallback too - ALWAYS use database-to-server mapping when databases are detected
             backup_id = state.get("backup_id")
             databases = state.get("databases", [])
-            if backup_id and databases:
-                state["target_servers"] = self._determine_server_from_backup_id(backup_id, databases)
+            if databases:
+                if backup_id:
+                    state["target_servers"] = self._determine_server_from_backup_id(backup_id, databases)
+                else:
+                    # Use database-to-server mapping for server determination
+                    state["target_servers"] = self._determine_servers_from_databases(databases)
             else:
+                # Only use fallback parsing if no databases detected
                 state["target_servers"] = self._parse_servers_fallback(user_input)
 
         return state
@@ -317,6 +343,25 @@ class BackupOrchestrator:
         
         return servers
     
+    def _determine_servers_from_databases(self, databases: List[str]) -> List[str]:
+        """Determine which servers should handle the backup based on database names."""
+        if not databases:
+            return ["PG1", "PG2"]  # Fallback to both
+        
+        # Database to server mapping
+        pg1_databases = ["customer_db", "inventory_db", "analytics_db"]
+        pg2_databases = ["hr_db", "finance_db", "reporting_db"]
+        
+        servers = []
+        for db_name in databases:
+            if db_name in pg1_databases and "PG1" not in servers:
+                servers.append("PG1")
+            elif db_name in pg2_databases and "PG2" not in servers:
+                servers.append("PG2")
+        
+        # If no servers found, fallback to both
+        return servers if servers else ["PG1", "PG2"]
+
     def _determine_server_from_backup_id(self, backup_id: str, databases: List[str]) -> List[str]:
         """Determine which server should handle the backup based on backup_id and database names."""
         if not backup_id or not databases:

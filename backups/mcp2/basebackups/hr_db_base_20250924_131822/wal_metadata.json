@@ -1,0 +1,10 @@
+{
+  "backup_id": "hr_db_base_20250924_131822",
+  "database": "hr_db",
+  "server": "PG2",
+  "timestamp": "20250924_131822",
+  "type": "full",
+  "method": "pg_basebackup",
+  "status": "completed",
+  "size_mb": 10.989995002746582
+}
