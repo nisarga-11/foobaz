@@ -1,0 +1,139 @@
+tasks:
+  # ------------------
+  # Cluster-level backups
+  # ------------------
+  - id: backup_pg1
+    description: "Perform a backup (full or incremental) on all databases in PG1 cluster."
+    actions:
+      - agent: backup_restore_pg1
+        action: backup
+
+  - id: backup_pg2
+    description: "Perform a backup (full or incremental) on all databases in PG2 cluster."
+    actions:
+      - agent: backup_restore_pg2
+        action: backup
+
+  - id: backup_both
+    description: "Perform a backup on both PG1 and PG2 clusters."
+    actions:
+      - agent: backup_restore_pg1
+        action: backup
+      - agent: backup_restore_pg2
+        action: backup
+
+  # ------------------
+  # DB-level backups PG1
+  # ------------------
+  - id: backup_pg1_db1
+    description: "Perform a DB-level backup of db1 in PG1."
+    actions:
+      - agent: backup_restore_pg1
+        action: backup
+        db_name: db1
+
+  - id: backup_pg1_db2
+    description: "Perform a DB-level backup of db2 in PG1."
+    actions:
+      - agent: backup_restore_pg1
+        action: backup
+        db_name: db2
+
+  # ------------------
+  # DB-level backups PG2
+  # ------------------
+  - id: backup_pg2_db3
+    description: "Perform a DB-level backup of db3 in PG2."
+    actions:
+      - agent: backup_restore_pg2
+        action: backup
+        db_name: db3
+
+  - id: backup_pg2_db4
+    description: "Perform a DB-level backup of db4 in PG2."
+    actions:
+      - agent: backup_restore_pg2
+        action: backup
+        db_name: db4
+
+  # ------------------
+  # Restore backups cluster-level
+  # ------------------
+  - id: restore_pg1
+    description: "Restore PG1 cluster from a backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg1
+        action: restore
+
+  - id: restore_pg2
+    description: "Restore PG2 cluster from a backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg2
+        action: restore
+
+  # ------------------
+  # DB-level restore PG1
+  # ------------------
+  - id: restore_pg1_db1
+    description: "Restore db1 in PG1 from a DB-level backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg1
+        action: restore
+        db_name: db1
+
+  - id: restore_pg1_db2
+    description: "Restore db2 in PG1 from a DB-level backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg1
+        action: restore
+        db_name: db2
+
+  # ------------------
+  # DB-level restore PG2
+  # ------------------
+  - id: restore_pg2_db3
+    description: "Restore db3 in PG2 from a DB-level backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg2
+        action: restore
+        db_name: db3
+
+  - id: restore_pg2_db4
+    description: "Restore db4 in PG2 from a DB-level backup."
+    inputs:
+      - name: backup_name
+        type: string
+    actions:
+      - agent: backup_restore_pg2
+        action: restore
+        db_name: db4
+
+  # ------------------
+  # List backups
+  # ------------------
+  - id: list_pg1
+    description: "List available backups for PG1 cluster."
+    actions:
+      - agent: backup_restore_pg1
+        action: list
+
+  - id: list_pg2
+    description: "List available backups for PG2 cluster."
+    actions:
+      - agent: backup_restore_pg2
+        action: list

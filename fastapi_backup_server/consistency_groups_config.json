@@ -1,0 +1,44 @@
+{
+  "consistency_groups": [
+    {
+      "cg_id": "cg_lakehouse_main",
+      "name": "Main Lakehouse",
+      "description": "Primary lakehouse with users database and all S3 objects",
+      "postgres_databases": ["users_db"],
+      "ceph_buckets": ["src-slog-bkt1"],
+      "ceph_object_prefixes": ["*"],
+      "backup_type": "full",
+      "enabled": true
+    },
+    {
+      "cg_id": "cg_analytics",
+      "name": "Analytics Stack",
+      "description": "Analytics databases with reports bucket",
+      "postgres_databases": ["products_db", "reports_db"],
+      "ceph_buckets": ["src-slog-bkt1"],
+      "ceph_object_prefixes": ["obj", "sample", "test"],
+      "backup_type": "full",
+      "enabled": true
+    },
+    {
+      "cg_id": "cg_users_only",
+      "name": "Users Database",
+      "description": "Only users database with user-data bucket",
+      "postgres_databases": ["users_db"],
+      "ceph_buckets": ["src-slog-bkt1"],
+      "ceph_object_prefixes": ["sample", "test"],
+      "backup_type": "full",
+      "enabled": true
+    },
+    {
+      "cg_id": "cg_full_system",
+      "name": "Complete System Backup",
+      "description": "All databases and all S3 buckets",
+      "postgres_databases": ["users_db", "products_db", "reports_db"],
+      "ceph_buckets": ["src-slog-bkt1"],
+      "ceph_object_prefixes": ["*"],
+      "backup_type": "base",
+      "enabled": true
+    }
+  ]
+}

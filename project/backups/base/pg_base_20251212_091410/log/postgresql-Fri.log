@@ -1,0 +1,6 @@
+2025-12-12 05:52:51.676 UTC [384284] ERROR:  recovery is in progress
+2025-12-12 05:52:51.676 UTC [384284] HINT:  WAL control functions cannot be executed during recovery.
+2025-12-12 05:52:51.676 UTC [384284] STATEMENT:  SELECT pg_switch_wal();
+2025-12-12 08:44:48.647 UTC [395620] ERROR:  recovery is in progress
+2025-12-12 08:44:48.647 UTC [395620] HINT:  WAL control functions cannot be executed during recovery.
+2025-12-12 08:44:48.647 UTC [395620] STATEMENT:  SELECT pg_switch_wal();

@@ -1,0 +1,88 @@
+2025-12-11 02:42:06.249 UTC [283868] LOG:  received fast shutdown request
+2025-12-11 02:42:06.250 UTC [283868] LOG:  aborting any active transactions
+2025-12-11 02:42:06.252 UTC [283868] LOG:  background worker "logical replication launcher" (PID 283897) exited with exit code 1
+2025-12-11 02:42:06.253 UTC [283875] LOG:  shutting down
+2025-12-11 02:42:06.275 UTC [283875] LOG:  checkpoint starting: shutdown immediate
+2025-12-11 02:42:06.326 UTC [283875] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.053 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16384 kB, estimate=31129 kB; lsn=0/27000028, redo lsn=0/27000028
+2025-12-11 02:42:06.340 UTC [283868] LOG:  database system is shut down
+2025-12-11 02:42:06.432 UTC [297581] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-11 02:42:06.433 UTC [297581] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-11 02:42:06.433 UTC [297581] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-11 02:42:06.434 UTC [297581] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-11 02:42:06.440 UTC [297581] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-11 02:42:06.448 UTC [297585] LOG:  database system was shut down at 2025-12-11 02:42:06 UTC
+2025-12-11 02:42:06.457 UTC [297581] LOG:  database system is ready to accept connections
+2025-12-11 02:42:15.865 UTC [297606] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-11 02:42:15.865 UTC [297606] FATAL:  Peer authentication failed for user "postgres"
+2025-12-11 02:42:15.865 UTC [297606] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-11 02:47:06.543 UTC [297583] LOG:  checkpoint starting: time
+2025-12-11 02:47:06.553 UTC [297583] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.011 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/27000130, redo lsn=0/270000D8
+2025-12-11 02:49:39.251 UTC [297581] LOG:  received fast shutdown request
+2025-12-11 02:49:39.252 UTC [297581] LOG:  aborting any active transactions
+2025-12-11 02:49:39.254 UTC [297581] LOG:  background worker "logical replication launcher" (PID 297589) exited with exit code 1
+2025-12-11 02:49:39.257 UTC [297583] LOG:  shutting down
+2025-12-11 02:49:39.277 UTC [297583] LOG:  checkpoint starting: shutdown immediate
+2025-12-11 02:49:39.366 UTC [297583] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.089 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32767 kB, estimate=32767 kB; lsn=0/29000028, redo lsn=0/29000028
+2025-12-11 02:49:39.376 UTC [297581] LOG:  database system is shut down
+2025-12-11 02:49:39.453 UTC [298386] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-11 02:49:39.454 UTC [298386] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-11 02:49:39.454 UTC [298386] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-11 02:49:39.455 UTC [298386] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-11 02:49:39.457 UTC [298386] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-11 02:49:39.463 UTC [298391] LOG:  database system was shut down at 2025-12-11 02:49:39 UTC
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000006.history': No such file or directory
+2025-12-11 02:49:39.475 UTC [298391] LOG:  restored log file "00000005.history" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000050000000000000029': No such file or directory
+2025-12-11 02:49:39.483 UTC [298391] LOG:  starting archive recovery
+2025-12-11 02:49:39.488 UTC [298391] LOG:  consistent recovery state reached at 0/290000A0
+2025-12-11 02:49:39.488 UTC [298391] LOG:  invalid record length at 0/290000A0: expected at least 24, got 0
+2025-12-11 02:49:39.488 UTC [298391] LOG:  redo is not required
+2025-12-11 02:49:39.488 UTC [298386] LOG:  database system is ready to accept read-only connections
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000050000000000000029': No such file or directory
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000006.history': No such file or directory
+2025-12-11 02:49:39.504 UTC [298391] LOG:  selected new timeline ID: 6
+2025-12-11 02:49:39.604 UTC [298391] LOG:  restored log file "00000005.history" from archive
+2025-12-11 02:49:39.605 UTC [298391] LOG:  archive recovery complete
+2025-12-11 02:49:39.607 UTC [298389] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-12-11 02:49:39.612 UTC [298389] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB; lsn=0/290000A0, redo lsn=0/290000A0
+2025-12-11 02:49:39.617 UTC [298386] LOG:  database system is ready to accept connections
+2025-12-11 02:54:39.706 UTC [298389] LOG:  checkpoint starting: time
+2025-12-11 02:54:39.709 UTC [298389] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.004 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16383 kB, estimate=16383 kB; lsn=0/2A0000B8, redo lsn=0/2A000060
+2025-12-11 02:57:44.176 UTC [298389] LOG:  checkpoint starting: force wait
+2025-12-11 02:57:44.364 UTC [298389] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.188 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32767 kB, estimate=32767 kB; lsn=0/2C000080, redo lsn=0/2C000028
+2025-12-11 03:01:47.198 UTC [300559] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-11 03:01:47.199 UTC [300559] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-11 03:01:47.199 UTC [300559] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-11 03:01:47.200 UTC [300559] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-11 03:01:47.202 UTC [300559] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-11 03:01:47.208 UTC [300568] LOG:  database system was interrupted; last known up at 2025-12-11 02:57:44 UTC
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000007.history': No such file or directory
+2025-12-11 03:01:47.639 UTC [300568] LOG:  starting backup recovery with redo LSN 0/2C000028, checkpoint LSN 0/2C000080, on timeline ID 6
+2025-12-11 03:01:47.654 UTC [300568] LOG:  restored log file "00000006.history" from archive
+2025-12-11 03:01:47.683 UTC [300568] LOG:  restored log file "00000006000000000000002C" from archive
+2025-12-11 03:01:47.759 UTC [300568] LOG:  starting archive recovery
+2025-12-11 03:01:47.763 UTC [300568] LOG:  redo starts at 0/2C000028
+2025-12-11 03:01:47.786 UTC [300568] LOG:  restored log file "00000006000000000000002D" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000006000000000000002E': No such file or directory
+2025-12-11 03:01:47.808 UTC [300568] LOG:  completed backup recovery with redo LSN 0/2C000028 and end LSN 0/2C000120
+2025-12-11 03:01:47.808 UTC [300568] LOG:  consistent recovery state reached at 0/2C000120
+2025-12-11 03:01:47.808 UTC [300559] LOG:  database system is ready to accept read-only connections
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000006000000000000002E': No such file or directory
+2025-12-11 03:01:47.811 UTC [300568] LOG:  redo done at 0/2D0002F0 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.04 s
+2025-12-11 03:01:47.811 UTC [300568] LOG:  last completed transaction was at log time 2025-12-11 02:58:56.894129+00
+2025-12-11 03:01:47.834 UTC [300568] LOG:  restored log file "00000006000000000000002D" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000007.history': No such file or directory
+2025-12-11 03:01:47.891 UTC [300568] LOG:  selected new timeline ID: 7
+2025-12-11 03:01:47.956 UTC [300568] LOG:  restored log file "00000006.history" from archive
+2025-12-11 03:01:47.958 UTC [300568] LOG:  archive recovery complete
+2025-12-11 03:01:47.959 UTC [300566] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-12-11 03:01:47.965 UTC [300566] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=5, longest=0.001 s, average=0.001 s; distance=32768 kB, estimate=32768 kB; lsn=0/2E000028, redo lsn=0/2E000028
+2025-12-11 03:01:47.972 UTC [300559] LOG:  database system is ready to accept connections
+2025-12-11 03:06:10.210 UTC [300693] ERROR:  syntax error at or near "psql" at character 1
+2025-12-11 03:06:10.210 UTC [300693] STATEMENT:  psql -U postgres -d postgres -c "SELECT pg_switch_wal();" >/dev/null 2>&1
+	;
+2025-12-11 03:06:17.515 UTC [300898] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-11 03:06:17.515 UTC [300898] FATAL:  Peer authentication failed for user "postgres"
+2025-12-11 03:06:17.515 UTC [300898] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-11 03:12:05.362 UTC [300566] LOG:  checkpoint starting: force wait
+2025-12-11 03:12:05.544 UTC [300566] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.182 s; sync files=1, longest=0.001 s, average=0.001 s; distance=16384 kB, estimate=31129 kB; lsn=0/2F000080, redo lsn=0/2F000028

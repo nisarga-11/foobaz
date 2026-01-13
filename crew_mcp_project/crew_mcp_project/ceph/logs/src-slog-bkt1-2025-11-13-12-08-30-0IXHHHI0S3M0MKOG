@@ -1,0 +1,5 @@
+user1 src-slog-bkt1 [13/Nov/2025:12:08:29 +0000] log1_put.txt REST.PUT.put_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:08:39 +0000] log2_put.txt REST.PUT.put_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:08:48 +0000] log3_put.txt REST.PUT.put_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:08:57 +0000] log4_put.txt REST.PUT.put_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:09:07 +0000] log5_put.txt REST.PUT.put_obj 97 d14fb1078648695e15e37a05ebf5b393

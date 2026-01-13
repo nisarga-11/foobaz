@@ -1,0 +1,3 @@
+ANS1691I  The option 'TCPSERVERADDRESS' that was found in the options file '/opt/tivoli/tsm/client/ba/bin/dsm.opt' at the line number: 2 is not supported and will be ignored by the client.
+ANS1691I  The option 'TCPPORT' that was found in the options file '/opt/tivoli/tsm/client/ba/bin/dsm.opt' at the line number: 3 is not supported and will be ignored by the client.
+ANS8019E Credentials file or admin id and password must be supplied in Batch mode.

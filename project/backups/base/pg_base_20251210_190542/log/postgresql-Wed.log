@@ -1,0 +1,997 @@
+2025-12-10 00:00:47.626 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:00:47.626 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:01:47.686 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:01:47.686 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:02:47.746 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:02:47.746 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:03:47.774 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:03:47.774 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:04:47.821 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:04:47.821 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:05:47.834 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:05:47.834 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:06:47.882 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:06:47.882 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:07:47.931 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:07:47.931 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:08:47.992 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:08:47.992 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:09:48.038 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:09:48.038 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:10:48.071 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:10:48.071 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:11:48.132 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:11:48.132 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:12:48.161 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:12:48.161 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:13:48.221 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:13:48.221 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:14:48.228 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:14:48.228 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:15:48.269 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:15:48.269 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:16:48.288 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:16:48.288 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:17:48.348 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:17:48.348 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:18:48.375 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:18:48.375 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:19:48.435 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:19:48.435 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:20:48.454 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:20:48.454 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:21:48.514 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:21:48.514 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:22:48.549 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:22:48.549 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:23:48.609 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:23:48.609 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:24:48.662 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:24:48.662 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:25:48.722 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:25:48.722 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:26:48.782 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:26:48.782 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:27:48.825 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:27:48.825 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:28:48.853 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:28:48.853 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:29:48.903 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:29:48.903 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:30:48.941 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:30:48.941 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:31:49.001 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:31:49.001 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:32:49.024 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:32:49.024 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:33:49.084 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:33:49.084 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:34:49.129 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:34:49.129 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:35:49.149 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:35:49.149 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:36:49.190 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:36:49.190 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:37:49.221 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:37:49.221 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:38:49.281 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:38:49.281 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:39:49.328 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:39:49.328 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:40:49.392 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:40:49.392 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:41:49.411 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:41:49.411 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:42:49.471 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:42:49.471 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:43:49.483 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:43:49.483 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:44:49.512 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:44:49.512 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:45:49.570 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:45:49.570 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:46:49.628 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:46:49.628 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:47:49.689 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:47:49.689 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:48:49.693 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:48:49.693 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:49:49.753 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:49:49.753 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:50:49.811 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:50:49.811 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:51:49.853 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:51:49.853 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:52:49.895 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:52:49.895 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:53:49.896 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:53:49.896 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:54:49.956 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:54:49.956 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:55:49.971 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:55:49.971 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:56:50.031 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:56:50.031 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:57:50.088 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:57:50.088 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:58:50.147 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:58:50.147 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 00:59:50.150 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 00:59:50.150 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:00:50.210 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:00:50.210 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:01:50.270 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:01:50.270 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:02:50.286 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:02:50.286 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:03:50.341 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:03:50.341 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:04:50.401 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:04:50.401 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:05:50.414 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:05:50.414 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:06:50.439 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:06:50.439 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:07:50.490 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:07:50.490 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:08:50.550 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:08:50.550 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:09:50.610 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:09:50.610 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:10:50.669 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:10:50.669 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:11:50.704 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:11:50.704 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:12:50.741 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:12:50.741 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:13:50.756 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:13:50.756 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:14:50.803 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:14:50.803 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:15:50.836 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:15:50.836 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:16:50.895 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:16:50.895 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:17:50.947 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:17:50.947 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:18:51.007 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:18:51.007 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:19:51.009 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:19:51.009 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:20:51.069 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:20:51.069 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:21:51.094 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:21:51.094 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:22:51.130 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:22:51.130 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:23:51.191 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:23:51.191 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:24:51.251 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:24:51.251 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:25:51.280 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:25:51.280 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:26:51.305 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:26:51.305 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:27:51.365 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:27:51.365 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:28:51.402 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:28:51.402 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:29:51.462 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:29:51.462 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:30:51.471 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:30:51.471 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:31:51.513 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:31:51.513 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:32:51.555 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:32:51.555 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:33:51.600 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:33:51.600 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:34:51.642 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:34:51.642 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:35:51.693 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:35:51.693 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:36:51.734 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:36:51.734 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:37:51.779 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:37:51.779 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:38:51.805 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:38:51.805 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:39:51.821 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:39:51.821 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:40:51.867 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:40:51.867 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:41:51.906 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:41:51.906 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:42:51.958 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:42:51.958 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:43:52.018 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:43:52.018 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:44:52.059 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:44:52.059 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:45:52.119 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:45:52.119 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:46:52.158 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:46:52.158 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:47:52.205 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:47:52.205 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:48:52.240 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:48:52.240 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:49:52.300 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:49:52.300 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:50:52.358 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:50:52.358 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:51:52.388 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:51:52.388 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:52:52.448 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:52:52.448 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:53:52.507 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:53:52.507 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:54:52.568 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:54:52.568 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:55:52.628 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:55:52.628 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:56:52.689 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:56:52.689 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:57:52.690 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:57:52.690 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:58:52.700 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:58:52.700 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 01:59:52.760 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 01:59:52.760 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:00:52.778 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:00:52.778 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:01:52.798 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:01:52.798 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:02:52.859 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:02:52.859 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:03:52.914 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:03:52.914 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:04:52.920 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:04:52.920 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:05:52.980 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:05:52.980 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:06:53.003 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:06:53.003 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:07:53.045 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:07:53.045 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:08:53.098 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:08:53.098 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:09:53.155 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:09:53.155 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:10:53.181 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:10:53.181 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:11:53.226 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:11:53.226 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:12:53.282 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:12:53.282 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:13:53.333 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:13:53.333 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:14:53.357 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:14:53.357 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:15:53.418 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:15:53.418 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:16:53.478 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:16:53.478 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:17:53.534 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:17:53.534 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:18:53.581 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:18:53.581 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:19:53.636 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:19:53.636 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:20:53.678 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:20:53.678 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:21:53.738 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:21:53.738 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:22:53.782 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:22:53.782 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:23:53.840 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:23:53.840 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:24:53.878 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:24:53.878 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:25:53.924 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:25:53.924 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:26:53.955 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:26:53.955 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:27:53.966 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:27:53.966 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:28:54.011 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:28:54.011 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:29:54.062 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:29:54.062 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:30:54.071 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:30:54.071 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:31:54.131 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:31:54.131 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:32:54.192 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:32:54.192 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:33:54.252 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:33:54.252 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:34:54.313 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:34:54.313 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:35:54.373 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:35:54.373 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:36:54.433 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:36:54.433 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:37:54.454 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:37:54.454 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:38:54.514 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:38:54.514 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:39:54.558 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:39:54.558 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:40:54.602 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:40:54.602 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:41:54.647 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:41:54.647 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:42:54.686 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:42:54.686 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:43:54.746 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:43:54.746 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:44:54.769 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:44:54.769 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:45:54.830 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:45:54.830 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:46:54.832 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:46:54.832 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:47:54.885 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:47:54.885 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:48:54.945 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:48:54.945 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:49:54.979 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:49:54.979 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:50:55.034 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:50:55.034 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:51:55.067 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:51:55.067 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:52:55.091 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:52:55.091 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:53:55.151 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:53:55.151 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:54:55.202 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:54:55.202 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:55:55.250 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:55:55.250 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:56:55.267 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:56:55.267 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:57:55.326 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:57:55.326 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:58:55.375 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:58:55.375 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 02:59:55.435 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 02:59:55.435 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:00:55.487 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:00:55.487 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:01:55.547 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:01:55.547 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:02:55.594 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:02:55.594 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:03:55.603 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:03:55.603 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:04:55.647 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:04:55.647 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:05:55.684 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:05:55.684 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:06:55.710 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:06:55.710 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:07:55.770 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:07:55.770 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:08:55.795 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:08:55.795 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:09:55.826 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:09:55.826 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:10:55.877 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:10:55.877 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:11:55.912 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:11:55.912 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:12:55.966 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:12:55.966 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:13:56.010 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:13:56.010 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:14:56.067 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:14:56.067 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:15:56.113 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:15:56.113 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:16:56.173 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:16:56.173 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:17:56.195 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:17:56.195 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:18:56.228 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:18:56.228 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:19:56.256 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:19:56.256 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:20:56.312 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:20:56.312 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:21:56.372 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:21:56.372 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:22:56.419 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:22:56.419 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:23:56.462 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:23:56.462 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:24:56.522 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:24:56.522 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:25:56.567 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:25:56.567 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:26:56.574 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:26:56.574 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:27:56.610 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:27:56.610 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:28:56.655 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:28:56.655 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:29:56.687 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:29:56.687 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:30:56.739 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:30:56.739 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:31:56.756 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:31:56.756 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:32:56.816 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:32:56.816 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:33:56.863 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:33:56.863 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:34:56.892 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:34:56.892 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:35:56.952 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:35:56.952 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:36:56.982 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:36:56.982 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:37:57.028 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:37:57.028 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:38:57.060 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:38:57.060 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:39:57.092 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:39:57.092 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:40:57.127 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:40:57.127 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:41:57.180 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:41:57.180 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:42:57.223 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:42:57.223 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:43:57.252 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:43:57.252 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:44:57.288 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:44:57.288 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:45:57.348 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:45:57.348 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:46:57.389 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:46:57.389 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:47:57.433 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:47:57.433 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:48:57.475 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:48:57.475 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:49:57.482 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:49:57.482 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:50:57.542 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:50:57.542 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:51:57.581 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:51:57.581 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:52:57.641 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:52:57.641 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:53:57.700 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:53:57.700 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:54:57.744 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:54:57.744 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:55:57.755 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:55:57.755 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:56:57.759 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:56:57.759 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:57:57.819 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:57:57.819 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:58:57.870 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:58:57.870 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 03:59:57.903 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 03:59:57.903 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:00:57.948 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:00:57.948 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:01:57.981 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:01:57.981 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:02:58.002 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:02:58.002 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:03:58.037 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:03:58.037 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:04:58.091 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:04:58.091 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:05:58.152 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:05:58.152 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:06:58.179 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:06:58.179 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:07:58.220 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:07:58.220 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:08:58.263 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:08:58.263 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:09:58.323 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:09:58.323 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:10:58.383 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:10:58.383 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:11:58.440 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:11:58.440 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:12:58.500 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:12:58.500 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:13:58.519 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:13:58.519 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:14:58.568 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:14:58.568 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:15:58.628 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:15:58.628 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:16:58.671 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:16:58.671 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:17:58.715 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:17:58.715 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:18:58.766 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:18:58.766 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:19:58.827 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:19:58.827 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:20:58.887 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:20:58.887 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:21:58.930 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:21:58.930 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:22:58.977 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:22:58.977 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:23:59.035 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:23:59.035 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:24:59.087 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:24:59.087 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:25:59.147 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:25:59.147 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:26:59.183 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:26:59.183 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:27:59.185 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:27:59.185 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:28:59.226 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:28:59.226 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:29:59.286 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:29:59.286 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:30:59.347 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:30:59.347 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:31:59.382 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:31:59.382 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:32:59.442 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:32:59.442 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:33:59.502 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:33:59.502 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:34:59.559 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:34:59.559 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:35:59.561 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:35:59.561 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:36:59.606 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:36:59.606 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:37:59.657 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:37:59.657 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:38:59.714 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:38:59.714 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:39:59.774 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:39:59.774 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:40:59.834 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:40:59.834 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:41:59.863 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:41:59.863 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:42:59.888 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:42:59.888 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:43:59.907 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:43:59.907 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:44:59.967 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:44:59.967 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:46:00.024 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:46:00.024 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:47:00.066 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:47:00.066 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:48:00.123 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:48:00.123 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:49:00.172 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:49:00.172 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:50:00.190 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:50:00.190 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:51:00.243 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:51:00.243 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:52:00.297 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:52:00.297 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:53:00.333 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:53:00.333 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:54:00.380 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:54:00.380 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:55:00.430 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:55:00.430 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:56:00.484 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:56:00.484 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:57:00.541 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:57:00.541 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:58:00.552 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:58:00.552 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 04:59:00.612 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 04:59:00.612 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:00:00.661 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:00:00.661 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:01:00.719 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:01:00.719 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:02:00.765 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:02:00.765 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:03:00.774 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:03:00.774 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:04:00.834 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:04:00.834 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:05:00.894 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:05:00.894 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:06:00.923 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:06:00.923 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:07:00.950 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:07:00.950 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:08:00.980 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:08:00.980 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:09:01.035 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:09:01.035 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:10:01.039 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:10:01.039 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:11:01.100 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:11:01.100 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:12:01.156 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:12:01.156 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:13:01.216 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:13:01.216 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:14:01.237 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:14:01.237 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:15:01.279 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:15:01.279 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:16:01.321 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:16:01.321 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:17:01.342 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:17:01.342 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:18:01.401 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:18:01.401 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:19:01.431 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:19:01.431 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:20:01.464 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:20:01.464 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:21:01.470 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:21:01.470 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:22:01.511 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:22:01.511 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:23:01.571 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:23:01.571 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:24:01.631 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:24:01.631 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:25:01.686 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:25:01.686 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:26:01.735 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:26:01.735 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:27:01.782 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:27:01.782 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:28:01.842 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:28:01.842 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:29:01.894 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:29:01.894 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:30:01.951 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:30:01.951 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:31:02.012 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:31:02.012 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:32:02.065 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:32:02.065 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:33:02.123 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:33:02.123 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:34:02.183 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:34:02.183 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:35:02.232 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:35:02.232 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:36:02.292 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:36:02.292 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:37:02.352 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:37:02.352 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:38:02.395 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:38:02.395 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:39:02.450 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:39:02.450 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:40:02.504 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:40:02.504 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:41:02.551 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:41:02.551 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:41:40.898 UTC [237031] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 05:41:40.898 UTC [237031] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 05:41:40.898 UTC [237031] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 05:41:55.083 UTC [237104] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 05:41:55.084 UTC [237104] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 05:41:55.084 UTC [237104] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 05:42:02.605 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:42:02.605 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:43:02.610 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:43:02.610 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:44:02.653 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:44:02.653 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:45:02.677 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:45:02.677 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:46:02.737 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:46:02.737 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:47:02.796 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:47:02.796 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:47:04.538 UTC [162769] LOG:  checkpoint starting: time
+2025-12-10 05:48:02.822 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:48:02.822 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:49:02.859 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:49:02.859 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:50:02.897 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:50:02.897 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:51:02.929 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:51:02.929 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:51:34.075 UTC [162769] LOG:  checkpoint complete: wrote 2825 buffers (17.2%); 1 WAL file(s) added, 0 removed, 0 recycled; write=269.474 s, sync=0.005 s, total=269.538 s; sync files=913, longest=0.002 s, average=0.001 s; distance=12817 kB, estimate=12817 kB; lsn=0/BC87190, redo lsn=0/BC87100
+2025-12-10 05:52:02.988 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:52:02.988 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:53:03.048 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:53:03.048 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:54:03.079 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:54:03.079 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:55:03.131 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:55:03.131 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:56:03.191 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:56:03.191 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:57:03.243 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:57:03.243 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:58:03.303 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:58:03.303 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 05:59:03.351 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 05:59:03.351 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:00:03.410 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:00:03.410 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:01:03.446 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:01:03.446 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:02:03.481 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:02:03.481 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:03:03.483 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:03:03.483 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:04:03.490 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:04:03.490 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:05:03.525 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:05:03.525 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:06:03.531 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:06:03.531 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:07:03.544 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:07:03.544 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:08:03.591 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:08:03.591 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:09:03.651 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:09:03.651 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:10:03.695 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:10:03.695 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:11:03.755 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:11:03.755 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:12:03.759 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:12:03.759 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:13:03.815 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:13:03.815 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:14:03.816 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:14:03.816 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:15:03.838 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:15:03.838 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:16:03.895 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:16:03.895 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:17:03.955 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:17:03.955 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:18:03.989 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:18:03.989 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:19:04.006 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:19:04.006 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:20:04.030 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:20:04.030 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:21:04.090 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:21:04.090 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:22:04.099 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:22:04.099 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:23:04.132 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:23:04.132 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:24:04.192 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:24:04.192 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:25:04.219 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:25:04.219 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:26:04.247 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:26:04.247 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:27:04.290 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:27:04.290 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:28:04.350 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:28:04.350 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:29:04.404 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:29:04.404 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:30:04.458 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:30:04.458 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:31:04.489 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:31:04.489 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:32:04.549 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:32:04.549 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:33:04.553 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:33:04.553 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:34:04.613 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:34:04.613 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:35:04.673 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:35:04.673 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:35:22.625 UTC [162769] LOG:  checkpoint starting: immediate force wait
+2025-12-10 06:35:22.632 UTC [162769] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=1, longest=0.001 s, average=0.001 s; distance=13 kB, estimate=11537 kB; lsn=0/BC8A638, redo lsn=0/BC8A5E0
+2025-12-10 06:35:22.633 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:35:22.633 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:35:22.745 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:35:22.745 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:36:22.805 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:36:22.805 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:37:22.850 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:37:22.850 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:38:22.904 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:38:22.904 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:39:22.941 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:39:22.941 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:40:22.698 UTC [162769] LOG:  checkpoint starting: time
+2025-12-10 06:40:22.988 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:40:22.988 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:41:23.048 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:41:23.048 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:41:56.936 UTC [162769] LOG:  checkpoint complete: wrote 942 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=94.233 s, sync=0.003 s, total=94.239 s; sync files=309, longest=0.001 s, average=0.001 s; distance=4285 kB, estimate=10812 kB; lsn=0/C0B9CD8, redo lsn=0/C0B9C48
+2025-12-10 06:42:23.105 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:42:23.105 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:43:23.134 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:43:23.134 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:43:26.374 UTC [240969] ERROR:  syntax error at or near "archive_mode" at character 1
+2025-12-10 06:43:26.374 UTC [240969] STATEMENT:  archive_mode | on
+	archive_command | cp %p /root/sp-lakehouse-backup/project/backups/wal/%f
+	wal_level | replica
+	;
+2025-12-10 06:44:23.194 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:44:23.194 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:45:23.255 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:45:23.255 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:46:23.296 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:46:23.296 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:47:23.329 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:47:23.329 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:48:23.339 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:48:23.339 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:49:23.392 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:49:23.392 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:50:23.414 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:50:23.414 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:51:05.187 UTC [162767] LOG:  received fast shutdown request
+2025-12-10 06:51:05.190 UTC [162767] LOG:  aborting any active transactions
+2025-12-10 06:51:05.194 UTC [162767] LOG:  background worker "logical replication launcher" (PID 162775) exited with exit code 1
+2025-12-10 06:51:05.196 UTC [162769] LOG:  shutting down
+2025-12-10 06:51:05.230 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:51:05.230 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:51:05.230 UTC [162769] LOG:  checkpoint starting: shutdown immediate
+2025-12-10 06:51:05.353 UTC [162769] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.124 s; sync files=0, longest=0.000 s, average=0.000 s; distance=15640 kB, estimate=15640 kB; lsn=0/D000028, redo lsn=0/D000028
+2025-12-10 06:51:05.361 UTC [162774] WARNING:  "archive_mode" enabled, yet archiving is not configured
+2025-12-10 06:51:05.361 UTC [162774] DETAIL:  archive_command is not set.
+2025-12-10 06:51:05.375 UTC [162767] LOG:  database system is shut down
+2025-12-10 06:51:12.425 UTC [242323] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-10 06:51:12.426 UTC [242323] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-10 06:51:12.426 UTC [242323] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-10 06:51:12.427 UTC [242323] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-10 06:51:12.428 UTC [242323] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-10 06:51:12.433 UTC [242328] LOG:  database system was shut down at 2025-12-10 06:51:05 UTC
+2025-12-10 06:51:12.443 UTC [242323] LOG:  database system is ready to accept connections
+2025-12-10 06:51:21.710 UTC [242323] LOG:  received fast shutdown request
+2025-12-10 06:51:21.713 UTC [242323] LOG:  aborting any active transactions
+2025-12-10 06:51:21.715 UTC [242323] LOG:  background worker "logical replication launcher" (PID 242332) exited with exit code 1
+2025-12-10 06:51:21.718 UTC [242326] LOG:  shutting down
+2025-12-10 06:51:21.746 UTC [242326] LOG:  checkpoint starting: shutdown immediate
+2025-12-10 06:51:21.800 UTC [242326] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.055 s; sync files=2, longest=0.001 s, average=0.001 s; distance=16384 kB, estimate=16384 kB; lsn=0/E000028, redo lsn=0/E000028
+2025-12-10 06:51:21.811 UTC [242323] LOG:  database system is shut down
+2025-12-10 06:51:21.881 UTC [242390] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-10 06:51:21.881 UTC [242390] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-10 06:51:21.881 UTC [242390] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-10 06:51:21.882 UTC [242390] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-10 06:51:21.883 UTC [242390] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-10 06:51:21.888 UTC [242394] LOG:  database system was shut down at 2025-12-10 06:51:21 UTC
+2025-12-10 06:51:21.892 UTC [242390] LOG:  database system is ready to accept connections
+2025-12-10 06:53:01.451 UTC [242392] LOG:  checkpoint starting: immediate force wait
+2025-12-10 06:53:01.458 UTC [242392] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.007 s; sync files=8, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/E0004B8, redo lsn=0/E000460
+2025-12-10 07:02:09.545 UTC [242392] LOG:  checkpoint starting: force wait
+2025-12-10 07:02:09.625 UTC [242392] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.081 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16382 kB, estimate=16382 kB; lsn=0/F000080, redo lsn=0/F000028
+2025-12-10 07:10:10.202 UTC [245101] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-10 07:10:10.202 UTC [245101] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-10 07:10:10.202 UTC [245101] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-10 07:10:10.203 UTC [245101] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-10 07:10:10.204 UTC [245101] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-10 07:10:10.208 UTC [245105] LOG:  database system was interrupted; last known up at 2025-12-10 07:02:09 UTC
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000002.history': No such file or directory
+2025-12-10 07:10:10.238 UTC [245105] LOG:  starting backup recovery with redo LSN 0/F000028, checkpoint LSN 0/F000080, on timeline ID 1
+2025-12-10 07:10:10.256 UTC [245105] LOG:  restored log file "00000001000000000000000F" from archive
+2025-12-10 07:10:10.296 UTC [245105] LOG:  starting archive recovery
+2025-12-10 07:10:10.300 UTC [245105] LOG:  redo starts at 0/F000028
+2025-12-10 07:10:10.319 UTC [245105] LOG:  restored log file "000000010000000000000010" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000010000000000000011': No such file or directory
+2025-12-10 07:10:10.339 UTC [245105] LOG:  completed backup recovery with redo LSN 0/F000028 and end LSN 0/F000120
+2025-12-10 07:10:10.339 UTC [245105] LOG:  consistent recovery state reached at 0/F000120
+2025-12-10 07:10:10.339 UTC [245101] LOG:  database system is ready to accept read-only connections
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000010000000000000011': No such file or directory
+2025-12-10 07:10:10.345 UTC [245105] LOG:  redo done at 0/10000168 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.04 s
+2025-12-10 07:10:10.364 UTC [245105] LOG:  restored log file "000000010000000000000010" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000002.history': No such file or directory
+2025-12-10 07:10:10.411 UTC [245105] LOG:  selected new timeline ID: 2
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000001.history': No such file or directory
+2025-12-10 07:10:10.469 UTC [245105] LOG:  archive recovery complete
+2025-12-10 07:10:10.470 UTC [245103] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-12-10 07:10:10.476 UTC [245103] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.008 s; sync files=2, longest=0.001 s, average=0.001 s; distance=32768 kB, estimate=32768 kB; lsn=0/11000028, redo lsn=0/11000028
+2025-12-10 07:10:10.483 UTC [245101] LOG:  database system is ready to accept connections
+2025-12-10 07:10:43.621 UTC [245200] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 07:10:43.621 UTC [245200] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 07:10:43.621 UTC [245200] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 07:12:16.843 UTC [245607] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 07:12:16.843 UTC [245607] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 07:12:16.843 UTC [245607] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 09:00:12.159 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 09:00:13.067 UTC [245103] LOG:  checkpoint complete: wrote 9 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.905 s, sync=0.001 s, total=0.909 s; sync files=6, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=29492 kB; lsn=0/110029B8, redo lsn=0/11002960
+2025-12-10 09:10:12.264 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 09:10:14.077 UTC [245103] LOG:  checkpoint complete: wrote 18 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.808 s, sync=0.001 s, total=1.814 s; sync files=14, longest=0.001 s, average=0.001 s; distance=20 kB, estimate=26545 kB; lsn=0/11007B60, redo lsn=0/11007B08
+2025-12-10 09:40:12.635 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 09:40:12.639 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16353 kB, estimate=25525 kB; lsn=0/120000B8, redo lsn=0/12000060
+2025-12-10 10:00:12.980 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 10:00:12.984 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16384 kB, estimate=24611 kB; lsn=0/130000B8, redo lsn=0/13000060
+2025-12-10 10:55:13.842 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 10:55:13.846 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.004 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16384 kB, estimate=23788 kB; lsn=0/140000B8, redo lsn=0/14000060
+2025-12-10 10:56:35.868 UTC [254893] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 10:56:35.884 UTC [254893] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 10:56:35.884 UTC [254893] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 10:56:40.983 UTC [254943] LOG:  provided user name (postgres) and authenticated user name (root) do not match
+2025-12-10 10:56:40.983 UTC [254943] FATAL:  Peer authentication failed for user "postgres"
+2025-12-10 10:56:40.983 UTC [254943] DETAIL:  Connection matched file "/var/lib/pgsql/17/data/pg_hba.conf" line 113: "local   all             all                                     peer"
+2025-12-10 11:00:13.946 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 11:00:13.952 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.006 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16384 kB, estimate=23048 kB; lsn=0/150000B8, redo lsn=0/15000060
+2025-12-10 14:15:16.155 UTC [245103] LOG:  checkpoint starting: time
+2025-12-10 14:15:16.159 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.004 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32768 kB, estimate=32768 kB; lsn=0/170000B8, redo lsn=0/17000060
+2025-12-10 14:29:10.754 UTC [245103] LOG:  checkpoint starting: force wait
+2025-12-10 14:29:10.856 UTC [245103] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.102 s; sync files=0, longest=0.000 s, average=0.000 s; distance=16383 kB, estimate=31129 kB; lsn=0/18000080, redo lsn=0/18000028
+2025-12-10 17:47:11.568 UTC [278754] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-10 17:47:11.569 UTC [278754] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-10 17:47:11.569 UTC [278754] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-10 17:47:11.570 UTC [278754] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-10 17:47:11.572 UTC [278754] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-10 17:47:11.578 UTC [278759] LOG:  database system was interrupted; last known up at 2025-12-10 14:29:10 UTC
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000003.history': No such file or directory
+2025-12-10 17:47:11.975 UTC [278759] LOG:  starting backup recovery with redo LSN 0/18000028, checkpoint LSN 0/18000080, on timeline ID 2
+2025-12-10 17:47:11.994 UTC [278759] LOG:  restored log file "00000002.history" from archive
+2025-12-10 17:47:12.010 UTC [278759] LOG:  restored log file "000000020000000000000018" from archive
+2025-12-10 17:47:12.055 UTC [278759] LOG:  starting archive recovery
+2025-12-10 17:47:12.073 UTC [278759] LOG:  redo starts at 0/18000028
+2025-12-10 17:47:12.100 UTC [278759] LOG:  restored log file "000000020000000000000019" from archive
+2025-12-10 17:47:12.140 UTC [278759] LOG:  restored log file "00000002000000000000001A" from archive
+2025-12-10 17:47:12.227 UTC [278759] LOG:  restored log file "00000002000000000000001B" from archive
+2025-12-10 17:47:12.260 UTC [278759] LOG:  completed backup recovery with redo LSN 0/18000028 and end LSN 0/18000120
+2025-12-10 17:47:12.260 UTC [278759] LOG:  consistent recovery state reached at 0/18000120
+2025-12-10 17:47:12.260 UTC [278754] LOG:  database system is ready to accept read-only connections
+2025-12-10 17:47:12.281 UTC [278759] LOG:  restored log file "00000002000000000000001C" from archive
+2025-12-10 17:47:12.332 UTC [278759] LOG:  restored log file "00000002000000000000001D" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000002000000000000001E': No such file or directory
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000002000000000000001E': No such file or directory
+2025-12-10 17:47:12.379 UTC [278759] LOG:  redo done at 0/1D000390 system usage: CPU: user: 0.00 s, system: 0.03 s, elapsed: 0.32 s
+2025-12-10 17:47:12.379 UTC [278759] LOG:  last completed transaction was at log time 2025-12-10 17:26:16.792062+00
+2025-12-10 17:47:12.411 UTC [278759] LOG:  restored log file "00000002000000000000001D" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000003.history': No such file or directory
+2025-12-10 17:47:12.455 UTC [278759] LOG:  selected new timeline ID: 3
+2025-12-10 17:47:12.491 UTC [278759] LOG:  restored log file "00000002.history" from archive
+2025-12-10 17:47:12.493 UTC [278759] LOG:  archive recovery complete
+2025-12-10 17:47:12.494 UTC [278756] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-12-10 17:47:12.503 UTC [278756] LOG:  checkpoint complete: wrote 44 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.002 s, total=0.010 s; sync files=37, longest=0.001 s, average=0.001 s; distance=98304 kB, estimate=98304 kB; lsn=0/1E000028, redo lsn=0/1E000028
+2025-12-10 17:47:12.510 UTC [278754] LOG:  database system is ready to accept connections
+2025-12-10 18:53:30.695 UTC [278756] LOG:  checkpoint starting: force wait
+2025-12-10 18:53:31.920 UTC [278756] LOG:  checkpoint complete: wrote 11 buffers (0.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.106 s, sync=0.001 s, total=1.225 s; sync files=9, longest=0.001 s, average=0.001 s; distance=16384 kB, estimate=90112 kB; lsn=0/1F000080, redo lsn=0/1F000028
+2025-12-10 18:58:22.713 UTC [282438] LOG:  starting PostgreSQL 17.6 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-26), 64-bit
+2025-12-10 18:58:22.714 UTC [282438] LOG:  listening on IPv6 address "::1", port 5432
+2025-12-10 18:58:22.714 UTC [282438] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2025-12-10 18:58:22.720 UTC [282438] LOG:  listening on Unix socket "/run/postgresql/.s.PGSQL.5432"
+2025-12-10 18:58:22.721 UTC [282438] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2025-12-10 18:58:22.726 UTC [282442] LOG:  database system was interrupted; last known up at 2025-12-10 18:53:31 UTC
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000004.history': No such file or directory
+2025-12-10 18:58:23.118 UTC [282442] LOG:  starting backup recovery with redo LSN 0/1F000028, checkpoint LSN 0/1F000080, on timeline ID 3
+2025-12-10 18:58:23.125 UTC [282442] LOG:  restored log file "00000003.history" from archive
+2025-12-10 18:58:23.153 UTC [282442] LOG:  restored log file "00000003000000000000001F" from archive
+2025-12-10 18:58:23.257 UTC [282442] LOG:  starting archive recovery
+2025-12-10 18:58:23.261 UTC [282442] LOG:  redo starts at 0/1F000028
+2025-12-10 18:58:23.287 UTC [282442] LOG:  restored log file "000000030000000000000020" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000030000000000000021': No such file or directory
+2025-12-10 18:58:23.315 UTC [282442] LOG:  completed backup recovery with redo LSN 0/1F000028 and end LSN 0/1F000120
+2025-12-10 18:58:23.315 UTC [282442] LOG:  consistent recovery state reached at 0/1F000120
+2025-12-10 18:58:23.315 UTC [282438] LOG:  database system is ready to accept read-only connections
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/000000030000000000000021': No such file or directory
+2025-12-10 18:58:23.321 UTC [282442] LOG:  redo done at 0/200001A0 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.05 s
+2025-12-10 18:58:23.321 UTC [282442] LOG:  last completed transaction was at log time 2025-12-10 18:57:10.316564+00
+2025-12-10 18:58:23.342 UTC [282442] LOG:  restored log file "000000030000000000000020" from archive
+cp: cannot stat '/root/sp-lakehouse-backup/project/backups/wal/00000004.history': No such file or directory
+2025-12-10 18:58:23.408 UTC [282442] LOG:  selected new timeline ID: 4
+2025-12-10 18:58:23.479 UTC [282442] LOG:  restored log file "00000003.history" from archive
+2025-12-10 18:58:23.481 UTC [282442] LOG:  archive recovery complete
+2025-12-10 18:58:23.482 UTC [282440] LOG:  checkpoint starting: end-of-recovery immediate wait
+2025-12-10 18:58:23.490 UTC [282440] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.009 s; sync files=3, longest=0.002 s, average=0.001 s; distance=32768 kB, estimate=32768 kB; lsn=0/21000028, redo lsn=0/21000028
+2025-12-10 18:58:23.495 UTC [282438] LOG:  database system is ready to accept connections
+2025-12-10 19:02:27.301 UTC [282440] LOG:  checkpoint starting: force wait
+2025-12-10 19:02:27.496 UTC [282440] LOG:  checkpoint complete: wrote 1 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.102 s, sync=0.001 s, total=0.196 s; sync files=1, longest=0.001 s, average=0.001 s; distance=16384 kB, estimate=31129 kB; lsn=0/22000080, redo lsn=0/22000028
+2025-12-10 19:05:42.788 UTC [282440] LOG:  checkpoint starting: force wait
+2025-12-10 19:05:42.868 UTC [282440] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.080 s; sync files=0, longest=0.000 s, average=0.000 s; distance=32768 kB, estimate=32768 kB; lsn=0/24000080, redo lsn=0/24000028

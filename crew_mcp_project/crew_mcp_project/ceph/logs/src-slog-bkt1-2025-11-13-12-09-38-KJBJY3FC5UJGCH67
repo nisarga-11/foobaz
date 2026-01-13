@@ -1,0 +1,3 @@
+user1 src-slog-bkt1 [13/Nov/2025:12:11:21 +0000] log1_put.txt REST.DELETE.delete_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:11:29 +0000] log2_put.txt REST.DELETE.delete_obj 97 d14fb1078648695e15e37a05ebf5b393
+user1 src-slog-bkt1 [13/Nov/2025:12:11:36 +0000] log3_put.txt REST.DELETE.delete_obj 97 d14fb1078648695e15e37a05ebf5b393

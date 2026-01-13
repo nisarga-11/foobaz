@@ -1,0 +1,86 @@
+{
+  "backup_id": "cg_20260108_065055",
+  "timestamp": "2026-01-08T06:50:55.738141",
+  "cg_id": "cg_analytics",
+  "cg_name": "Analytics Stack",
+  "backup_type": "full",
+  "postgres_databases": [
+    "products_db",
+    "reports_db"
+  ],
+  "postgres_backups": [
+    {
+      "database": "products_db",
+      "success": true,
+      "backup_file": "products_db_full_20260108_065055.sql",
+      "local_path": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/products_db_full_20260108_065055.sql"
+    },
+    {
+      "database": "reports_db",
+      "success": true,
+      "backup_file": "reports_db_full_20260108_065055.sql",
+      "local_path": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/reports_db_full_20260108_065055.sql"
+    }
+  ],
+  "ceph_buckets": [
+    "src-slog-bkt1"
+  ],
+  "ceph_objects": [
+    "obj01",
+    "obj02",
+    "obj03",
+    "obj04",
+    "obj1",
+    "obj2",
+    "obj3",
+    "obj4",
+    "obj5",
+    "obj6",
+    "obj7",
+    "obj8",
+    "object1.txt",
+    "object2.txt",
+    "sample1.txt",
+    "sample2.txt",
+    "sample3.txt",
+    "test-upload.txt",
+    "test1.txt",
+    "test2.txt",
+    "testtttt.txt"
+  ],
+  "storage": {
+    "base_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups",
+    "postgres_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres",
+    "ceph_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph",
+    "downloaded_files": {
+      "postgres": [
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/products_db_full_20260108_065055.sql",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/reports_db_full_20260108_065055.sql"
+      ],
+      "ceph": [
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj01",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj02",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj03",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj04",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj1",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj2",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj3",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj4",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj5",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj6",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj7",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/obj8",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/object1.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/object2.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/sample1.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/sample2.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/sample3.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/test-upload.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/test1.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/test2.txt",
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph/testtttt.txt"
+      ]
+    }
+  },
+  "errors": null
+}

@@ -1,0 +1,34 @@
+{
+  "backup_id": "cg_20260108_034310",
+  "timestamp": "2026-01-08T03:43:10.217219",
+  "cg_id": "cg_lakehouse_main",
+  "cg_name": "Main Lakehouse",
+  "backup_type": "full",
+  "postgres_databases": [
+    "users_db"
+  ],
+  "postgres_backups": [
+    {
+      "database": "users_db",
+      "success": true,
+      "backup_file": "users_db_full_20260108_034310.sql",
+      "local_path": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/users_db_full_20260108_034310.sql"
+    }
+  ],
+  "ceph_buckets": [
+    "src-slog-bkt1"
+  ],
+  "ceph_objects": [],
+  "storage": {
+    "base_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups",
+    "postgres_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres",
+    "ceph_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph",
+    "downloaded_files": {
+      "postgres": [
+        "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres/users_db_full_20260108_034310.sql"
+      ],
+      "ceph": []
+    }
+  },
+  "errors": null
+}

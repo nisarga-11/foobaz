@@ -1,0 +1,34 @@
+agents:
+  - id: backup_restore_pg1
+    name: BackupRestorePG1
+    role: "Manages backup/restore for PostgreSQL cluster PG1"
+    goal: "Perform full/incremental backups and restores for cluster1/db1, db2"
+    backstory: "This agent ensures PG1 data safety using pgBackRest via MCP."
+    tools:
+      - type: mcp
+        name: pg1_tools
+        host: "127.0.0.1"
+        port: 5001
+
+  - id: backup_restore_pg2
+    name: BackupRestorePG2
+    role: "Manages backup/restore for PostgreSQL cluster PG2"
+    goal: "Perform full/incremental backups and restores for cluster2/db3, db4"
+    backstory: "This agent ensures PG2 data safety using pgBackRest via MCP."
+    tools:
+      - type: mcp
+        name: pg2_tools
+        host: "127.0.0.1"
+        port: 5002
+
+  - id: coordinator
+    name: BackupCoordinator
+    role: "Coordinates backup/restore across PG1 and PG2"
+    goal: "Understand user requests in natural language, then call the correct MCP tool(s)."
+    backstory: "This agent uses Ollama for NLP and delegates tasks to PG1/PG2 agents."
+    tools:
+      - type: agent
+        target: backup_restore_pg1
+      - type: agent
+        target: backup_restore_pg2
+      

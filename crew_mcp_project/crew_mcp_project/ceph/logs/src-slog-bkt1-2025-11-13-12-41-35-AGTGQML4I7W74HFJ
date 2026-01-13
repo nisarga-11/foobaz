@@ -1,0 +1,3 @@
+user1 src-slog-bkt1 [13/Nov/2025:12:41:35 +0000] ttt1.txt REST.PUT.put_obj 40 8038e476bcd93f84cd5dee94ea275cf9
+user1 src-slog-bkt1 [13/Nov/2025:12:41:42 +0000] ttt2.txt REST.PUT.put_obj 40 8038e476bcd93f84cd5dee94ea275cf9
+user1 src-slog-bkt1 [13/Nov/2025:12:41:50 +0000] ttt3.txt REST.PUT.put_obj 40 8038e476bcd93f84cd5dee94ea275cf9

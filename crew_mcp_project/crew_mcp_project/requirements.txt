@@ -1,0 +1,9 @@
+flask
+crewai
+crewai-tools
+paramiko
+python-dotenv
+pyyaml
+requests
+fastmcp
+ollama

@@ -1,0 +1,12 @@
+[0;1;32m●[0m dsmcad.service - "IBM SP Client dsmcad service."
+   Loaded: loaded (/etc/systemd/system/dsmcad.service; enabled; vendor preset: disabled)
+   Active: [0;1;32mactive (running)[0m since Wed 2025-11-05 17:15:05 UTC; 42ms ago
+  Process: 306185 ExecStopPost=/bin/bash -c let i=0; while [[ (-n "$(ps -eo comm | grep dsmcad)") && ($i -le 10) ]]; do let i++; sleep 1; done (code=exited, status=0/SUCCESS)
+  Process: 308896 ExecStart=/usr/bin/dsmcad (code=exited, status=0/SUCCESS)
+    Tasks: 2 (limit: 100411)
+   Memory: 5.7M
+   CGroup: /system.slice/dsmcad.service
+           └─308898 /usr/bin/dsmcad
+
+Nov 05 17:15:05 foobaz systemd[1]: Starting "IBM SP Client dsmcad service."...
+Nov 05 17:15:05 foobaz systemd[1]: Started "IBM SP Client dsmcad service.".

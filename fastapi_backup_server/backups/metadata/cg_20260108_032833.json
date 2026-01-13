@@ -1,0 +1,31 @@
+{
+  "backup_id": "cg_20260108_032833",
+  "timestamp": "2026-01-08T03:28:33.860159",
+  "cg_id": "cg_users_only",
+  "cg_name": "Users Database",
+  "backup_type": "full",
+  "postgres_databases": [
+    "users_db"
+  ],
+  "postgres_backups": [
+    {
+      "database": "users_db",
+      "success": true,
+      "backup_file": "users_db_full_20260108_032833.sql",
+      "local_path": null
+    }
+  ],
+  "ceph_buckets": [
+    "src-slog-bkt1"
+  ],
+  "ceph_objects": [],
+  "local_storage": {
+    "postgres_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/postgres",
+    "ceph_dir": "/root/sp-lakehouse-backup/fastapi_backup_server/backups/ceph",
+    "files": {
+      "postgres": [],
+      "ceph": []
+    }
+  },
+  "errors": null
+}

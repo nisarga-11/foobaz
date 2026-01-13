@@ -1,0 +1,42 @@
+{
+  "schedule_20251218_150439": {
+    "schedule_id": "schedule_20251218_150439",
+    "schedule_name": "weekly_backup",
+    "target": "lakehouse",
+    "backup_type": "full",
+    "schedule_type": "cron",
+    "cron_minute": "30",
+    "cron_hour": "3",
+    "cron_day": null,
+    "cron_month": null,
+    "cron_day_of_week": "mon",
+    "interval_minutes": null,
+    "interval_hours": null,
+    "interval_days": null,
+    "enabled": true,
+    "created_at": "2025-12-18T15:04:39.562785",
+    "last_run": null,
+    "next_run": null,
+    "run_count": 0
+  },
+  "schedule_20251219_053117": {
+    "schedule_id": "schedule_20251219_053117",
+    "schedule_name": "minute_backup",
+    "target": "lakehouse",
+    "backup_type": "full",
+    "schedule_type": "interval",
+    "cron_minute": null,
+    "cron_hour": null,
+    "cron_day": null,
+    "cron_month": null,
+    "cron_day_of_week": null,
+    "interval_minutes": 1,
+    "interval_hours": null,
+    "interval_days": null,
+    "enabled": true,
+    "created_at": "2025-12-19T05:31:17.528750",
+    "last_run": null,
+    "next_run": null,
+    "run_count": 0
+  }
+}
